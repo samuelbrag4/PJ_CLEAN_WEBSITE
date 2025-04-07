@@ -26,7 +26,7 @@ const Header = ({ corHeader }) => {
                 <Link href="/blog" className={styles.navText}>
                     Blog
                 </Link>
-                <Link href="/contacts" className={styles.navText}>
+                <Link href="/contact" className={styles.navText}>
                     Contato
                 </Link>
                 <Link href="/account" className={styles.navText}>
