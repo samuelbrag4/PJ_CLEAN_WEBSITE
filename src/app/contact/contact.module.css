@@ -3,3 +3,21 @@
     height: 100vh;
     background: linear-gradient(180deg, #FFFFFFE6 0%, #D9BFA9E6 25%, #E4D0BAE6 75%, #FFFFFFE6 100%);
 }
+
+.contactImage {
+    width: 100%;
+    height: 100%;
+}
+
+.contactText {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactTitle h1 {
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+}
