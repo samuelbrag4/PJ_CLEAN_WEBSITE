@@ -25,6 +25,7 @@
 .navLink {
     text-decoration: none; 
     color: inherit; 
+    display: block; 
 }
 
 .card {
