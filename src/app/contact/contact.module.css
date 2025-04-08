@@ -1,6 +1,6 @@
 .contactSection {
     font-family: 'Inter', sans-serif;
-    position: relative; /* Permite posicionar elementos filhos */
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,25 +8,27 @@
     justify-content: center;
     background: linear-gradient(180deg, #FFFFFFE6 0%, #D9BFA9E6 25%, #E4D0BAE6 75%, #FFFFFFE6 100%);
     padding: 20px;
-    overflow: hidden; /* Garante que nada ultrapasse os limites */
+    overflow: hidden;
 }
 
 .contactImage {
-    position: absolute; /* Faz a imagem ficar no fundo */
+    position: absolute;
     width: 120%;
     height: auto;
-    z-index: 1; /* Coloca a imagem atrás dos textos */
+    z-index: 1;
+    transition: opacity 0.3s ease; /* Suaviza a transição ao esconder a imagem */
 }
 
 .contactContainer {
-    position: relative; /* Mantém os textos acima da imagem */
-    z-index: 2; /* Garante que os textos fiquem acima da imagem */
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 1050px;
+    gap: 20px;
 }
 
 .contactText {
@@ -73,13 +75,13 @@
 }
 
 .contactForm textarea {
-    resize: none; /* Impede o redimensionamento */
+    resize: none;
     height: 100px;
     padding: 10px;
 }
 
 .checkboxContainer input {
-   border-radius: 5px;
+    border-radius: 5px;
 }
 
 .contactForm button {
@@ -98,40 +100,81 @@
     background-color: #b89a7a;
 }
 
-@media (max-width: 768px) {
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+}
+
+.checkboxContainer input {
+    margin: 0; 
+    width: 16px; 
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkboxContainer label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
     .contactContainer {
-        flex-direction: column; /* Alinha os textos e o formulário verticalmente */
-        align-items: center; /* Centraliza os elementos */
-        gap: 30px; /* Aumenta o espaçamento entre os elementos */
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
         padding: 20px;
     }
 
     .contactText {
-        text-align: center; /* Centraliza os textos */
+        text-align: center;
     }
 
     .contactFormContainer {
-        width: 100%; /* Faz o formulário ocupar toda a largura */
-        max-width: 500px; /* Limita a largura máxima */
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .contactImage {
+        opacity: 0; 
+        pointer-events: none; 
     }
 }
 
-@media (max-width: 480px) {
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    .contactContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
     .contactTitle {
-        font-size: 36px; /* Reduz o tamanho do título */
+        font-size: 36px;
     }
 
     .contactSubTitle {
-        font-size: 14px; /* Reduz o tamanho do subtítulo */
+        font-size: 14px;
+    }
+
+    .contactFormContainer {
+        width: 100%;
+        max-width: 500px;
     }
 
     .contactForm input,
     .contactForm textarea {
-        font-size: 14px; /* Reduz o tamanho dos campos do formulário */
+        font-size: 14px;
     }
 
     .contactForm button {
-        font-size: 14px; /* Reduz o tamanho do botão */
-        padding: 8px 16px; /* Ajusta o espaçamento do botão */
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .contactImage {
+        display: none; 
     }
 }
