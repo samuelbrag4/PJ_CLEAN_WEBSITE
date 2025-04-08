@@ -64,19 +64,27 @@
 
 .contactForm input,
 .contactForm textarea {
+    font-family: 'Inter', sans-serif;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    padding: 10px;
 }
 
 .contactForm textarea {
     resize: none; /* Impede o redimensionamento */
     height: 100px;
+    padding: 10px;
+}
+
+.checkboxContainer input {
+   border-radius: 5px;
 }
 
 .contactForm button {
-    padding: 10px 20px;
+    width: 35%;
+    height: 50px;
     background-color: #DBBD9C;
     color: #fff;
     border: none;
@@ -88,4 +96,42 @@
 
 .contactForm button:hover {
     background-color: #b89a7a;
+}
+
+@media (max-width: 768px) {
+    .contactContainer {
+        flex-direction: column; /* Alinha os textos e o formulário verticalmente */
+        align-items: center; /* Centraliza os elementos */
+        gap: 30px; /* Aumenta o espaçamento entre os elementos */
+        padding: 20px;
+    }
+
+    .contactText {
+        text-align: center; /* Centraliza os textos */
+    }
+
+    .contactFormContainer {
+        width: 100%; /* Faz o formulário ocupar toda a largura */
+        max-width: 500px; /* Limita a largura máxima */
+    }
+}
+
+@media (max-width: 480px) {
+    .contactTitle {
+        font-size: 36px; /* Reduz o tamanho do título */
+    }
+
+    .contactSubTitle {
+        font-size: 14px; /* Reduz o tamanho do subtítulo */
+    }
+
+    .contactForm input,
+    .contactForm textarea {
+        font-size: 14px; /* Reduz o tamanho dos campos do formulário */
+    }
+
+    .contactForm button {
+        font-size: 14px; /* Reduz o tamanho do botão */
+        padding: 8px 16px; /* Ajusta o espaçamento do botão */
+    }
 }

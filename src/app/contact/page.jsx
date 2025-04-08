@@ -23,7 +23,7 @@ export default function Contato() {
                             <input type="text" placeholder="Last name" />
                             <input type="email" placeholder="Email address" />
                             <textarea placeholder="Message"></textarea>
-                            <div>
+                            <div className={styles.checkboxContainer}>
                                 <input type="checkbox" id="terms" />
                                 <label htmlFor="terms">
                                     By clicking here you agree to our <a href="#">terms and policy</a>.
