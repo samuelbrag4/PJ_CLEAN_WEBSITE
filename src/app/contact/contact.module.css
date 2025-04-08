@@ -1,23 +1,91 @@
 .contactSection {
+    font-family: 'Inter', sans-serif;
+    position: relative; /* Permite posicionar elementos filhos */
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(180deg, #FFFFFFE6 0%, #D9BFA9E6 25%, #E4D0BAE6 75%, #FFFFFFE6 100%);
+    padding: 20px;
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
 }
 
 .contactImage {
+    position: absolute; /* Faz a imagem ficar no fundo */
+    width: 120%;
+    height: auto;
+    z-index: 1; /* Coloca a imagem atrás dos textos */
+}
+
+.contactContainer {
+    position: relative; /* Mantém os textos acima da imagem */
+    z-index: 2; /* Garante que os textos fiquem acima da imagem */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
+    max-width: 1050px;
 }
 
 .contactText {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-.contactTitle h1 {
-    font-family: Inter;
-    font-size: 50px;
-    font-style: normal;
+.contactTitle {
+    font-size: 44px;
     font-weight: 700;
-    line-height: 60px;
+    color: #000;
+}
+
+.contactSubTitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+}
+
+.contactFormContainer {
+    padding: 20px;
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contactForm textarea {
+    resize: none; /* Impede o redimensionamento */
+    height: 100px;
+}
+
+.contactForm button {
+    padding: 10px 20px;
+    background-color: #DBBD9C;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contactForm button:hover {
+    background-color: #b89a7a;
 }
