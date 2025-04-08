@@ -3,6 +3,10 @@
   color: white;
   padding: 20px;
   margin-bottom: 0;
+  position: relative;
+  bottom: 0;
+  width: 90%;
+  
 }
 
 .topSection {

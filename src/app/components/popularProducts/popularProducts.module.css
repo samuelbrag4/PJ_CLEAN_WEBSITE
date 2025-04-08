@@ -1,45 +1,106 @@
 .produtos-populares {
-    text-align: center;
-    margin: 4rem 0;
-  }
-  
-  .produtos-populares-h2 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .produtos-populares-p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-  }
-  
-  .cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .card.vazio {
-    width: 15rem;
-    height: 10rem;
-    background-color: #f0f0f0;
-    border: 1px dashed #ccc;
-    border-radius: 0.5rem;
-  }
-  
-  .ver-mais {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #f05080;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .ver-mais:hover {
-    background-color: #d04070;
-  }
+  text-align: center;
+  margin: 12rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.produtos-populares-h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  color: #333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.produtos-populares-p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  width: 25%;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  width: 80%;
+}
+
+.card {
+  width: 100%;
+  height: 12rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.card.vazio {
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(240, 80, 128, 0.1), rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-content {
+  z-index: 2;
+  text-align: center;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.ver-mais {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f05080;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ver-mais:hover {
+  background-color: #d04070;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}

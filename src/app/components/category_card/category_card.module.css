@@ -19,15 +19,17 @@
     display: flex;
     gap: 1rem;
     z-index: 2;
+    width: 80%;
 }
 
 .navLink {
-    text-decoration: none;
+    text-decoration: none; 
+    color: inherit; 
 }
 
 .card {
     padding: 1rem;
-    width: 32rem;
+    width: 90%;
     height: 18rem;
     display: flex;
     border-radius: 0.5rem;
@@ -36,8 +38,9 @@
     background-color: #FFFFFF;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transition: transform 0.7s ease, box-shadow 0.7s ease, background-color 0.7s ease;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .titulo {
@@ -48,9 +51,13 @@
 }
 
 .tituloCard {
+    font-family: 'Pacifico', cursive;
+    font-style: normal;
+    line-height: 28px;
+    margin: 0;
     width: 27%;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
     color: #000;
     font-family: Pacifico;
@@ -87,7 +94,7 @@
     text-align: left;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.7s ease, visibility 0.7s ease, color 0.7s ease;
 }
 
 .card:hover .cardTexto {
@@ -102,4 +109,20 @@
 
 .card:hover .tituloCard {
     color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
 }
