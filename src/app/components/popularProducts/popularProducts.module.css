@@ -1,10 +1,41 @@
 .produtos-populares {
+  position: relative;
   text-align: center;
-  margin: 12rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.produtos-populares::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #00DAC7, #F05080, #DBBD9C, #5FCED4);
+  background-size: 400% 400%;
+  opacity: 0.4;
+  animation: gradientAnimation 8s ease infinite;
+  z-index: -1;
+  filter: blur(20px);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .produtos-populares-h2 {
@@ -24,25 +55,28 @@
   color: #555;
   margin-bottom: 2rem;
   line-height: 1.6;
-  width: 25%;
+  width: 50%;
+  text-align: center;
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+  gap: 2rem; /* Espaçamento entre os cards */
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   padding: 0 1rem;
-  width: 80%;
+  width: 100%;
 }
 
 .card {
-  width: 100%;
-  height: 12rem;
+  flex: 1 1 calc(33.33% - 2rem); /* Cada card ocupa 1/3 da largura menos o gap */
+  max-width: 30rem; /* Limita a largura máxima do card */
+  height: 14rem;
   background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,12 +88,12 @@
 
 .card.vazio {
   background-color: #f9f9f9;
-  border: 1px dashed #ccc;
+  border: 2px dashed #ccc;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .card::before {
@@ -83,24 +117,46 @@
   z-index: 2;
   text-align: center;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
 .ver-mais {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   color: #fff;
   background-color: #f05080;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ver-mais:hover {
   background-color: #d04070;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Cada card ocupa 100% da largura em telas menores */
+    max-width: 100%;
+  }
+
+  .produtos-populares-p {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    height: 12rem;
+  }
+
+  .ver-mais {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
 }
