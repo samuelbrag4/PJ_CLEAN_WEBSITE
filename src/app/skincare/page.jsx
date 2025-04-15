@@ -2,6 +2,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import Hero from '../components/hero';
 import Banner from '../components/banner';
+import SkinTypeGrid from '../components/skinTypeGrid';
 
 export default function Skincare() {
     return (
@@ -17,12 +18,32 @@ export default function Skincare() {
                 textoSegundoBotao={"Vídeos"}
             />
 
-            <Banner 
-            image={"https://teiacosmeticos.com/cdn/shop/articles/skincare-para-estos-dias-en-casa-395165.jpg?v=1695166167"}
-            imageAlt={"Mulher aplicando creme na pele"}
-            title={"Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."}
-            description={"Sua pele é única e merece cuidados personalizados. Aqui, você encontra dicas, produtos e conselhos para criar um ritual de skincare personalizado que vai desde a limpeza diária até os tratamentos mais específicos. Saiba como produtos certos podem tratar suas preocupações específicas e transformar sua rotina em um momento para si em qualquer momento. Porque cuidar da pele é cuidar de você."}
-            corButton={"#5FCED4"}
+            <Banner
+                image={"https://teiacosmeticos.com/cdn/shop/articles/skincare-para-estos-dias-en-casa-395165.jpg?v=1695166167"}
+                imageAlt={"Mulher aplicando creme na pele"}
+                title={"Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."}
+                description={"Sua pele é única e merece cuidados personalizados. Aqui, você encontra dicas, produtos e conselhos para criar um ritual de skincare personalizado que vai desde a limpeza diária até os tratamentos mais específicos. Saiba como produtos certos podem tratar suas preocupações específicas e transformar sua rotina em um momento para si em qualquer momento. Porque cuidar da pele é cuidar de você."}
+                corButton={"#5FCED4"}
+            />
+
+            <SkinTypeGrid
+                title="Tipos de pele"
+
+                oilyImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                oilyTitle="Oleosa"
+                oilyDescription="Uma pele oleosa produz excesso de sebo, o que causa aparência brilhante e tendência a acne, especialmente no nariz T (testa, nariz e queixo)."
+
+                dryImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                dryTitle="Seca"
+                dryDescription="Contém áreas ásperas e tensas, com linhas evidentes ou poros minúsculos, possui pele escamativa, que requer hidratação específica para cada região."
+
+                combinationImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                combinationTitle="Mista"
+                combinationDescription="Apresenta a espinhas, cravos e oleosidade em algumas áreas, combinada à ressecamento, vermelhidão e poros dilatados."
+
+                normalImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                normalTitle="Normal"
+                normalDescription="Possui os seus poros pequenos, com textura aveludada, sensação de relaxamento e tendência a estabilidade."
             />
 
             <Footer />
