@@ -5,6 +5,7 @@
   width: 80%;
   margin: auto;
   margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hamburger {
@@ -44,7 +45,28 @@
   font-weight: 800;
 }
 
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
+@media (min-width: 769px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    animation: floating 3s ease-in-out infinite;
+  }
+}
 
 @media (max-width: 768px) {
   .header {
@@ -88,7 +110,6 @@
     text-transform: uppercase;
   }
 
-
   .hamburger {
     display: block;
     font-size: 2rem;
@@ -100,8 +121,6 @@
     display: flex;
   }
 }
-
-
 
 @media (max-width: 480px) {
 

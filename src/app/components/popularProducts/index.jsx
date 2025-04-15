@@ -11,6 +11,9 @@ export default function PopularProducts() {
         <div className={`${styles.card} ${styles.vazio}`}></div>
         <div className={`${styles.card} ${styles.vazio}`}></div>
         <div className={`${styles.card} ${styles.vazio}`}></div>
+        <div className={`${styles.card} ${styles.vazio}`}></div>
+        <div className={`${styles.card} ${styles.vazio}`}></div>
+        <div className={`${styles.card} ${styles.vazio}`}></div>
       </div>
       <button className={styles["ver-mais"]}>Ver mais</button>
     </section>
