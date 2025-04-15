@@ -1,8 +1,8 @@
 import Header from '../components/header';
 import Card from '../components/card';
 import Hero from '../components/hero';
-import SectionCards from "../components/section_cards";
-import CategoryBlog from "../components/category_blog";
+import SectionCards from "../components/sectionCards";
+import CategoryBlog from "../components/categoryBlog";
 import Footer from "../components/footer";
 
 export default function Blog() {

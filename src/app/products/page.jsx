@@ -1,8 +1,8 @@
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Hero from '../components/hero';
-import SectionCardsProducts from '../components/section_cards_products';
-import SectionCards from '../components/section_cards';
+import SectionCardsProducts from '../components/sectionCardsProducts';
+import SectionCards from '../components/sectionCards';
 import Card from '../components/card';
 
 export default function Produtos() {
