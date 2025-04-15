@@ -1,5 +1,5 @@
 import Header from '../components/header';
-import BannerArticle from '../components/banner_article';
+import BannerArticle from '../components/bannerArticle';
 import Footer from '../components/footer';
 
 export default function ArtigoSkincare() {
