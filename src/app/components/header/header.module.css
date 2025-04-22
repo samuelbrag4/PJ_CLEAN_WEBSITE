@@ -5,9 +5,16 @@
   width: 80%;
   margin: auto;
   margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
-.logoTitulo{
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.logoTitulo {
   width: 20%;
   margin-left: 1rem;
 }
@@ -36,4 +43,85 @@
 
 .navText:hover {
   font-weight: 800;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    animation: floating 3s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .logoTitulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navText {
+    font-size: 1rem;
+    margin: 10px 0;    
+  }
+
+  .nav {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navText {
+    font-size: 1rem;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+
 }

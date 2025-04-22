@@ -1,6 +1,7 @@
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Hero from '../components/hero';
+import OurMission from '../components/ourMission';
 
 export default function Corpo() {
     return (
@@ -15,6 +16,8 @@ export default function Corpo() {
                 corBotao={"#DBBD9C"}
                 textoSegundoBotao={"Vídeos"}
             />
+
+            <OurMission />
 
             <Footer />
         </div>

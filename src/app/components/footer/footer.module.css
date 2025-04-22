@@ -2,27 +2,34 @@
   background-color: #00DAC7;
   color: white;
   padding: 20px;
-  margin-bottom: 0;
+  width: 80%; 
+  max-width: 1200px; 
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); 
+  position: absolute; 
+  bottom: -120rem; 
+  left: 50%; 
+  transform: translateX(-50%);
 }
 
 .topSection {
   display: flex;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
   font-family: 'Caveat', cursive;
-  margin: 0; 
+  margin: 0;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .description {
   font-size: 17px;
   font-family: 'Inter', sans-serif;
-  justify-items: justify;
+  text-align: justify;
   padding-right: 100px;
 }
 
@@ -34,8 +41,8 @@
 .bottomSection {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  gap: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .links {
@@ -43,17 +50,20 @@
   max-width: 200px;
 }
 
-.connect h3, .links h3 {
+.connect h3,
+.links h3 {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.connect ul, .links ul {
+.connect ul,
+.links ul {
   list-style: none;
   padding: 0;
 }
 
-.connect ul li a, .links ul li a {
+.connect ul li a,
+.links ul li a {
   color: white;
   text-decoration: none;
   font-size: 14px;
@@ -62,7 +72,7 @@
 .newsletter p {
   font-size: 14px;
   margin-bottom: 10px;
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
 }
 
 .newsletter input {
@@ -77,22 +87,14 @@
   height: 30px;
   width: 10rem;
   border: none;
- 
 }
 
 .links {
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
 }
 
 .connect {
   font-family: 'Inter', sans-serif;
-}
-
-
-.footer {
-  padding: 40px 20px;
-  margin: 20px auto; 
-  max-width: 1200px; 
 }
 
 .newsletter {
@@ -109,12 +111,12 @@
 
 .paragrafo {
   padding-right: 30%;
-  justify-items: justify;
+  text-align: justify;
   margin-top: 5px;
 }
 
-.inputGroup input::placeholder{
-  color: #00DAC7
+.inputGroup input::placeholder {
+  color: #00DAC7;
 }
 
 .links ul {
@@ -123,4 +125,47 @@
 }
 
 .connect ul {
-  line-height: 2;}
+  line-height: 2;
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .description {
+    padding-right: 0;
+  }
+
+  .newsletter {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px;
+    width: calc(100% - 20px); /* Ajusta o espaçamento para telas menores */
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .connect ul li a,
+  .links ul li a {
+    font-size: 12px;
+  }
+}

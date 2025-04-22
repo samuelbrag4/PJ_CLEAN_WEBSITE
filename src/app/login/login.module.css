@@ -1,111 +1,142 @@
-.container {
+.signupContainer {
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #00DAC7, #F05080, #DBBD9C, #49f6ff);
+    background-size: 400% 400%;
+    animation: gradientBackground 5s ease infinite;
 }
 
-.loginSection {
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.signupBox {
+    display: flex;
+    width: 900px;
+    overflow: hidden;
+    
+
+}
+
+.signupLeft {
     width: 50%;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 2rem;
+    gap: 10px;
+
 }
 
-.loginForm {
+.signupTitle {
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 36px;
+    font: pacifico;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.signupForm {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    gap: 1rem;
+    gap: 30px;
 }
 
-.input {
+.signupInput {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 14px;
 }
 
-.loginButton {
+.signupButton {
     width: 100%;
-    padding: 0.8rem;
-    background-color: #DBBD9C;
-    color: #fff;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: transparent;
+    border: 2px solid #F05080;
+
 }
 
-.loginButton:hover {
-    background-color: #c4a883;
+.signupButton:hover{
+    background-color: #ffffff;
+    transition: 1s;
 }
 
-.createAccountButton {
-    margin-top: 1rem;
-    padding: 0.8rem;
-    background-color: #6c757d;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+
+.signupDivider {
+    text-align: center;
+    margin: 15px 0;
+    color: black;
+}
+
+.signupSocialButton {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 90px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    transition: background 0.3s ease;
 }
 
-.createAccountButton:hover {
-    background-color: #5a6268;
+.signupSocialButton:hover {
+    background-color: #f5f5f5;
 }
 
-.socialButton {
-    width: 80%;
-    padding: 0.8rem;
-    margin-top: 0.5rem;
-    background-color: #4285F4;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.iconGoogle {
+    color: #db4437;
 }
 
-.socialButton:nth-child(5) {
-    background-color: #3b5998;
+.iconFacebook {
+    color: #3b5998;
 }
 
-.socialButton:hover {
-    opacity: 0.9;
+.signupFooter {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ffffff;
 }
 
-.createAccountText {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.createAccountText a {
-    color: #DBBD9C;
+.signupLink {
+    color: #F05080;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.createAccountText a:hover {
+.signupLink:hover {
     text-decoration: underline;
 }
 
-.imageSection {
+.signupRight {
     width: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #DBBD9C;
+    justify-content: center;
 }
 
-.butterflyImage {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+.signupImage {
+    max-width: 80%;
+    opacity: 0.9;
 }
