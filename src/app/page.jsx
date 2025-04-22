@@ -1,12 +1,7 @@
-import Link from 'next/link';
-import { FaGoogle, FaFacebook } from 'react-icons/fa';
-import styles from './page.module.css';
-
 export default function Login() {
   return (
     <div className={styles.signupContainer}>
     <div className={styles.signupBox}>
-
         <div className={styles.signupLeft}>
           <h2 className={styles.signupTitle}>Entre </h2>
           <form className={styles.signupForm}>

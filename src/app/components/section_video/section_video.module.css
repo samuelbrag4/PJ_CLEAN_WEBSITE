@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Homemade+Apple&display=swap');
+
+.sectionVideo {
+  width: 80%;
+  margin: auto;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  font-family: "Inter", sans-serif; /* Define "Inter" como fonte padrão */
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.subCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
+
+.statTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.statText {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: justify;
+}
+
+.mainText {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  text-align: justify;
+  margin-top: 2rem;
+}
+
+.sideText {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sideText h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: justify;
+}
+
+.sideText p {
+  font-size: 2rem;
+  color: #9BF0FA;
+  font-family: "Homemade Apple", cursive;
+  text-align: justify;
+}
+
+.videoCard {
+  flex: 1;
+  position: relative;
+}
+
+.videoContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  position: relative;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.playButton {
+  background-color: #bffcff;
+  color: #ffffff; 
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoLabel {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 5rem;
+  color: #ffffff;
+}
+
+.footerText {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: justify;
+  line-height: 1.8;
+  margin-top: 12rem;
+}
+
+.startButton {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #00dac7;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.startButton:hover {
+  background-color: #00b8a5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .videoCard {
+    display: none;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
