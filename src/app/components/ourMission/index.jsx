@@ -1,4 +1,7 @@
 import styles from "./ourMission.module.css";
+import { FaSoap, FaPumpSoap } from "react-icons/fa";
+import { FaDroplet } from "react-icons/fa6";
+import { RiBubbleChartFill } from "react-icons/ri";
 
 const OurMission = () => {
   return (
@@ -18,7 +21,7 @@ const OurMission = () => {
         
         <div className={styles.nossaMissaoIcones}>
           <div className={styles.nossaMissaoIcone}>
-            <div className={styles.nossaMissaoCirculo}><img src="https://cdn-user-icons.flaticon.com/186924/186924339/1744739691316.svg?token=exp=1744740513~hmac=0d2f77b187823f73974ccfb1c5df6f7a" alt="" /></div>
+            <div className={styles.nossaMissaoCirculo}><FaSoap /></div>
             <h3>Limpeza</h3>
             <p>
               Empower them by providing the knowledge, guidance, and support
@@ -26,7 +29,7 @@ const OurMission = () => {
             </p>
           </div>
           <div className={styles.nossaMissaoIcone}>
-            <div className={styles.nossaMissaoCirculo}><img src="https://cdn-user-icons.flaticon.com/186924/186924339/1744739621525.svg?token=exp=1744740443~hmac=7338718231dae674cac7e1206da0c15f" alt="" /></div>
+            <div className={styles.nossaMissaoCirculo}><RiBubbleChartFill /></div>
             <h3>Esfoliação</h3>
             <p>
               Build a supportive community where childcare providers can
@@ -34,7 +37,7 @@ const OurMission = () => {
             </p>
           </div>
           <div className={styles.nossaMissaoIcone}>
-            <div className={styles.nossaMissaoCirculo}><img src="https://cdn-user-icons.flaticon.com/186924/186924339/1744739000846.svg?token=exp=1744740107~hmac=7c3dff311d73d0851f8a77b44c7a404a" alt="" /></div>
+            <div className={styles.nossaMissaoCirculo}><FaDroplet /></div>
             <h3>Tonificação</h3>
             <p>
               Every child's journey is unique. Our mission is to provide
@@ -42,7 +45,7 @@ const OurMission = () => {
             </p>
           </div>
           <div className={styles.nossaMissaoIcone}>
-            <div className={styles.nossaMissaoCirculo}><img src="https://cdn-user-icons.flaticon.com/186924/186924339/1744739069980.svg?token=exp=1744740310~hmac=86bf86c4bbade172871d99481bc9718b" alt="" /></div>
+            <div className={styles.nossaMissaoCirculo}><FaPumpSoap /></div>
             <h3>Hidratação</h3>
             <p>
               Our mission extends beyond caring for children to building
