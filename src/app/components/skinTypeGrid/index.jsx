@@ -5,10 +5,11 @@ const SkinTypeGrid = ({
   oilyImage, oilyTitle, oilyDescription,
   dryImage, dryTitle, dryDescription,
   combinationImage, combinationTitle, combinationDescription,
-  normalImage, normalTitle, normalDescription
+  normalImage, normalTitle, normalDescription, category, corCategory
 }) => {
   return (
     <div className={styles.skinTypeContainer}>
+      <h5 className={styles.category} style={{ color: corCategory }} >{category}</h5>
       <h2 className={styles.skinTypeMainTitle}>{title}</h2>
       <div className={styles.skinTypeGrid}>
         {/* Tipo de pele oleosa */}
