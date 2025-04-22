@@ -49,13 +49,6 @@ export default function Maquiagem() {
                 normalDescription="A segurança dos produtos é fundamental. Escolha maquiagens dermatologicamente testadas e livres de substâncias nocivas para evitar irritações e alergias."
             />
 
-            <Banner
-                image={"https://teiacosmeticos.com/cdn/shop/articles/skincare-para-estos-dias-en-casa-395165.jpg?v=1695166167"}
-                imageAlt={"Mulher aplicando creme na pele"}
-                title={"Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."}
-                description={"Sua pele é única e merece cuidados personalizados. Aqui, você encontra dicas, produtos e conselhos para criar um ritual de skincare personalizado que vai desde a limpeza diária até os tratamentos mais específicos. Saiba como produtos certos podem tratar suas preocupações específicas e transformar sua rotina em um momento para si em qualquer momento. Porque cuidar da pele é cuidar de você."}
-                corButton={"#5FCED4"}
-            />
 
             <Footer />
         </div>
