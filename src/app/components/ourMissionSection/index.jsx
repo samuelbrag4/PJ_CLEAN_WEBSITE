@@ -1,4 +1,4 @@
-import styles from "./ourMission.module.css";
+import styles from "./ourMissionSection.module.css";
 import { FaSoap, FaPumpSoap } from "react-icons/fa";
 import { FaDroplet } from "react-icons/fa6";
 import { RiBubbleChartFill } from "react-icons/ri";

@@ -1,7 +1,8 @@
+import AcessoriesSection from '../components/acessoriesSection';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Hero from '../components/hero';
-import OurMission from '../components/ourMission';
+import OurMission from '../components/ourMissionSection';
 
 export default function Corpo() {
     return (
@@ -18,6 +19,8 @@ export default function Corpo() {
             />
 
             <OurMission />
+
+            <AcessoriesSection />
 
             <Footer />
         </div>
