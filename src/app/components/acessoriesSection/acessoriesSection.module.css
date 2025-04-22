@@ -18,15 +18,15 @@
   align-items: flex-start;
 }
 
-.acessoriesTexto h4 {
+.acessoriesSubtitulo {
   color: #dbbd9c;
   font-size: 16px;
   font-weight: normal;
   font-weight: 700;
 }
 
-.acessoriesSubtitulo {
-  font-size: 48px;
+.acessoriesTitulo {
+  font-size: 36px;
   font-style: normal;
   font-weight: 700;
 }
@@ -34,6 +34,7 @@
 .acessoriesCards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 2rem;
 }
 
