@@ -1,0 +1,75 @@
+.acessoriesSection {
+  background: linear-gradient(0deg, #d2ad84 0%, #fff 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px 20px;
+}
+
+.acessoriesContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.acessoriesTexto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.acessoriesTexto h4 {
+  color: #dbbd9c;
+  font-size: 16px;
+  font-weight: normal;
+  font-weight: 700;
+}
+
+.acessoriesSubtitulo {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.acessoriesCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.acessoriesCard {
+  background-color: #fff; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem; 
+  max-width: 564px;
+  height: 350px;
+  display: flex;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.acessoriesCardTexto {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+}
+
+.acessoriesCardTitulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 2rem 0 3rem 0;
+}
+
+.acessoriesCardParagarafo {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.acessoriesCard img {
+  width: 60%; 
+  border-radius: 8px;
+  margin-top: 1rem;
+}
