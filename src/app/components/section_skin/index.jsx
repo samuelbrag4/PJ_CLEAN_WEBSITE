@@ -333,7 +333,6 @@ const SectionSkin = () => {
                 </>
               )}
             </ul>
-            <div className={styles.confetti}></div>
           </div>
         )}
 
