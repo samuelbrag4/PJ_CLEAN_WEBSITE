@@ -92,28 +92,6 @@ export default function Blog() {
                     corBorda={"#00DAC7"}
                     corCategoria={"#00DAC7"}
                 />
-
-                <Card
-                    capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
-                    textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
-                    categoria={"Skincare"}
-                    titulo={"Hidratação com Argila"}
-                    descricao={"A argila é um dos ingredientes naturais mais poderosos para a saúde da pele, oferecendo propriedades purificantes..."}
-                    caminhoArtigo={"https://www.belezanaweb.com.br/loucas-por-beleza/como-usar-argila-no-cabelo/"}
-                    corBorda={"#00DAC7"}
-                    corCategoria={"#00DAC7"}
-                />
-
-                <Card
-                    capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
-                    textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
-                    categoria={"Skincare"}
-                    titulo={"Hidratação com Argila"}
-                    descricao={"A argila é um dos ingredientes naturais mais poderosos para a saúde da pele, oferecendo propriedades purificantes..."}
-                    caminhoArtigo={"https://www.belezanaweb.com.br/loucas-por-beleza/como-usar-argila-no-cabelo/"}
-                    corBorda={"#00DAC7"}
-                    corCategoria={"#00DAC7"}
-                />
             </SectionCards>
 
             <CategoryBlog
@@ -124,28 +102,6 @@ export default function Blog() {
             />
 
             <SectionCards corBotao={"#00DAC7"} corTextoBotao={"#fff"}>
-                <Card
-                    capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
-                    textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
-                    categoria={"Skincare"}
-                    titulo={"Hidratação com Argila"}
-                    descricao={"A argila é um dos ingredientes naturais mais poderosos para a saúde da pele, oferecendo propriedades purificantes..."}
-                    caminhoArtigo={"https://www.belezanaweb.com.br/loucas-por-beleza/como-usar-argila-no-cabelo/"}
-                    corBorda={"#00DAC7"}
-                    corCategoria={"#00DAC7"}
-                />
-
-                <Card
-                    capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
-                    textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
-                    categoria={"Skincare"}
-                    titulo={"Hidratação com Argila"}
-                    descricao={"A argila é um dos ingredientes naturais mais poderosos para a saúde da pele, oferecendo propriedades purificantes..."}
-                    caminhoArtigo={"https://www.belezanaweb.com.br/loucas-por-beleza/como-usar-argila-no-cabelo/"}
-                    corBorda={"#00DAC7"}
-                    corCategoria={"#00DAC7"}
-                />
-
                 <Card
                     capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
                     textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
@@ -286,30 +242,8 @@ export default function Blog() {
                     corBorda={"#00DAC7"}
                     corCategoria={"#00DAC7"}
                 />
-
-                <Card
-                    capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
-                    textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
-                    categoria={"Skincare"}
-                    titulo={"Hidratação com Argila"}
-                    descricao={"A argila é um dos ingredientes naturais mais poderosos para a saúde da pele, oferecendo propriedades purificantes..."}
-                    caminhoArtigo={"https://www.belezanaweb.com.br/loucas-por-beleza/como-usar-argila-no-cabelo/"}
-                    corBorda={"#00DAC7"}
-                    corCategoria={"#00DAC7"}
-                />
-
-                <Card
-                    capa={"https://artex.com.br/emcasa/wp-content/uploads/2021/03/skincare4.png"}
-                    textoAlt={"Mulher deitada com uma toalha na cabeça e um argila no rosto"}
-                    categoria={"Skincare"}
-                    titulo={"Hidratação com Argila"}
-                    descricao={"A argila é um dos ingredientes naturais mais poderosos para a saúde da pele, oferecendo propriedades purificantes..."}
-                    caminhoArtigo={"https://www.belezanaweb.com.br/loucas-por-beleza/como-usar-argila-no-cabelo/"}
-                    corBorda={"#00DAC7"}
-                    corCategoria={"#00DAC7"}
-                />
             </SectionCards>
-            <Footer />
+            
         </div>
     );
 };
