@@ -2,13 +2,11 @@
   background-color: #00DAC7;
   color: white;
   padding: 20px;
-  width: 80%; 
-  max-width: 1200px; 
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); 
-  position: absolute; 
-  bottom: -120rem; 
-  left: 50%; 
-  transform: translateX(-50%);
+  width: 80%; /* Igual à header */
+  margin: auto; /* Centraliza a footer */
+  margin-top: 2rem; /* Espaçamento entre a footer e o conteúdo acima */
+  padding-bottom: 1rem; /* Pequena distância do final da página */
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .topSection {
