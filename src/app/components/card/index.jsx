@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./cards.module.css";
 
+
 const Card = ({ capa, textoAlt, categoria, titulo, descricao, caminhoArtigo, corBorda, corCategoria }) => {
     return (
         <div className={styles.card}>
@@ -14,5 +15,6 @@ const Card = ({ capa, textoAlt, categoria, titulo, descricao, caminhoArtigo, cor
         </div>
     );
 };
+
 
 export default Card;

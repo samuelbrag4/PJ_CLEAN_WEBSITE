@@ -12,7 +12,7 @@ export default function Login() {
           <form className={styles.signupForm}>
             <input type="email" name="email" placeholder="E-mail" className={styles.signupInput} />
             <input type="password" name="password" placeholder="Senha" className={styles.signupInput} />
-            <button type="submit" className={styles.signupButton}>Entrar</button>
+            <button src="/home" type="submit" className={styles.signupButton}>Entrar</button>
           </form>
           <div className={styles.signupDivider}>ou</div>
           <button className={styles.signupSocialButton}>

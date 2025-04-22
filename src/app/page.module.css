@@ -1,65 +1,142 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-}
-
-.content {
-    flex: 1; 
-}
-
-.hero {
-    position: relative;
-    z-index: 1;
-}
-
-.produtos-populares {
-    text-align: center;
-    margin: 4rem 0;
-}
-
-.produtos-populares h2 {
-    font-size: 2rem;
-    color: #333;
-}
-
-.produtos-populares p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.cards-container {
+.signupContainer {
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    background: linear-gradient(-45deg, #00DAC7, #F05080, #DBBD9C, #49f6ff);
+    background-size: 400% 400%;
+    animation: gradientBackground 5s ease infinite;
 }
 
-.card.vazio {
-    width: 15rem;
-    height: 10rem;
-    background-color: #f0f0f0;
-    border: 1px dashed #ccc;
-    border-radius: 0.5rem;
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.signupBox {
+    display: flex;
+    width: 900px;
+    overflow: hidden;
+    
+
 }
 
-.ver-mais {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #f05080;
+.signupLeft {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.signupTitle {
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 36px;
+    font: pacifico;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.signupInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.signupButton {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
-    border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: transparent;
+    border: 2px solid #F05080;
+
 }
 
-.ver-mais:hover {
-    background-color: #d04070;
+.signupButton:hover{
+    background-color: #ffffff;
+    transition: 1s;
+}
+
+
+.signupDivider {
+    text-align: center;
+    margin: 15px 0;
+    color: black;
+}
+
+.signupSocialButton {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.signupSocialButton:hover {
+    background-color: #f5f5f5;
+}
+
+.iconGoogle {
+    color: #db4437;
+}
+
+.iconFacebook {
+    color: #3b5998;
+}
+
+.signupFooter {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.signupLink {
+    color: #F05080;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signupLink:hover {
+    text-decoration: underline;
+}
+
+.signupRight {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupImage {
+    max-width: 80%;
+    opacity: 0.9;
 }
