@@ -34,7 +34,7 @@
 .acessoriesCards {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 4rem 10rem;
 }
 
 .acessoriesCard {
