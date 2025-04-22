@@ -29,19 +29,19 @@ export default function Skincare() {
             <SkinTypeGrid
                 title="Tipos de pele"
 
-                oilyImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                oilyImage="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDgvlvTyk_JzmTiMvzmATKp1XNFPycj-LKsGsa07OlrUVxAhgq"
                 oilyTitle="Oleosa"
                 oilyDescription="Uma pele oleosa produz excesso de sebo, o que causa aparência brilhante e tendência a acne, especialmente no nariz T (testa, nariz e queixo)."
 
-                dryImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                dryImage="https://escolabelezapura.com.br/wp-content/uploads/2024/06/1.jpg"
                 dryTitle="Seca"
                 dryDescription="Contém áreas ásperas e tensas, com linhas evidentes ou poros minúsculos, possui pele escamativa, que requer hidratação específica para cada região."
 
-                combinationImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                combinationImage="https://static.stealthelook.com.br/wp-content/uploads/2024/06/bevurecosmetics-skincare.jpg"
                 combinationTitle="Mista"
                 combinationDescription="Apresenta a espinhas, cravos e oleosidade em algumas áreas, combinada à ressecamento, vermelhidão e poros dilatados."
 
-                normalImage="https://lucianagarbelini.com.br/wp-content/uploads/2019/09/00-story-transitional-skincare-1.jpg"
+                normalImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDrXqq2I1Ii8r1EEFvBCSg7nl-6VQm3a9lZ_9Oh4kojkS0eEe"
                 normalTitle="Normal"
                 normalDescription="Possui os seus poros pequenos, com textura aveludada, sensação de relaxamento e tendência a estabilidade."
             />
