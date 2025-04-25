@@ -1,0 +1,40 @@
+.testimonials {
+    background: linear-gradient(180deg, #fff 0%, #00dac7 25%, #00dac7 75%, #fff 100%);
+    padding: 4rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  .title {
+    font-family: Pacifico;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 2rem;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: #f05080;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 25px;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text {
+    font-family: Caveat;
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  
+  .name {
+    font-family: Pacifico;
+    font-size: 20px;
+  }

@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import PopularProducts from "../components/popularProducts";
 import SectionSkin from "../components/section_skin";
 import SectionVideo from "../components/section_video";
+import Testimonials from "../components/testimonials";
 
 export default function Home() {
   return (
@@ -31,6 +32,8 @@ export default function Home() {
       <SectionSkin />
 
       <SectionVideo />
+
+      <Testimonials />
 
       <Footer />
     </div>
