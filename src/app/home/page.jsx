@@ -3,6 +3,7 @@ import Hero from "../components/hero";
 import CategoryCard from "../components/categoryCard";
 import Footer from "../components/footer";
 import PopularProducts from "../components/popularProducts";
+import SectionSkin from "../components/section_skin";
 
 export default function Home() {
   return (
@@ -25,6 +26,8 @@ export default function Home() {
       <CategoryCard />
 
       <PopularProducts />
+
+      <SectionSkin />
 
       <Footer />
     </div>
