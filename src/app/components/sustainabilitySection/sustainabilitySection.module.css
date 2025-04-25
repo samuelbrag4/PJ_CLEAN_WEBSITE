@@ -1,0 +1,19 @@
+.sustainability {
+    background: linear-gradient(180deg, #fff 0%, #00dac7 25%, #00dac7 75%, #fff 100%);
+    padding: 4rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  .title {
+    font-family: Pacifico;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  
+  .text {
+    font-family: Caveat;
+    font-size: 24px;
+    color: #000;
+  }
