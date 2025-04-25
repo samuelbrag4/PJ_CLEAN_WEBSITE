@@ -307,7 +307,7 @@ export default function Produtos() {
 
             </SectionCardsProducts>
 
-            <Footer />
+            <Footer corFooter={"#DBBD9C"} />
         </div>
     );
 };

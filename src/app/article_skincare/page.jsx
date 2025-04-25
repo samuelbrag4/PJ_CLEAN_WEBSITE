@@ -9,7 +9,7 @@ export default function ArtigoSkincare() {
 
             <BannerArticle linkImagem="https://capricho.abril.com.br/wp-content/uploads/2022/06/skincare-rotina-com-mascara-de-argila-verde.jpg?quality=85&strip=info" textoAlt="Mulher aplicando argila no rosto"/>
 
-            <Footer />
+            <Footer corFooter={"#00DAC7"} />
         </div>
     );
 };

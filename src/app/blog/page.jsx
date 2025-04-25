@@ -2,6 +2,7 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import SectionCards from "../components/sectionCards";
 import CategoryBlog from "../components/categoryBlog";
+import Footer from '../components/footer';
 
 export default function Blog() {
 
@@ -77,7 +78,7 @@ export default function Blog() {
 
             <SectionCards corBotao={"#00DAC7"} corTextoBotao={"#fff"} cardData={cardData} />
 
-
+            <Footer corFooter={"#00DAC7"} />
         </div>
     );
 };
