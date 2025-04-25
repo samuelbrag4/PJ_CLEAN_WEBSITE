@@ -1,19 +1,91 @@
 .sustainability {
-    background: linear-gradient(180deg, #fff 0%, #00dac7 25%, #00dac7 75%, #fff 100%);
-    padding: 4rem 2rem;
-    border-radius: 25px;
-    text-align: center;
-  }
-  
-  .title {
-    font-family: Pacifico;
-    font-size: 32px;
-    color: #000;
-    margin-bottom: 1rem;
-  }
-  
-  .text {
-    font-family: Caveat;
-    font-size: 24px;
-    color: #000;
-  }
+  background: linear-gradient(180deg, #5fced4, #ffffff);
+  padding: 4rem 2rem;
+  border-radius: 25px;
+  text-align: center;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: Pacifico;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  font-family: Caveat;
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.disposal,
+.impact {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.disposalList,
+.impactList {
+  list-style: none;
+  padding: 0;
+}
+
+.disposalItem,
+.impactItem {
+  background: #f0f0f060;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.disposalItem:hover,
+.impactItem:hover {
+  background: #e0e0e0;
+  transform: scale(1.02);
+}
+
+.disposalHeader,
+.impactHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.disposalDescription,
+.impactDescription {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
