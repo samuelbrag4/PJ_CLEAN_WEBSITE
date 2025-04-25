@@ -2,9 +2,9 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation"; 
-import Spinner from "./components/spinner";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import PageTransition from "./components/pageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,21 +17,26 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }) {
-  const [loading, setLoading] = useState(false);
-  const pathname = usePathname(); 
-
-  useEffect(() => {
-    setLoading(true); 
-    const timeout = setTimeout(() => setLoading(false), 500); 
-
-    return () => clearTimeout(timeout); 
-  }, [pathname]);
+  const pathname = usePathname();
 
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {loading && <Spinner />}
-        {children}
+        <AnimatePresence mode="wait">
+          {/* Aqui a mágica: envolvemos a página com motion.div */}
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Transição customizada por cima, tipo loading circular */}
+        <PageTransition />
       </body>
     </html>
   );

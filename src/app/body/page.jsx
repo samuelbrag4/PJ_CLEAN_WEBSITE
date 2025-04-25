@@ -92,7 +92,7 @@ export default function Corpo() {
         ]}
       />
 
-      <Footer />
+      <Footer corFooter={"#DBBD9C"} />
     </div>
   );
 }
