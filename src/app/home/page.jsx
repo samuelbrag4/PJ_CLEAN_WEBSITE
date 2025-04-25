@@ -4,6 +4,7 @@ import CategoryCard from "../components/categoryCard";
 import Footer from "../components/footer";
 import PopularProducts from "../components/popularProducts";
 import SectionSkin from "../components/section_skin";
+import SectionVideo from "../components/section_video";
 
 export default function Home() {
   return (
@@ -28,6 +29,8 @@ export default function Home() {
       <PopularProducts />
 
       <SectionSkin />
+
+      <SectionVideo />
 
       <Footer />
     </div>
