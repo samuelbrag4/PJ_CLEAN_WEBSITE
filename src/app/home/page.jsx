@@ -6,6 +6,7 @@ import PopularProducts from "../components/popularProducts";
 import SectionSkin from "../components/section_skin";
 import SectionVideo from "../components/section_video";
 import Testimonials from "../components/testimonials";
+import BlogSection from "../components/blogSection";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
       <SectionVideo />
 
       <Testimonials />
+
+      <BlogSection />
 
       <Footer />
     </div>
