@@ -11,6 +11,7 @@ import SkincareSection from "../components/skincareSection";
 import FAQSection from "../components/faqSection";
 import SustainabilitySection from "../components/sustainabilitySection";
 import MakeSection from "../components/makeSection";
+import BodySection from "../components/bodySection";
 
 export default function Home() {
   return (
@@ -44,7 +45,9 @@ export default function Home() {
 
       <SkincareSection />
 
-      <MakeSection  />
+      <MakeSection />
+
+      <BodySection />
 
       <FAQSection />
 
