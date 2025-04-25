@@ -6,7 +6,7 @@
   text-align: center;
   overflow: hidden;
   width: 80%; /* Define a largura como 80% */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  margin: 10rem auto; /* Centraliza horizontalmente */
 }
 
 .container {
