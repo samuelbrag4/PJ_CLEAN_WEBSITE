@@ -7,6 +7,7 @@ import SectionSkin from "../components/section_skin";
 import SectionVideo from "../components/section_video";
 import Testimonials from "../components/testimonials";
 import BlogSection from "../components/blogSection";
+import SkincareSection from "../components/skincareSection";
 
 export default function Home() {
   return (
@@ -37,6 +38,8 @@ export default function Home() {
       <Testimonials />
 
       <BlogSection />
+
+      <SkincareSection />
 
       <Footer />
     </div>
