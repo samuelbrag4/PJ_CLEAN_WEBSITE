@@ -1,0 +1,36 @@
+.faq {
+    background: #5fced4;
+    padding: 4rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  .title {
+    font-family: Pacifico;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 2rem;
+  }
+  
+  .items {
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .item {
+    margin-bottom: 1rem;
+  }
+  
+  .question {
+    font-family: Pacifico;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .answer {
+    font-family: Caveat;
+    font-size: 18px;
+    color: #555;
+    margin-top: 0.5rem;
+  }
