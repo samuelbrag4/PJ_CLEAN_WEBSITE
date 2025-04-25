@@ -1,10 +1,9 @@
 import style from "./footer.module.css";
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ corFooter }) => {
   return (
-    <footer className={style.footer}>
+    <footer className={style.footer} style={{ backgroundColor: corFooter }}>
       {/* Parte Superior: Logo e Descrição */}
       <div className={style.topSection}>
         <h2 className={style.logo}>Clean.</h2>
@@ -17,16 +16,31 @@ const Footer = () => {
       <div className={style.separator}></div>
 
       {/* Parte Inferior: Conecte-se, Relevantes e Newsletter */}
-      {/* Conecte-se */}
       <div className={style.bottomSection}>
-
+        {/* Conecte-se */}
         <div className={style.connect}>
           <h3>CONECTE-SE</h3>
           <ul>
-            <li><a href="#"><FaInstagram size={20} color="white" /> Instagram</a></li>
-            <li><a href="#"><FaFacebook size={20} color="white" /> Facebook</a></li>
-            <li><a href="#"><FaTwitter size={20} color="white" /> Twitter</a></li>
-            <li><a href="#"><FaTiktok size={20} color="white" /> Tiktok</a></li>
+            <li>
+              <a href="#">
+                <FaInstagram size={20} color="white" /> Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FaFacebook size={20} color="white" /> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FaTwitter size={20} color="white" /> Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FaTiktok size={20} color="white" /> Tiktok
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -34,10 +48,18 @@ const Footer = () => {
         <div className={style.links}>
           <h3>RELEVANTES</h3>
           <ul>
-            <li><a href="#">Produtos de Skincare</a></li>
-            <li><a href="#">Produtos de Maquiagem</a></li>
-            <li><a href="#">Produtos de Corpo</a></li>
-            <li><a href="#">Blog</a></li>
+            <li>
+              <a href="#">Produtos de Skincare</a>
+            </li>
+            <li>
+              <a href="#">Produtos de Maquiagem</a>
+            </li>
+            <li>
+              <a href="#">Produtos de Corpo</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
           </ul>
         </div>
 
@@ -46,15 +68,38 @@ const Footer = () => {
           <h3>NEWSLETTER</h3>
           <p>Receba nossas novidades!</p>
           <div className={style.inputGroup}>
-            <input type="text" placeholder="Nome" />
-            <input type="email" placeholder="Email" />
-            <button className={style.button}>ASSINAR</button>
+            <input
+              type="text"
+              placeholder="Nome"
+              style={{
+                borderColor: corFooter,
+                color: corFooter,
+              }}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              style={{
+                borderColor: corFooter,
+                color: corFooter,
+              }}
+            />
+            <button
+              className={style.button}
+              style={{
+                backgroundColor: corFooter,
+              }}
+            >
+              ASSINAR
+            </button>
           </div>
-          <p className={style.paragrafo}>Ao clicar em “assinar” você concorda em receber e-mails da Re Petit e aceita a Politica de Privacidade e Termos e Uso.</p>
+          <p className={style.paragrafo}>
+            Ao clicar em “assinar” você concorda em receber e-mails da Re Petit e aceita a Politica de Privacidade e Termos e Uso.
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

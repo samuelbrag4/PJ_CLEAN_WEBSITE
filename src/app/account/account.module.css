@@ -3,33 +3,59 @@
     flex-direction: row;
     gap: 2rem;
     padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.sidebar {
-    width: 250px;
+    max-width: 80%; /* Igual ao width da header */
+    margin: 10rem auto;
+    background: linear-gradient(-45deg, #00DAC7, #F05080, #DBBD9C, #49f6ff);
+    background-size: 400% 400%;
+    animation: gradientBackground 5s ease infinite;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .sidebar {
+    width: 200px;
     padding: 1.5rem;
     border-radius: 8px;
     color: #fff;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.userImage {
-    width: 100px;
-    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sidebar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .userImage {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     margin-bottom: 1rem;
-}
-
-.userName {
+    border: 2px solid #fff;
+  }
+  
+  .userName {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-}
-
-.logoutButton {
+  }
+  
+  .logoutButton {
     background: transparent;
     border: none;
     color: #fff;
@@ -37,15 +63,24 @@
     cursor: pointer;
     margin-bottom: 1rem;
     text-decoration: underline;
-}
-
-.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+    color: #dbbd9c;
+    transform: scale(1.1);
+  }
+  
+  .navLinks {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
-
-.navButton {
+  }
+  
+  .navButton {
     background-color: #F2F2F2;
     border: none;
     border-radius: 4px;
@@ -57,102 +92,36 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-.navButton:hover {
+  }
+  
+  .navButton:hover {
     background-color: #e0e0e0;
     transform: scale(1.05);
     color: inherit; /* Mantém a cor dinâmica */
-}
-
-.mainContent {
+  }
+  
+  .mainContent {
     flex: 1;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header {
+    backdrop-filter: blur(10px);
+  }
+  
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-}
-
-.title {
+  }
+  
+  .title {
     font-size: 2rem;
     color: #333;
-}
-
-.editButton {
-    background-color: #F05080;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.editButton:hover {
-    background-color: #d04070;
-}
-
-.userForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.formGroup {
-    display: flex;
-    flex-direction: column;
-}
-
-.formGroup label {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-}
-
-.formGroup input,
-.languageSelect {
-    font-size: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.locationInputs {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.languageSelect {
-    width: 100%;
-}
-
-.logoutButton {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    text-decoration: underline;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logoutButton:hover {
-    opacity: 0.8;
-}
-
-.editButton {
+  }
+  
+  .editButton {
     background-color: #F05080;
     color: #fff;
     border: none;
@@ -163,15 +132,32 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-.editButton:hover {
+  }
+  
+  .editButton:hover {
     background-color: #d04070;
     transform: scale(1.05);
-}
-
-.formGroup input,
-.languageSelect {
+  }
+  
+  .userForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formGroup input,
+  .languageSelect {
     font-size: 1rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -179,15 +165,81 @@
     background-color: #f9f9f9;
     color: #333;
     transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.formGroup input:focus,
-.languageSelect:focus {
+  }
+  
+  .formGroup input:focus,
+  .languageSelect:focus {
     border-color: #F05080;
     box-shadow: 0 0 5px rgba(240, 80, 128, 0.5);
-}
-
-.locationInputs {
+  }
+  
+  .locationInputs {
     display: flex;
     gap: 0.5rem;
-}
+  }
+  
+  .languageSelect {
+    width: 100%;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  
+    .sidebar {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .mainContent {
+      padding: 1rem;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .editButton {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .userImage {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .userName {
+      font-size: 1.2rem;
+    }
+  
+    .logoutButton {
+      font-size: 0.9rem;
+    }
+  
+    .navButton {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .editButton {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }

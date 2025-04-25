@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.content {
+    flex: 1; 
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+}
+
+.produtos-populares {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.produtos-populares h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.produtos-populares p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card.vazio {
+    width: 15rem;
+    height: 10rem;
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    border-radius: 0.5rem;
+}
+
+.ver-mais {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f05080;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mais:hover {
+    background-color: #d04070;
+}

@@ -1,4 +1,5 @@
 import styles from "./popularProducts.module.css";
+import Link from "next/link";
 
 export default function PopularProducts() {
   return (
@@ -15,7 +16,9 @@ export default function PopularProducts() {
         <div className={`${styles.card} ${styles.vazio}`}></div>
         <div className={`${styles.card} ${styles.vazio}`}></div>
       </div>
-      <button className={styles["ver-mais"]}>Ver mais</button>
+      <Link href="../../products">
+        <button className={styles["ver-mais"]}>Ver mais</button>
+      </Link>
     </section>
   );
 }

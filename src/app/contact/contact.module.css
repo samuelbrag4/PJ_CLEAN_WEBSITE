@@ -9,6 +9,7 @@
     background: linear-gradient(180deg, #FFFFFFE6 0%, #D9BFA9E6 25%, #E4D0BAE6 75%, #FFFFFFE6 100%);
     padding: 20px;
     overflow: hidden;
+    margin-top: 100px;
 }
 
 .contactImage {
