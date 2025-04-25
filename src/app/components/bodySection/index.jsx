@@ -3,11 +3,13 @@ import styles from "./bodySection.module.css";
 export default function BodySection() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Corpo</h2>
-      <p className={styles.subtitle}>
-        Explore dicas e produtos para manter sua pele saudável e radiante.
-      </p>
-      <button className={styles.button}>Ver Mais</button>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Cuidados com o Corpo</h2>
+        <p className={styles.subtitle}>
+          Descubra como manter seu corpo saudável e radiante com dicas de <strong>hidratação</strong>, <strong>limpeza</strong> e cuidados diários. Transforme sua rotina e sinta-se bem consigo mesmo!
+        </p>
+        <button className={styles.button}>Ver Mais</button>
+      </div>
     </section>
   );
 }
