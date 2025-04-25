@@ -1,36 +1,137 @@
 .faq {
-    background: #5fced4;
-    padding: 4rem 2rem;
-    border-radius: 25px;
-    text-align: center;
-  }
-  
-  .title {
-    font-family: Pacifico;
-    font-size: 32px;
-    color: #000;
-    margin-bottom: 2rem;
-  }
-  
-  .items {
-    text-align: left;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .item {
-    margin-bottom: 1rem;
-  }
-  
-  .question {
-    font-family: Pacifico;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .answer {
-    font-family: Caveat;
-    font-size: 18px;
-    color: #555;
-    margin-top: 0.5rem;
-  }
+  background: linear-gradient(180deg, #f0f0f0, #ffffff);
+  padding: 4rem 2rem;
+  border-radius: 25px;
+  text-align: center;
+  width: 80%;
+  margin: 10rem auto;
+}
+
+.title {
+  font-family: Pacifico;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.items {
+  text-align: left;
+}
+
+.item {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.itemActive {
+  border-color: #00dac7;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.answer {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.team {
+  margin-top: 3rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.teamList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.teamMember {
+  text-align: center;
+  max-width: 150px;
+}
+
+.profilePic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.memberName {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.memberRole {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.githubLink {
+  font-size: 0.9rem;
+  color: #00dac7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.githubLink:hover {
+  color: #00b8a5;
+}
+
+.extra {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.askButton {
+  background: #00dac7;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.askButton:hover {
+  background: #00b8a5;
+  transform: scale(1.05);
+}
