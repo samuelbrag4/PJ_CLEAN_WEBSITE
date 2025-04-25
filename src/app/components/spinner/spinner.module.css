@@ -1,0 +1,49 @@
+/* Fundo opaco */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo opaco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Certifique-se de que está acima de outros elementos */
+}
+
+/* Spinner com gradiente animado */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  border-top: 6px solid #00dac7; /* Cor inicial */
+  animation: spin 1s linear infinite, gradient 3s linear infinite;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animação de gradiente */
+@keyframes gradient {
+  0% {
+    border-top-color: #00dac7;
+  }
+  25% {
+    border-top-color: #f05080;
+  }
+  50% {
+    border-top-color: #dbbd9c;
+  }
+  75% {
+    border-top-color: #5fced4;
+  }
+  100% {
+    border-top-color: #00dac7;
+  }
+}

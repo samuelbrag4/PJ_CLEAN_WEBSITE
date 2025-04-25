@@ -17,7 +17,7 @@ const Header = ({ corHeader }) => {
                 <h1 className={styles.titulo}>Clean.</h1>
             </section>
             <nav className={`${styles.nav} ${isMenuActive ? styles.active : ''}`}>
-                <Link href="/" className={styles.navText}>
+                <Link href="/home" className={styles.navText}>
                     Home
                 </Link>
                 <Link href="/products" className={styles.navText}>

@@ -1,0 +1,107 @@
+.section {
+  position: relative;
+  background: linear-gradient(180deg, #00dac7, #2ee6cd, #4dffde, #78ffe6, #bfffee);
+  padding: 4rem 2rem;
+  border-radius: 25px;
+  text-align: center;
+  overflow: hidden;
+  width: 80%; /* Define a largura como 80% */
+  margin: 10rem auto; /* Centraliza horizontalmente */
+}
+
+.container {
+  max-width: 1200px; /* Define a largura máxima */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 0 2rem; /* Espaçamento lateral consistente */
+}
+
+.title {
+  font-family: Pacifico;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-family: Caveat;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+  background: #00dac7;
+  color: #fff;
+  font-family: Pacifico;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background: #2ee6cd;
+  transform: scale(1.1);
+}
+
+.butterflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.butterfly {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #fff, transparent);
+  border-radius: 50%;
+  animation: fly 8s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+.butterfly1 {
+  background: radial-gradient(circle, #00dac7, transparent);
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.butterfly2 {
+  background: radial-gradient(circle, #4dffde, transparent);
+  top: 30%;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.butterfly3 {
+  background: radial-gradient(circle, #bfffee, transparent);
+  top: 60%;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) scale(0.8) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(50px, -50px) scale(1) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-30px, 30px) scale(0.8) rotate(360deg);
+    opacity: 0.8;
+  }
+}

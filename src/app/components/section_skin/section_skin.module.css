@@ -23,6 +23,12 @@
   color: #333;
 }
 
+.disclaimer {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: justify !important;
+}
+
 .popupContent {
   background: #fff;
   padding: 2rem;
@@ -157,21 +163,17 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #555;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease;
 }
 
-.label:hover {
-  color: #00dac7;
-}
-
 .checkbox {
   appearance: none;
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 1rem;
   border: 2px solid #ccc;
   border-radius: 50%;
   background: #fff;
@@ -180,9 +182,14 @@
 }
 
 .checkbox:checked {
-  background: radial-gradient(circle, #258675, #1e6e5a);
-  border-color: #258675;
+  background: radial-gradient(circle, #74E7ED);
+  border-color: #5FCED4;
   transform: rotate(360deg);
+}
+
+.checkbox:hover {
+  background: radial-gradient(circle, #FF6E94);
+  transform: scale(1.05);
 }
 
 .submitButton {

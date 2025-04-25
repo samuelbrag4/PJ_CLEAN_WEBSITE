@@ -3,6 +3,15 @@ import Hero from "../components/hero";
 import CategoryCard from "../components/categoryCard";
 import Footer from "../components/footer";
 import PopularProducts from "../components/popularProducts";
+import SectionSkin from "../components/section_skin";
+import SectionVideo from "../components/section_video";
+import Testimonials from "../components/testimonials";
+import BlogSection from "../components/blogSection";
+import SkincareSection from "../components/skincareSection";
+import FAQSection from "../components/faqSection";
+import SustainabilitySection from "../components/sustainabilitySection";
+import MakeSection from "../components/makeSection";
+import BodySection from "../components/bodySection";
 
 export default function Home() {
   return (
@@ -25,6 +34,24 @@ export default function Home() {
       <CategoryCard />
 
       <PopularProducts />
+
+      <SectionSkin />
+
+      <SectionVideo />
+
+      <Testimonials />
+
+      <BlogSection />
+
+      <SkincareSection />
+
+      <MakeSection />
+
+      <BodySection />
+
+      <FAQSection />
+
+      <SustainabilitySection />
 
       <Footer />
     </div>

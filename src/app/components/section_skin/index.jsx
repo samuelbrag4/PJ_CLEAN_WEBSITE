@@ -257,6 +257,11 @@ const SectionSkin = () => {
           <button type="submit" className={styles.submitButton}>
             Descobrir meu tipo de pele
           </button>
+          <p className={styles.disclaimer}>
+            Este formulário é apenas uma orientação e não substitui uma
+            avaliação profissional. Para ter certeza sobre seu tipo de pele,
+            consulte um dermatologista ou especialista.
+          </p>
         </form>
 
         {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
