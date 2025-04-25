@@ -126,6 +126,7 @@
   line-height: 2;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .topSection {
     flex-direction: column;
@@ -145,6 +146,17 @@
 
   .newsletter {
     margin-right: 0;
+    text-align: center;
+  }
+
+  .inputGroup {
+    flex-direction: column; /* Altera para coluna em telas menores */
+    gap: 10px;
+  }
+
+  .inputGroup input,
+  .button {
+    width: 100%; /* Ocupa toda a largura disponível */
   }
 }
 

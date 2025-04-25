@@ -97,17 +97,6 @@
   background: #00b8a5;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -129,6 +118,7 @@
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
 }
 
 .card {
@@ -141,6 +131,8 @@
   color: #333;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  width: calc(33.33% - 1rem); /* Cada card ocupa 1/3 da largura */
+  max-width: 300px;
 }
 
 .card:hover {
@@ -220,111 +212,47 @@
   text-align: center;
 }
 
-.loadingOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #fff;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-}
-
-.closeButton {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(145deg, #00dac7, #00b8a5);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.closeButton:hover {
-  background: #00b8a5;
-  transform: scale(1.1);
-}
-
-.resultCard {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: left;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.resultTitle {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.resultDetails {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.resultDetails li {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-
-.confetti {
-  margin-top: 1rem;
-  width: 100%;
-  height: 100px;
-  background: url("https://i.imgur.com/3Z9QZ5q.png") center/cover no-repeat;
-  animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column; /* Alinha os cards em coluna */
+    gap: 1.5rem;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .card {
+    width: 100%; /* Cada card ocupa 100% da largura */
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+  .subtitle {
+    font-size: 0.9rem;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .card {
+    padding: 1rem;
+  }
+
+  .submitButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
   }
 }
