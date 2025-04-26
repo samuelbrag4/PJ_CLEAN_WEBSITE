@@ -1,12 +1,11 @@
 .section {
   position: relative;
-  background: linear-gradient(180deg, #00dac7, #2ee6cd, #4dffde, #78ffe6, #bfffee);
+  background: linear-gradient(10000deg, #ffffff, #00dac86c, #ffffff); /* Degradê suave que se mistura com o fundo branco */
   padding: 4rem 2rem;
-  border-radius: 25px;
   text-align: center;
   overflow: hidden;
   width: 80%; /* Define a largura como 80% */
-  margin: 10rem auto; /* Centraliza horizontalmente */
+  margin: 5rem auto; /* Centraliza horizontalmente */
 }
 
 .container {
@@ -16,33 +15,33 @@
 }
 
 .title {
-  font-family: Pacifico;
+  font-family: "Pacifico", cursive; /* Fonte Pacifico */
   font-size: 2.5rem;
-  color: #fff;
+  color: #333; /* Cor mais suave */
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 .subtitle {
-  font-family: Caveat;
-  font-size: 1.5rem;
-  color: #fff;
+  font-family: "Inter", sans-serif; /* Fonte Inter */
+  font-size: 1.2rem;
+  color: #555; /* Cor mais neutra */
   margin-bottom: 2rem;
   line-height: 1.8;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-align: justify; /* Justifica o texto */
 }
 
 .button {
   background: #00dac7;
   color: #fff;
-  font-family: Pacifico;
+  font-family: "Pacifico", cursive; /* Fonte Pacifico */
   font-size: 1.2rem;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
 }
 
 .button:hover {
@@ -62,12 +61,12 @@
 
 .butterfly {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 40px; /* Tamanho reduzido para suavidade */
+  height: 40px;
   background: radial-gradient(circle, #fff, transparent);
   border-radius: 50%;
-  animation: fly 8s infinite ease-in-out;
-  opacity: 0.8;
+  animation: fly 10s infinite ease-in-out; /* Animação mais lenta */
+  opacity: 0.6; /* Transparência maior */
 }
 
 .butterfly1 {
@@ -94,14 +93,14 @@
 @keyframes fly {
   0% {
     transform: translate(0, 0) scale(0.8) rotate(0deg);
-    opacity: 0.8;
+    opacity: 0.6;
   }
   50% {
     transform: translate(50px, -50px) scale(1) rotate(180deg);
-    opacity: 1;
+    opacity: 0.8;
   }
   100% {
     transform: translate(-30px, 30px) scale(0.8) rotate(360deg);
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }

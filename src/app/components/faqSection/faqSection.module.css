@@ -1,5 +1,5 @@
 .faq {
-  background: linear-gradient(180deg, #f0f0f0, #ffffff);
+  background: linear-gradient(180deg, #ffffff, #f0f0f0, #ffffff);
   padding: 4rem 2rem;
   border-radius: 25px;
   text-align: center;
@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-family: Pacifico;
+  font-family: "Pacifico", cursive; /* Fonte Pacifico */
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 2rem;
@@ -20,7 +20,6 @@
 
 .item {
   background: #ffffff;
-  border: 1px solid #ddd;
   border-radius: 12px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -29,11 +28,15 @@
 }
 
 .itemActive {
-  border-color: #00dac7;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  animation: gradientBackground 5s ease infinite; /* Adiciona a animação */
+  background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
+  background-size: 400% 400%;
+  color: #fff;
 }
 
 .question {
+  font-family: "Inter", sans-serif; /* Fonte Inter */
   font-size: 1.2rem;
   font-weight: bold;
   color: #333;
@@ -44,8 +47,9 @@
 }
 
 .answer {
+  font-family: "Inter", sans-serif; /* Fonte Inter */
   font-size: 1rem;
-  color: #555;
+  color: #ffffff;
   margin-top: 0.5rem;
   line-height: 1.6;
 }
@@ -65,6 +69,7 @@
 }
 
 .subtitle {
+  font-family: "Pacifico", cursive; /* Fonte Pacifico */
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -78,11 +83,20 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
+  align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
 }
 
 .teamMember {
   text-align: center;
   max-width: 150px;
+  flex: 1 1 150px; /* Permite que os cards cresçam igualmente */
+  display: flex;
+  flex-direction: column; /* Garante que o conteúdo interno seja empilhado */
+  justify-content: space-between; /* Distribui o conteúdo interno */
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .profilePic {
@@ -93,45 +107,136 @@
 }
 
 .memberName {
+  font-family: "Inter", sans-serif; /* Fonte Inter */
   font-size: 1.1rem;
   font-weight: bold;
   color: #333;
 }
 
 .memberRole {
+  font-family: "Inter", sans-serif; /* Fonte Inter */
   font-size: 0.9rem;
   color: #777;
   margin-bottom: 0.5rem;
 }
 
 .githubLink {
-  font-size: 0.9rem;
-  color: #00dac7;
+  font-family: "Inter", sans-serif; /* Fonte Inter */
+  font-size: 1.2rem;
+  font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s ease;
+  background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
+  background-size: 400% 400%;
+  animation: gradientBackground 5s ease infinite; /* Adiciona a animação */
+  -webkit-background-clip: text; /* Faz o gradiente aplicar apenas ao texto */
+  -webkit-text-fill-color: transparent; /* Torna o fundo do texto transparente */
+  transition: transform 0.3s ease;
 }
 
 .githubLink:hover {
-  color: #00b8a5;
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
 }
 
 .extra {
   margin-top: 2rem;
   text-align: center;
+  font-family: "Inter", sans-serif;
 }
 
 .askButton {
-  background: #00dac7;
+  background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
+  background-size: 400% 400%;
+  animation: gradientBackground 5s ease infinite; /* Adiciona a animação */
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 12px;
   font-size: 1rem;
+  margin: 1rem 0;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .askButton:hover {
-  background: #00b8a5;
   transform: scale(1.05);
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .faq {
+    width: 90%;
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .items {
+    gap: 0.5rem;
+  }
+
+  .item {
+    padding: 0.8rem;
+  }
+
+  .question {
+    font-size: 1rem;
+  }
+
+  .answer {
+    font-size: 0.9rem;
+  }
+
+  .askButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .teamList {
+    flex-direction: column; /* Alinha os cards em coluna */
+    gap: 1rem; /* Espaçamento entre os cards */
+  }
+
+  .teamMember {
+    max-width: 100%; /* Faz os cards ocuparem toda a largura disponível */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .askButton {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .teamList {
+    flex-direction: column; /* Alinha os cards em coluna */
+    gap: 0.8rem; /* Reduz o espaçamento entre os cards */
+  }
+
+  .teamMember {
+    max-width: 100%; /* Faz os cards ocuparem toda a largura disponível */
+  }
 }

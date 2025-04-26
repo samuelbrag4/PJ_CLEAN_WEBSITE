@@ -1,69 +1,100 @@
 .sustainability {
-  background: linear-gradient(180deg, #5fced4, #ffffff);
   padding: 4rem 2rem;
   border-radius: 25px;
   text-align: center;
   overflow: hidden;
   width: 80%;
-  margin: 10rem auto;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
-  font-family: Pacifico;
+  font-family: "Pacifico", cursive; /* Fonte Pacifico */
   font-size: 3rem;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  width: 95%;
 }
 
 .text {
-  font-family: Caveat;
-  font-size: 1.8rem;
+  font-family: "Inter", sans-serif; /* Fonte Inter */
+  font-size: 1rem;
+  width: 60%;
   color: #555;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   line-height: 1.8;
 }
 
 .disposal,
 .impact {
   margin-top: 3rem;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .subtitle {
+  font-family: "Pacifico", cursive; /* Fonte Pacifico */
   font-size: 2rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .disposalList,
 .impactList {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
 }
 
 .disposalItem,
 .impactItem {
-  background: #f0f0f060;
   border-radius: 12px;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 1.5rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 40%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 25%; /* Define a largura dos cards */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o conteúdo interno */
 }
 
 .disposalItem:hover,
 .impactItem:hover {
-  background: #e0e0e0;
-  transform: scale(1.02);
+  transform: scale(1.05);
+}
+
+.titleIcon {
+  font-family: "Inter"; 
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
 }
 
 .disposalHeader,
 .impactHeader {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -71,59 +102,73 @@
 }
 
 .icon {
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 2rem;
+  color: #5fced4;
   border-radius: 50%;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2rem;
-  height: 2rem;
+  height: 3rem;
 }
 
 .disposalDescription,
 .impactDescription {
-  margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  margin-top: 1rem;
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-grow: 1; /* Faz o texto ocupar o espaço disponível */
+}
+
+.disposalItem:hover .disposalDescription,
+.impactItem:hover .impactDescription {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.disposalItem,
+.impactItem {
+  animation: fadeIn 0.5s ease;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .sustainability {
-    width: 90%;
-    padding: 3rem 1rem;
-  }
-
-  .title {
-    font-size: 2.5rem;
+  .disposalItem,
+  .impactItem {
+    width: 45%; /* Ajusta a largura para tablets */
   }
 
   .text {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .disposalItem,
-  .impactItem {
-    width: 100%; /* Cada item ocupa 100% da largura */
+    font-size: 1.3rem;
   }
 
   .subtitle {
     font-size: 1.8rem;
   }
-
-  .disposalDescription,
-  .impactDescription {
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 480px) {
-  .title {
-    font-size: 2rem;
+  .disposalItem,
+  .impactItem {
+    width: 100%; /* Cada item ocupa 100% da largura em celulares */
   }
 
   .text {
@@ -135,13 +180,8 @@
   }
 
   .icon {
-    font-size: 1.2rem;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .disposalDescription,
-  .impactDescription {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }

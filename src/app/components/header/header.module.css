@@ -1,107 +1,86 @@
 .header {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  width: 80%; /* Mantém a largura */
-  margin: auto; /* Centraliza horizontalmente */
-  top: 20px; /* Espaçamento do topo */
-  left: 0;
-  gap: 6rem;
-  right: 0;
-  z-index: 1000; /* Garante que a header fique acima do conteúdo */
-  background-color: #00dac7; /* Cor de fundo */
-  position: fixed; /* Fixa a header na tela */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destaque */
-}
-
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #ffffff;
-}
-
-.logoTitulo {
-  width: 10%;
-}
-
-.titulo {
-  font-size: 2rem;
-  font-family: "Caveat", cursive;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.nav {
-  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  width: 80%; /* Define a largura da header */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  position: fixed; /* Torna a header fixa na tela */
+  top: 1rem; /* Adiciona espaçamento do topo */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta a posição para centralizar */
+  z-index: 10; /* Garante que a header fique acima de outros elementos */
+  background-color: inherit; /* Mantém a cor de fundo dinâmica */
+}
+
+.logoTitulo {
+  font-size: 1.5rem;
+}
+
+.titulo {
+  font-family: "Pacifico", cursive;
+  color: #fff;
+}
+
+.hamburger {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Esconde o menu inicialmente */
+  width: 300px; /* Tamanho fixo do popup */
+  height: 100vh;
+  background-color: #333; /* Cor padrão, será sobrescrita pelo estilo inline */
+  overflow-y: auto; /* Adiciona scroll para ver mais links */
+  transition: all 0.3s ease; /* Transição suave */
+  z-index: 15;
+  padding: 2rem 1rem;
+}
+
+.sidebar.active {
+  left: 0; /* Mostra o menu quando ativo */
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: justify; /* Justifica os links */
 }
 
 .navText {
-  font-size: 1rem;
   font-family: "Inter", sans-serif;
-  font-weight: 400;
-  color: #ffffff;
+  font-size: 1.2rem;
+  color: #fff;
   text-decoration: none;
-  position: relative;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-align: center;
-  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease; 
+  padding: 0.5rem 1rem; 
 }
 
 .navText:hover {
-  font-weight: 600;
-  transition: color 0.3s ease;
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
   transform: scale(1.05);
+  background-color: #afaeae; /* Cor de fundo ao passar o mouse */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+  color: #fff; /* Mantém a cor do texto ao passar o mouse */
+  font-weight: bold; /* Deixa o texto mais destacado ao passar o mouse */
+  font-size: 1.2rem; /* Mantém o tamanho do texto ao passar o mouse */
+  padding: 0.5rem 1rem; /* Mantém o espaçamento ao passar o mouse */
+  border: 1px solid #fff; /* Adiciona uma borda ao passar o mouse */
+  border-radius: 8px; /* Bordas arredondadas ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background-color: #00dac7;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 999;
-    padding: 1rem 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 2rem;
-    color: #ffffff;
-    cursor: pointer;
-  }
-}
-
-@media (max-width: 480px) {
-  .titulo {
-    font-size: 1.5rem;
-  }
-
-  .navText {
-    font-size: 0.9rem;
-  }
-
-  .hamburger {
-    font-size: 1.8rem;
-  }
+.icon {
+  font-size: 1.5rem;
+  color: #fff; /* Ícones brancos */
 }
