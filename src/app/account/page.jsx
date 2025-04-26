@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link"; // Importando o componente Link
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -51,15 +52,21 @@ export default function Conta() {
             <FontAwesomeIcon icon={faSignOutAlt} /> Sair
           </button>
           <nav className={styles.navLinks}>
-            <button className={styles.navButton} style={{ color: themeColor }}>
-              <FontAwesomeIcon icon={faUser} /> Meu Cadastro
-            </button>
-            <button className={styles.navButton} style={{ color: themeColor }}>
-              <FontAwesomeIcon icon={faHeart} /> Meus Favoritos
-            </button>
-            <button className={styles.navButton} style={{ color: themeColor }}>
-              <FontAwesomeIcon icon={faComment} /> Meus Comentários
-            </button>
+            <Link href="/account">
+              <button className={styles.navButton} style={{ color: themeColor }}>
+                <FontAwesomeIcon icon={faUser} /> Meu Cadastro
+              </button>
+            </Link>
+            <Link href="/likes">
+              <button className={styles.navButton} style={{ color: themeColor }}>
+                <FontAwesomeIcon icon={faHeart} /> Meus Favoritos
+              </button>
+            </Link>
+            <Link href="/comments">
+              <button className={styles.navButton} style={{ color: themeColor }}>
+                <FontAwesomeIcon icon={faComment} /> Meus Comentários
+              </button>
+            </Link>
           </nav>
         </aside>
 

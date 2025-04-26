@@ -1,0 +1,153 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 80%;
+    margin: 10rem auto;
+    background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
+    background-size: 400% 400%;
+    animation: gradientBackground 5s ease infinite;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .sidebar {
+    width: 200px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sidebar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .userImage {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid #fff;
+  }
+  
+  .userName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .logoutButton {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+    color: #dbbd9c;
+    transform: scale(1.1);
+  }
+  
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .navButton {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .navButton:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    color: inherit; /* Mantém a cor dinâmica */
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .commentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .cardTitle {
+    font-family: "Pacifico", cursive;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .cardDate {
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .cardComment {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .noCommentsMessage {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: #777;
+  }
