@@ -53,7 +53,7 @@ export default function Home() {
 
       <SustainabilitySection />
 
-      <Footer />
+      <Footer corFooter="#F05080" />
     </div>
   );
 }
