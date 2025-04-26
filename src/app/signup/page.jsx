@@ -1,15 +1,25 @@
+"use client";
+
 import Link from 'next/link';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import { useRouter } from 'next/navigation'; // Importa o useRouter
 import styles from './signup.module.css';
 
 export default function SignupPage() {
+  const router = useRouter(); // Inicializa o roteador
+
+  const handleSignup = (event) => {
+    event.preventDefault(); // Evita o comportamento padrão do formulário
+    console.log("Conta criada com sucesso!");
+    router.push('/login'); // Redireciona para a página de login
+  };
+
   return (
     <div className={styles.signupContainer}>
-    <div className={styles.signupBox}>
-
+      <div className={styles.signupBox}>
         <div className={styles.signupLeft}>
           <h2 className={styles.signupTitle}>Crie uma conta</h2>
-          <form className={styles.signupForm}>
+          <form className={styles.signupForm} onSubmit={handleSignup}>
             <input type="text" name="name" placeholder="Nome Completo" className={styles.signupInput} />
             <input type="email" name="email" placeholder="E-mail" className={styles.signupInput} />
             <input type="password" name="password" placeholder="Senha" className={styles.signupInput} />

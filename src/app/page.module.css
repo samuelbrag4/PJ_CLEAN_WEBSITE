@@ -140,3 +140,27 @@
     max-width: 80%;
     opacity: 0.9;
 }
+
+@media (max-width: 768px) {
+    .signupBox {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .signupLeft {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .signupRight {
+        display: none; /* Oculta a imagem em dispositivos móveis */
+    }
+
+    .signupTitle {
+        font-size: 28px; /* Ajusta o tamanho do título */
+    }
+
+    .signupInput, .signupButton, .signupSocialButton {
+        font-size: 14px; /* Ajusta o tamanho dos inputs e botões */
+    }
+}
