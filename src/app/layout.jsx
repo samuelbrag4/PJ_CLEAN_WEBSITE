@@ -5,6 +5,7 @@ import "./globals.css";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import PageTransition from "./components/pageTransition";
+import Butterfly from "./components/butterfly"; // Importa o componente da borboleta
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* Adiciona a borboleta que segue o mouse */}
+        <Butterfly />
+
+        {/* Transições de página */}
         <AnimatePresence mode="wait">
-          {/* Aqui a mágica: envolvemos a página com motion.div */}
           <motion.div
             key={pathname}
             initial={{ opacity: 0 }}
