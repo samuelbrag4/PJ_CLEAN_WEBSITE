@@ -1,17 +1,17 @@
 "use client";
 
-import styles from './page.module.css';
-import Link from 'next/link';
-import { FaGoogle, FaFacebook } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
+import styles from "./page.module.css";
+import Link from "next/link";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
 
   const handleLogin = (event) => {
     event.preventDefault(); // Evita o comportamento padrão do formulário
-    console.log("Redirecionando para a página inicial...");
-    router.push('/home'); // Redireciona para a página "home"
+    console.log("Redirecionando para a página inicial..."); // Log para depuração
+    router.push("/home"); // Redireciona para a página "home"
   };
 
   return (
@@ -32,22 +32,21 @@ export default function Login() {
               placeholder="Senha"
               className={styles.signupInput}
             />
-            <button
-              type="submit"
-              className={styles.signupButton}
-            >
+            <button type="submit" className={styles.signupButton}>
               Entrar
             </button>
           </form>
           <div className={styles.signupDivider}>ou</div>
           <button className={styles.signupSocialButton}>
-            <FaGoogle className={styles.iconGoogle} size={30} /> Entre com o Google
+            <FaGoogle className={styles.iconGoogle} size={30} /> Entre com o
+            Google
           </button>
           <button className={styles.signupSocialButton}>
-            <FaFacebook className={styles.iconFacebook} size={30} /> Entre com o Facebook
+            <FaFacebook className={styles.iconFacebook} size={30} /> Entre com o
+            Facebook
           </button>
           <p className={styles.signupFooter}>
-            Não tem uma conta?{' '}
+            Não tem uma conta?{" "}
             <Link href="/signup" className={styles.signupLink}>
               Cadastre-se
             </Link>

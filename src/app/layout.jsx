@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* Adiciona a borboleta que segue o mouse */}
-        <Butterfly />
+        {/* <Butterfly /> */}
 
         {/* Transições de página */}
         <AnimatePresence mode="wait">

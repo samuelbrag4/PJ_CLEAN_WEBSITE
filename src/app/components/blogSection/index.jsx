@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./blogSection.module.css";
 
 export default function BlogSection() {
@@ -13,7 +14,9 @@ export default function BlogSection() {
         <p className={styles.subtitle}>
           Descubra um mundo de <strong>artigos</strong>, <strong>vídeos</strong> e <strong>dicas</strong> para cuidar da sua pele e realçar sua beleza natural. Nosso blog é o lugar perfeito para aprender, se inspirar e transformar sua rotina de cuidados.
         </p>
-        <button className={styles.button}>Acessar Blog</button>
+        <Link href="/blog">
+          <button className={styles.button}>Acessar Blog</button>
+        </Link>
       </div>
     </section>
   );

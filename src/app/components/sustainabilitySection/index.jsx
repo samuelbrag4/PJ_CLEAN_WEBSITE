@@ -60,7 +60,7 @@ export default function SustainabilitySection() {
 
       <div className={styles.disposal}>
         <h3 className={styles.subtitle}>Descarte Sustentável de Cosméticos</h3>
-        <p>
+        <p className={styles.text}>
           Antes de descartar seus cosméticos, lave os frascos para remover
           resíduos e descarte-os no lixo correto:
         </p>
@@ -73,7 +73,7 @@ export default function SustainabilitySection() {
             >
               <div className={styles.disposalHeader}>
                 <span className={styles.icon}>{item.icon}</span>
-                <strong>{item.title}:</strong>
+                <strong className={styles.titleIcon}>{item.title}</strong>
               </div>
               {expandedDisposalItem === index && (
                 <p className={styles.disposalDescription}>

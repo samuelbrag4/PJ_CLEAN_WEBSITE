@@ -10,24 +10,28 @@ export default function Testimonials() {
       text: "Minha pele nunca esteve tão bonita! As dicas e produtos recomendados aqui são incríveis.",
       stars: 5,
       date: "10/04/2025",
+      image: "https://via.placeholder.com/80", 
     },
     {
       name: "João Pedro",
       text: "Descobri meu tipo de pele e agora sei exatamente como cuidar dela. Obrigado!",
       stars: 4,
       date: "08/04/2025",
+      image: "https://via.placeholder.com/80",
     },
     {
       name: "Mariana Silva",
       text: "Adorei as promoções e os artigos. Tudo muito bem explicado e fácil de entender.",
       stars: 5,
       date: "05/04/2025",
+      image: "https://via.placeholder.com/80",
     },
     {
       name: "Lucas Almeida",
       text: "Os produtos recomendados realmente funcionam. Estou muito satisfeito!",
       stars: 4,
       date: "02/04/2025",
+      image: "https://via.placeholder.com/80",
     },
   ]);
 
@@ -46,6 +50,10 @@ export default function Testimonials() {
   return (
     <section className={styles.testimonials}>
       <h2 className={styles.title}>O que nossos clientes dizem</h2>
+      <p className={styles.subtitle}>
+        Veja como nossos serviços e produtos transformaram a vida de nossos
+        clientes.
+      </p>
       <div className={styles.carousel}>
         {testimonials.map((testimonial, index) => (
           <div
@@ -60,6 +68,11 @@ export default function Testimonials() {
                 : styles.inactive
             }`}
           >
+            <img
+              src={testimonial.image}
+              alt={`Foto de ${testimonial.name}`}
+              className={styles.image}
+            />
             <p className={styles.text}>"{testimonial.text}"</p>
             <p className={styles.name}>- {testimonial.name}</p>
             <p className={styles.stars}>

@@ -104,9 +104,9 @@ const SectionSkin = () => {
   return (
     <section className={styles.sectionSkin}>
       <div className={styles.container}>
-        <h1 className={styles.title}>Qual seu tipo de pele</h1>
+        <h1 className={styles.title}>Qual seu tipo de pele?</h1>
         <p className={styles.subtitle}>
-          Oleosa? Seca ou Mista. Descubra agora.
+          Oleosa, Seca, Mista ou Normal? Descubra agora.
         </p>
 
         <div className={styles.cards}>
@@ -274,7 +274,10 @@ const SectionSkin = () => {
 
         {result && (
           <div className={styles.resultCard}>
-            <h2 className={styles.resultTitle}>Seu tipo de pele é: {result}</h2>
+            <h2 className={styles.resultTitle}>
+              Seu tipo de pele é:{" "}
+              <span className={styles.skinType}>{result}</span>
+            </h2>
             <ul className={styles.resultDetails}>
               {result === "Seca" && (
                 <>
