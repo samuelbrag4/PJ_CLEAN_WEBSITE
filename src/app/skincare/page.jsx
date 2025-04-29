@@ -37,6 +37,8 @@ export default function Skincare() {
       />
 
       <SkinTypeGrid
+        category="Skincare"
+        corCategory="#5FCED4"
         title="Tipos de pele"
         oilyImage="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDgvlvTyk_JzmTiMvzmATKp1XNFPycj-LKsGsa07OlrUVxAhgq"
         oilyTitle="Oleosa"
