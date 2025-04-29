@@ -4,8 +4,38 @@ import Hero from "../components/hero";
 import Banner from "../components/banner";
 import SkinTypeGrid from "../components/skinTypeGrid";
 import styles from "./makeup.module.css";
+import OurMission from "../components/ourMissionSection";
+
+import { FaSoap, FaPumpSoap } from "react-icons/fa";
+import { FaDroplet } from "react-icons/fa6";
+import { RiBubbleChartFill } from "react-icons/ri";
 
 export default function Maquiagem() {
+
+  const icones = [
+    {
+      icone: <FaSoap size={24} />,
+      tituloIcone: "Limpeza Facial",
+      descricaoIcone:
+        "Elimine impurezas e prepare sua pele para os próximos passos",
+    },
+    {
+      icone: <RiBubbleChartFill size={24} />,
+      tituloIcone: "Esfoliação",
+      descricaoIcone: "Use 2-3 vezes por semana para renovação celular",
+    },
+    {
+      icone: <FaDroplet size={24} />,
+      tituloIcone: "Hidratação",
+      descricaoIcone: "Mantenha sua pele nutrida e protegida diariamente",
+    },
+    {
+      icone: <FaPumpSoap size={24} />,
+      tituloIcone: "Proteção Solar",
+      descricaoIcone: "Essencial para prevenir o envelhecimento precoce",
+    },
+  ];
+
   return (
     <div className={styles.pageContainer}>
       <Header corHeader="#F05080" />
@@ -46,6 +76,17 @@ export default function Maquiagem() {
               normalImage="https://nomoremag.com/wp-content/uploads/2023/04/young-female-model-portrait-10x8-1.jpg"
               normalTitle="Segurança"
               normalDescription="A segurança dos produtos é fundamental. Escolha maquiagens dermatologicamente testadas e livres de substâncias nocivas para evitar irritações e alergias."
+            />
+
+            <OurMission
+              degrade="linear-gradient(180deg,rgb(248, 159, 186) 0%, #FFF 100%)"
+              subtitulo="Skincare Diário"
+              corPrincipal="#F05080"
+              titulo="Rotina Completa para Cuidados com a Pele"
+              descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
+              textoBotao="Ver Produtos"
+              corHover="#f88aab"
+              icones={icones}
             />
           </div>
         </main>
