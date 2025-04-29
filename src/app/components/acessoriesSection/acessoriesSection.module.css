@@ -1,5 +1,4 @@
 .acessoriesSection {
-  background: linear-gradient(0deg, #d2ad84 0%, #fff 100%);
   font-family: Arial, Helvetica, sans-serif;
   padding: 50px 20px;
 }
@@ -19,7 +18,6 @@
 }
 
 .acessoriesSubtitulo {
-  color: #dbbd9c;
   font-size: 16px;
   font-weight: normal;
   font-weight: 700;

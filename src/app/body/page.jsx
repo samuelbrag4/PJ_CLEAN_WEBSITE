@@ -33,6 +33,37 @@ const icones = [
   },
 ];
 
+const cards = [
+  {
+    titulo: "Gua Sha de Quartzo Rosa",
+    descricao:
+      "Ferramenta de massagem facial que estimula a circulação sanguínea, reduz inchaços e promove relaxamento do rosto.",
+    imagem:
+      "https://glov.eu/cdn/shop/products/QuartzGuaSha_ef4b3c01-9fe4-4761-b21d-1097fe2307c6.png?v=1649078742",
+  },
+  {
+    titulo: "Rolo de Jade",
+    descricao:
+      "Massageador que ajuda na absorção de produtos, reduz olheiras e linhas finas, além de aliviar a tensão facial.",
+    imagem:
+      "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/products/89926/89926.png",
+  },
+  {
+    titulo: "Derma Roller",
+    descricao:
+      "Estimula a produção de colágeno, melhora a textura da pele e potencializa a penetração de ativos do skincare.",
+    imagem:
+      "https://www.swisscollc.com/cdn/shop/products/48009.png?v=1594308069",
+  },
+  {
+    titulo: "Esponja Konjac",
+    descricao:
+      "Esfoliante natural que limpa suavemente, remove células mortas e equilibra o pH da pele, ideal para uso diário.",
+    imagem:
+      "https://ikesaki.vtexassets.com/arquivos/ids/269140-800-auto?v=637655991804530000&width=800&height=auto&aspect=true",
+  },
+]
+
 export default function Corpo() {
   return (
     <div>
@@ -90,38 +121,11 @@ export default function Corpo() {
       />
 
       <AcessoriesSection
+        degrade="linear-gradient(0deg, #d2ad84 0%, #fff 100%)"
+        corPrincipal="#DBBD9C"
         subtitulo="Ferramentas de Beleza"
         titulo="Acessórios de Massagem Facial"
-        cards={[
-          {
-            titulo: "Gua Sha de Quartzo Rosa",
-            descricao:
-              "Ferramenta de massagem facial que estimula a circulação sanguínea, reduz inchaços e promove relaxamento do rosto.",
-            imagem:
-              "https://glov.eu/cdn/shop/products/QuartzGuaSha_ef4b3c01-9fe4-4761-b21d-1097fe2307c6.png?v=1649078742",
-          },
-          {
-            titulo: "Rolo de Jade",
-            descricao:
-              "Massageador que ajuda na absorção de produtos, reduz olheiras e linhas finas, além de aliviar a tensão facial.",
-            imagem:
-              "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/products/89926/89926.png",
-          },
-          {
-            titulo: "Derma Roller",
-            descricao:
-              "Estimula a produção de colágeno, melhora a textura da pele e potencializa a penetração de ativos do skincare.",
-            imagem:
-              "https://www.swisscollc.com/cdn/shop/products/48009.png?v=1594308069",
-          },
-          {
-            titulo: "Esponja Konjac",
-            descricao:
-              "Esfoliante natural que limpa suavemente, remove células mortas e equilibra o pH da pele, ideal para uso diário.",
-            imagem:
-              "https://ikesaki.vtexassets.com/arquivos/ids/269140-800-auto?v=637655991804530000&width=800&height=auto&aspect=true",
-          },
-        ]}
+        cards={cards}
       />
 
       <Footer corFooter={"#DBBD9C"} />
