@@ -9,6 +9,8 @@ import {
   faComment,
   faSignOutAlt,
   faEdit,
+  faEye,
+  faEyeSlash
 } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -16,6 +18,11 @@ import styles from "./account.module.css";
 
 export default function Conta() {
   const [isEditing, setIsEditing] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   // Simulação de preferência do usuário
   const [userPreference, setUserPreference] = useState("skincare"); // Pode ser "skincare", "corpo" ou "make"
@@ -43,7 +50,7 @@ export default function Conta() {
           style={{ backgroundColor: themeColor }}
         >
           <img
-            src="https://via.placeholder.com/100"
+            src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Foto do usuário"
             className={styles.userImage}
           />
@@ -96,20 +103,32 @@ export default function Conta() {
                 disabled={!isEditing}
               />
             </div>
-            <div className={styles.formGroup}>
-              <label>Telefone</label>
-              <input
-                type="text"
-                placeholder="Digite seu telefone"
-                disabled={!isEditing}
-              />
+            <div className={styles.formGroup}><label>Senha</label>
+              <div className={styles.passwordWrapper}>
+                <input
+                  type={showPassword ? "text" : "password"} // Alterna entre "text" e "password"
+                  placeholder="Digite sua senha"
+                  disabled={!isEditing}
+                  className={styles.passwordInput} // Adicionei uma classe para estilização
+                />
+                <button
+                  type="button"
+                  className={styles.togglePasswordButton}
+                  onClick={togglePasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
+              </div>
             </div>
             <div className={styles.formGroup}>
-              <label>Localização</label>
-              <div className={styles.locationInputs}>
-                <input type="text" placeholder="País" disabled={!isEditing} />
-                <input type="text" placeholder="Estado" disabled={!isEditing} />
-                <input type="text" placeholder="Cidade" disabled={!isEditing} />
+              <label>Informações da Conta</label>
+              <div className={styles.accountInfoContainer}>
+                <div className={styles.accountInfo}>
+                  <p>Conta criada em: <strong>01/01/2023</strong></p>
+                </div>
+                <div className={styles.accountInfo}>
+                  <p>Última atualização: <strong>15/04/2025</strong></p>
+                </div>
               </div>
             </div>
             <div className={styles.formGroup}>

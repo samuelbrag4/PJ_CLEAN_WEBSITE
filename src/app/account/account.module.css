@@ -182,6 +182,43 @@
   width: 100%;
 }
 
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordWrapper input {
+  flex: 1;
+}
+
+.togglePasswordButton {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+}
+
+.accountInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Espaço entre os itens */
+}
+
+.accountInfo {
+  flex: 1; /* Faz com que os itens ocupem o mesmo espaço */
+  font-size: 1rem;
+  color: #555;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center; /* Centraliza o texto */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .container {
