@@ -1,5 +1,6 @@
 .hero {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 80%;
@@ -12,6 +13,7 @@
 
 .containerInformacao {
     max-width: 50%;
+    flex: 1 1 100%;
 }
 
 .heroTitulo {
@@ -69,12 +71,38 @@
 
 .containerImagem {
     max-width: 40%;
+    flex: 1 1 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .imagem {
     max-width: 100%;
     height: auto;
+}
+
+@media (max-width: 968px) {
+    .hero {
+        width: 80%;
+        margin-top: 5.5rem; /* Ajusta a largura para telas menores */
+    }
+
+    .heroTitulo {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+    }
+
+    .heroTexto {
+        font-size: 0.8rem; /* Reduz o tamanho do texto */
+    }
+
+    .heroBotoes { /* Empilha os botões verticalmente */
+        gap: 0.5rem; /* Reduz o espaçamento entre os botões */
+    }
+
+    .heroPrimeiroBotao,
+    .heroSegundoBotao {
+        width: 50%; /* Faz os botões ocuparem toda a largura */
+    }
 }
