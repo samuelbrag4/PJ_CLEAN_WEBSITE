@@ -1,42 +1,111 @@
-import Image from 'next/image'
-import styles from './contact.module.css';
-import shapes from './img/shapes.png';
-import Header from '../components/header';
-import Footer from '../components/footer';
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./contact.module.css";
+import shapes from "./img/shapes.png";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 export default function Contato() {
-    return (
-        <div>
-            <Header corHeader={"#DBBD9C"} />
-            <div className={styles.contactSection}>
-                <Image src={shapes} alt="" className={styles.contactImage} />
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+  const [statusMessage, setStatusMessage] = useState("");
 
-                <div className={styles.contactContainer}>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-                    <div className={styles.contactText}>
-                        <h1 className={styles.contactTitle}>Entre Em Contato<br /> Conosco</h1>
-                        <p className={styles.contactSubTitle}>Entre em contato conosco! Tire dúvidas e nos dê<br /> sugestões.</p>
-                    </div>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatusMessage(""); // Limpa a mensagem de status
 
-                    <div className={styles.contactFormContainer}>
-                        <form className={styles.contactForm}>
-                            <input type="text" placeholder="First name" />
-                            <input type="text" placeholder="Last name" />
-                            <input type="email" placeholder="Email address" />
-                            <textarea placeholder="Message"></textarea>
-                            <div className={styles.checkboxContainer}>
-                                <input type="checkbox" id="terms" />
-                                <label htmlFor="terms">
-                                    By clicking here you agree to our <a href="#">terms and policy</a>.
-                                </label>
-                            </div>
-                            <button type="submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
+    try {
+      const response = await fetch("http://localhost:4000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-            </div>
-            <Footer corFooter={"#DBBD9C"} />
+      if (response.ok) {
+        setStatusMessage("E-mail enviado com sucesso!");
+        setFormData({ firstName: "", lastName: "", email: "", message: "" }); // Limpa o formulário
+      } else {
+        setStatusMessage("Erro ao enviar o e-mail. Tente novamente.");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar o e-mail:", error);
+      setStatusMessage("Erro ao enviar o e-mail. Tente novamente.");
+    }
+  };
+
+  return (
+    <div>
+      <Header corHeader={"#DBBD9C"} />
+      <div className={styles.contactSection}>
+        <Image src={shapes} alt="" className={styles.contactImage} />
+
+        <div className={styles.contactContainer}>
+          <div className={styles.contactText}>
+            <h1 className={styles.contactTitle}>
+              Entre Em Contato<br /> Conosco
+            </h1>
+            <p className={styles.contactSubTitle}>
+              Entre em contato conosco! Tire dúvidas e nos dê<br /> sugestões.
+            </p>
+          </div>
+
+          <div className={styles.contactFormContainer}>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First name"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last name"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+              <div className={styles.checkboxContainer}>
+                <input type="checkbox" id="terms" required />
+                <label htmlFor="terms">
+                  By clicking here you agree to our <a href="#">terms and policy</a>.
+                </label>
+              </div>
+              <button type="submit">Send Message</button>
+            </form>
+            {statusMessage && <p className={styles.statusMessage}>{statusMessage}</p>}
+          </div>
         </div>
-    );
-};
+      </div>
+      <Footer corFooter={"#DBBD9C"} />
+    </div>
+  );
+}
