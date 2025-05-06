@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function PageTransition({ onComplete }) {
   const [isVisible, setIsVisible] = useState(true);

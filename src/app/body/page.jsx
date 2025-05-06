@@ -64,7 +64,6 @@ const cards = [
   },
 ];
 
-
 export default function Corpo() {
   return (
     <div>
@@ -99,8 +98,6 @@ export default function Corpo() {
         corButton={"#DBBD9C"}
       />
 
-
-
       <SkinTypeGrid
         category="CORPO"
         corCategory="#DBBD9C"
@@ -119,7 +116,6 @@ export default function Corpo() {
         normalDescription="A exposição ao sol sem proteção pode causar manchas e envelhecimento precoce. Use protetor solar diariamente, mesmo em dias nublados, para manter sua pele protegida."
       />
 
-
       <OurMission
         degrade="linear-gradient(180deg,rgb(248, 223, 194) 0%, #FFF 100%)"
         subtitulo="Autocuidado Corporal"
@@ -137,7 +133,6 @@ export default function Corpo() {
         titulo="Acessórios para Massagem e Relaxamento Corporal"
         cards={cards}
       />
-
 
       <Footer corFooter={"#DBBD9C"} />
     </div>

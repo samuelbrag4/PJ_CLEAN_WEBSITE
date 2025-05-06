@@ -12,7 +12,6 @@ import { FaDroplet } from "react-icons/fa6";
 import { RiBubbleChartFill } from "react-icons/ri";
 
 export default function Maquiagem() {
-
   const icones = [
     {
       icone: <FaSoap size={24} />,
@@ -70,7 +69,6 @@ export default function Maquiagem() {
         "https://acrilicostore.fbitsstatic.net/img/p/organizador-de-maquiagem-4-gavetas-com-bandeja-para-batom-70136/256618-5.jpg?w=1000&h=1000&v=no-change&qs=ignore",
     },
   ];
-  
 
   return (
     <div className={styles.pageContainer}>
@@ -85,6 +83,17 @@ export default function Maquiagem() {
             textoPrimeiroBotao="Ler Mais"
             corBotao="#F05080"
             textoSegundoBotao="Sobre"
+          />
+
+          <OurMission
+            degrade="linear-gradient(180deg,rgb(248, 159, 186) 0%, #FFF 100%)"
+            subtitulo="Skincare Diário"
+            corPrincipal="#F05080"
+            titulo="Rotina Completa para Cuidados com a Pele"
+            descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
+            textoBotao="Ver Produtos"
+            corHover="#f88aab"
+            icones={icones}
           />
 
           <div className={styles.contentContainer}>
@@ -112,17 +121,6 @@ export default function Maquiagem() {
               normalImage="https://nomoremag.com/wp-content/uploads/2023/04/young-female-model-portrait-10x8-1.jpg"
               normalTitle="Segurança"
               normalDescription="A segurança dos produtos é fundamental. Escolha maquiagens dermatologicamente testadas e livres de substâncias nocivas para evitar irritações e alergias."
-            />
-
-            <OurMission
-              degrade="linear-gradient(180deg,rgb(248, 159, 186) 0%, #FFF 100%)"
-              subtitulo="Maquiagem Perfeita"
-              corPrincipal="#F05080"
-              titulo="Etapas Essenciais para uma Maquiagem de Alta Performance"
-              descricao="Uma maquiagem bonita começa com uma preparação adequada da pele. Conheça os passos fundamentais para garantir melhor fixação, acabamento e durabilidade."
-              textoBotao="Ver Produtos"
-              corHover="#f88aab"
-              icones={icones}
             />
 
             <AcessoriesSection

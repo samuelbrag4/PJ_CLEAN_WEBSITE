@@ -10,7 +10,6 @@ import { FaDroplet } from "react-icons/fa6";
 import { RiBubbleChartFill } from "react-icons/ri";
 
 export default function Skincare() {
-
   const icones = [
     {
       icone: <FaSoap size={24} />,
@@ -64,7 +63,7 @@ export default function Skincare() {
       imagem:
         "https://ikesaki.vtexassets.com/arquivos/ids/269140-800-auto?v=637655991804530000&width=800&height=auto&aspect=true",
     },
-  ]
+  ];
 
   return (
     <div>
@@ -97,23 +96,25 @@ export default function Skincare() {
         corButton={"#5FCED4"}
       />
 
-      <SkinTypeGrid
-        category="Skincare"
-        corCategory="#5FCED4"
-        title="Tipos de pele"
-        oilyImage="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDgvlvTyk_JzmTiMvzmATKp1XNFPycj-LKsGsa07OlrUVxAhgq"
-        oilyTitle="Oleosa"
-        oilyDescription="Uma pele oleosa produz excesso de sebo, o que causa aparência brilhante e tendência a acne, especialmente no nariz T (testa, nariz e queixo)."
-        dryImage="https://escolabelezapura.com.br/wp-content/uploads/2024/06/1.jpg"
-        dryTitle="Seca"
-        dryDescription="Contém áreas ásperas e tensas, com linhas evidentes ou poros minúsculos, possui pele escamativa, que requer hidratação específica para cada região."
-        combinationImage="https://static.stealthelook.com.br/wp-content/uploads/2024/06/bevurecosmetics-skincare.jpg"
-        combinationTitle="Mista"
-        combinationDescription="Apresenta a espinhas, cravos e oleosidade em algumas áreas, combinada à ressecamento, vermelhidão e poros dilatados."
-        normalImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDrXqq2I1Ii8r1EEFvBCSg7nl-6VQm3a9lZ_9Oh4kojkS0eEe"
-        normalTitle="Normal"
-        normalDescription="Possui os seus poros pequenos, com textura aveludada, sensação de relaxamento e tendência a estabilidade."
-      />
+      <div style={{ marginBottom: "5rem" }}>
+        <SkinTypeGrid
+          category="Skincare"
+          corCategory="#5FCED4"
+          title="Tipos de pele"
+          oilyImage="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDgvlvTyk_JzmTiMvzmATKp1XNFPycj-LKsGsa07OlrUVxAhgq"
+          oilyTitle="Oleosa"
+          oilyDescription="Uma pele oleosa produz excesso de sebo, o que causa aparência brilhante e tendência a acne, especialmente no nariz T (testa, nariz e queixo)."
+          dryImage="https://escolabelezapura.com.br/wp-content/uploads/2024/06/1.jpg"
+          dryTitle="Seca"
+          dryDescription="Contém áreas ásperas e tensas, com linhas evidentes ou poros minúsculos, possui pele escamativa, que requer hidratação específica para cada região."
+          combinationImage="https://static.stealthelook.com.br/wp-content/uploads/2024/06/bevurecosmetics-skincare.jpg"
+          combinationTitle="Mista"
+          combinationDescription="Apresenta a espinhas, cravos e oleosidade em algumas áreas, combinada à ressecamento, vermelhidão e poros dilatados."
+          normalImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDrXqq2I1Ii8r1EEFvBCSg7nl-6VQm3a9lZ_9Oh4kojkS0eEe"
+          normalTitle="Normal"
+          normalDescription="Possui os seus poros pequenos, com textura aveludada, sensação de relaxamento e tendência a estabilidade."
+        />
+      </div>
 
       <OurMission
         degrade="linear-gradient(180deg,#8fe8ec 0%, #FFF 100%)"

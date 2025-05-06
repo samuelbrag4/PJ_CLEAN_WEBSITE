@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+
 import PageTransition from "./components/pageTransition";
 import Butterfly from "./components/butterfly"; // Importa o componente da borboleta
 
