@@ -1,6 +1,5 @@
 .skinTypeContainer {
   width: 80%;
-  height: 50rem;
   font-family: Arial, sans-serif;
   margin: 0 auto;
   margin-top: 3rem;
@@ -100,20 +99,27 @@
 }
 
 @media (max-width: 768px) {
-  .skinTypeGrid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
   .skinTypeMainTitle {
     font-size: 28px;
     margin-bottom: 30px;
+  }
+
+  .skinTypeContent {
+    padding: 15px;
+  }
+
+  .skinTypeGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
 @media (max-width: 576px) {
   .skinTypeContent {
     padding: 12px;
+  }
+
+  .skinTypeGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
   .skinTypeTitle {
@@ -123,5 +129,9 @@
 
   .skinTypeDescription {
     font-size: 12px;
+  }
+
+  .skinTypeCard {
+    width: 100%;
   }
 }
