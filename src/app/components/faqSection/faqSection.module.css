@@ -8,10 +8,16 @@
 }
 
 .title {
-  font-family: "Pacifico", cursive; /* Fonte Pacifico */
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
+  font-family: "Caveat", cursive;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333; /* Cor mais suave */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
 }
 
 .items {
@@ -30,7 +36,7 @@
 .itemActive {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
   animation: gradientBackground 5s ease infinite; /* Adiciona a animação */
-  background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
+  background: linear-gradient(-45deg, #dbbd9c, #f05080, #00dac7, #49f6ff);
   background-size: 400% 400%;
   color: #fff;
 }
@@ -69,11 +75,16 @@
 }
 
 .subtitle {
-  font-family: "Pacifico", cursive; /* Fonte Pacifico */
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: Caveat, cursive;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px #0000001a;
 }
 
 .teamList {

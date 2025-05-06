@@ -12,11 +12,16 @@
 }
 
 .title {
-  font-family: "Pacifico", cursive; /* Fonte Pacifico */
-  font-size: 3rem;
-  color: #333;
+  font-family: Caveat, cursive;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(51, 51, 51);
+  text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
   margin-bottom: 2rem;
-  width: 95%;
 }
 
 .text {
@@ -39,11 +44,16 @@
 }
 
 .subtitle {
-  font-family: "Pacifico", cursive; /* Fonte Pacifico */
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 2rem;
+  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333; /* Cor mais suave */
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 .disposalList,
@@ -79,7 +89,7 @@
 }
 
 .titleIcon {
-  font-family: "Inter"; 
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   color: #333;
   text-align: center;
@@ -99,19 +109,9 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: #333;
+  font-family: "Inter", sans-serif;
 }
 
-.icon {
-  font-size: 2rem;
-  color: #5fced4;
-  border-radius: 50%;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 3rem;
-}
 
 .disposalDescription,
 .impactDescription {
