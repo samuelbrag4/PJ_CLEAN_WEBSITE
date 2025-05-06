@@ -5,6 +5,7 @@ import Banner from "../components/banner";
 import SkinTypeGrid from "../components/skinTypeGrid";
 import styles from "./makeup.module.css";
 import OurMission from "../components/ourMissionSection";
+import AcessoriesSection from "../components/acessoriesSection";
 
 import { FaSoap, FaPumpSoap } from "react-icons/fa";
 import { FaDroplet } from "react-icons/fa6";
@@ -15,26 +16,61 @@ export default function Maquiagem() {
   const icones = [
     {
       icone: <FaSoap size={24} />,
-      tituloIcone: "Limpeza Facial",
+      tituloIcone: "Preparação da Pele",
       descricaoIcone:
-        "Elimine impurezas e prepare sua pele para os próximos passos",
+        "Limpe e hidrate a pele antes de maquiar para melhorar a aderência dos produtos",
     },
     {
       icone: <RiBubbleChartFill size={24} />,
-      tituloIcone: "Esfoliação",
-      descricaoIcone: "Use 2-3 vezes por semana para renovação celular",
+      tituloIcone: "Primer",
+      descricaoIcone:
+        "Minimiza poros, controla oleosidade e aumenta a durabilidade da maquiagem",
     },
     {
       icone: <FaDroplet size={24} />,
-      tituloIcone: "Hidratação",
-      descricaoIcone: "Mantenha sua pele nutrida e protegida diariamente",
+      tituloIcone: "Base e Corretivo",
+      descricaoIcone:
+        "Uniformizam o tom da pele e disfarçam imperfeições para um acabamento impecável",
     },
     {
       icone: <FaPumpSoap size={24} />,
-      tituloIcone: "Proteção Solar",
-      descricaoIcone: "Essencial para prevenir o envelhecimento precoce",
+      tituloIcone: "Fixação",
+      descricaoIcone:
+        "Finalize com pó ou spray fixador para selar a maquiagem e prolongar o efeito",
     },
   ];
+
+  const cards = [
+    {
+      titulo: "Esponja de Maquiagem",
+      descricao:
+        "Ideal para aplicar base e corretivo com acabamento natural e sem marcas. Pode ser usada seca ou úmida.",
+      imagem:
+        "https://cdn-cosmos.bluesoft.com.br/products/731509637076/2018-07-27-15-24-37-0300",
+    },
+    {
+      titulo: "Pincel Kabuki",
+      descricao:
+        "Perfeito para aplicar base líquida ou em pó de maneira uniforme e com alta cobertura.",
+      imagem:
+        "https://images.tcdn.com.br/img/img_prod/615021/pincel_kabuki_maquiagem_rosa_popular_cerda_macia_kit_10un_8295_1_d15c5d9a7a907391b476c2be3c2acbb4.jpg",
+    },
+    {
+      titulo: "Curvador de Cílios",
+      descricao:
+        "Realça o olhar curvando os cílios antes da aplicação da máscara, para um efeito mais expressivo.",
+      imagem:
+        "https://acdn-us.mitiendanube.com/stores/001/999/459/products/curvex-0b3aa53aa970ea36cd17066257581618-1024-1024.png",
+    },
+    {
+      titulo: "Organizador de Maquiagem",
+      descricao:
+        "Facilita o armazenamento e acesso rápido aos seus produtos favoritos, mantendo tudo em ordem.",
+      imagem:
+        "https://acrilicostore.fbitsstatic.net/img/p/organizador-de-maquiagem-4-gavetas-com-bandeja-para-batom-70136/256618-5.jpg?w=1000&h=1000&v=no-change&qs=ignore",
+    },
+  ];
+  
 
   return (
     <div className={styles.pageContainer}>
@@ -80,13 +116,21 @@ export default function Maquiagem() {
 
             <OurMission
               degrade="linear-gradient(180deg,rgb(248, 159, 186) 0%, #FFF 100%)"
-              subtitulo="Skincare Diário"
+              subtitulo="Maquiagem Perfeita"
               corPrincipal="#F05080"
-              titulo="Rotina Completa para Cuidados com a Pele"
-              descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
+              titulo="Etapas Essenciais para uma Maquiagem de Alta Performance"
+              descricao="Uma maquiagem bonita começa com uma preparação adequada da pele. Conheça os passos fundamentais para garantir melhor fixação, acabamento e durabilidade."
               textoBotao="Ver Produtos"
               corHover="#f88aab"
               icones={icones}
+            />
+
+            <AcessoriesSection
+              degrade="linear-gradient(0deg, #f88aab 0%, #fff 100%)"
+              corPrincipal="#F05080"
+              subtitulo="Ferramentas de Beleza"
+              titulo="Acessórios Essenciais para Maquiagem"
+              cards={cards}
             />
           </div>
         </main>
