@@ -9,6 +9,8 @@ import {
   faComment,
   faSignOutAlt,
   faEdit,
+  faEye,
+  faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -19,6 +21,11 @@ export default function Conta() {
   const [userData, setUserData] = useState(null); // Dados do usuário
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const userId = "598c43a4-a082-41d2-9fb5-92375a46ed6b"; // Substitua pelo ID do usuário autenticado
 
@@ -84,7 +91,7 @@ export default function Conta() {
           style={{ backgroundColor: "#F05080" }}
         >
           <img
-            src="https://via.placeholder.com/100"
+            src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Foto do usuário"
             className={styles.userImage}
           />
@@ -146,6 +153,25 @@ export default function Conta() {
                 defaultValue={userData?.email || ""}
                 disabled={!isEditing}
               />
+            </div>
+            <div className={styles.formGroup}>
+              <label>Senha</label>
+              <div className={styles.passwordWrapper}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="senha"
+                  placeholder="Digite sua senha"
+                  disabled={!isEditing}
+                  className={styles.passwordInput}
+                />
+                <button
+                  type="button"
+                  className={styles.togglePasswordButton}
+                  onClick={togglePasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
+              </div>
             </div>
             <div className={styles.formGroup}>
               <label>Idioma</label>

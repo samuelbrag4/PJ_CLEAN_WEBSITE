@@ -1,7 +1,7 @@
 .nossaMissao {
-  background: linear-gradient(180deg, rgba(219, 189, 156, 0.24) 0%, #FFF 100%);
   padding: 50px 20px;
   text-align: center;
+  margin-top: 4rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -17,7 +17,6 @@
 }
 
 .nossaMissaoSubtitulo {
-  color: #DBBD9C;
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -35,15 +34,10 @@
 }
 
 .nossaMissaoBotao {
-  background: #DBBD9C;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-}
-
-.nossaMissaoBotao:hover {
-  background: #c5aa8e;
 }
 
 .nossaMissaoIcones {
@@ -59,7 +53,6 @@
 }
 
 .nossaMissaoCirculo {
-  background: #DBBD9C;
   color: #fff;
   width: 60px;
   height: 60px;
