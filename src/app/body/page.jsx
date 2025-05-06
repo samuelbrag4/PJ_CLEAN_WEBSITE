@@ -84,6 +84,7 @@ export default function Corpo() {
         textoSegundoBotao={"Vídeos"}
       />
 
+
       <Banner
         image="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/12/tendencias-de-maquiagem-tiktok.png"
         imageAlt="Mulher aplicando maquiagem"
@@ -92,25 +93,7 @@ export default function Corpo() {
         corButton="#DBBD9C"
       />
 
-      <SkinTypeGrid
-        category="Makeup"
-        corCategory="#DBBD9C"
-        title="O que influencia na qualidade da sua maquiagem?"
-        oilyImage="https://topview.com.br/wp-content/uploads/2024/01/retrato-de-mulher-jovem-e-bonita-com-um-produto-de-maquiagem.jpg"
-        oilyTitle="Durabilidade"
-        oilyDescription="A durabilidade da maquiagem depende de fatores como a qualidade dos produtos e a preparação da pele. Produtos de longa duração ajudam a manter o visual intacto por mais tempo."
-        dryImage="https://www.fashionbubbles.com/wp-content/uploads/2024/11/make-azul-bebe-tendencia-2.jpg"
-        dryTitle="Pigmentação"
-        dryDescription="A pigmentação é essencial para cores vibrantes e intensas. Produtos bem pigmentados garantem um acabamento mais profissional e marcante."
-        combinationImage="https://24698e6a.delivery.rocketcdn.me/wp-content/uploads/2022/03/makes-de-euphoria-ideias-de-maquiagens-inspiradas-na-serie-de-sucesso-63.jpg"
-        combinationTitle="Textura"
-        combinationDescription="A textura dos produtos influencia diretamente na aplicação e no acabamento. Texturas leves e uniformes proporcionam um visual mais natural e confortável."
-        normalImage="https://nomoremag.com/wp-content/uploads/2023/04/young-female-model-portrait-10x8-1.jpg"
-        normalTitle="Segurança"
-        normalDescription="A segurança dos produtos é fundamental. Escolha maquiagens dermatologicamente testadas e livres de substâncias nocivas para evitar irritações e alergias."
-      />
-
-      <OurMission
+<OurMission
         degrade="linear-gradient(180deg,rgb(241, 213, 182) 0%, #FFF 100%)"
         subtitulo="Skincare Diário"
         corPrincipal="#DBBD9C"
@@ -120,7 +103,8 @@ export default function Corpo() {
         icones={icones}
       />
 
-      <AcessoriesSection
+
+<AcessoriesSection
         degrade="linear-gradient(0deg, #d2ad84 0%, #fff 100%)"
         corPrincipal="#DBBD9C"
         subtitulo="Ferramentas de Beleza"

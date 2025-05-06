@@ -36,25 +36,29 @@ export default function Skincare() {
         corButton={"#5FCED4"}
       />
 
-      <SkinTypeGrid
-        category="Skincare"
-        corCategory="#5FCED4"
-        title="Tipos de pele"
-        oilyImage="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDgvlvTyk_JzmTiMvzmATKp1XNFPycj-LKsGsa07OlrUVxAhgq"
-        oilyTitle="Oleosa"
-        oilyDescription="Uma pele oleosa produz excesso de sebo, o que causa aparência brilhante e tendência a acne, especialmente no nariz T (testa, nariz e queixo)."
-        dryImage="https://escolabelezapura.com.br/wp-content/uploads/2024/06/1.jpg"
-        dryTitle="Seca"
-        dryDescription="Contém áreas ásperas e tensas, com linhas evidentes ou poros minúsculos, possui pele escamativa, que requer hidratação específica para cada região."
-        combinationImage="https://static.stealthelook.com.br/wp-content/uploads/2024/06/bevurecosmetics-skincare.jpg"
-        combinationTitle="Mista"
-        combinationDescription="Apresenta a espinhas, cravos e oleosidade em algumas áreas, combinada à ressecamento, vermelhidão e poros dilatados."
-        normalImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDrXqq2I1Ii8r1EEFvBCSg7nl-6VQm3a9lZ_9Oh4kojkS0eEe"
-        normalTitle="Normal"
-        normalDescription="Possui os seus poros pequenos, com textura aveludada, sensação de relaxamento e tendência a estabilidade."
-      />
+      {/* Basta aplicar uma marginBottom após a última seção */}
+      <div style={{ marginBottom: "5rem" }}>
+        <SkinTypeGrid
+          category="Skincare"
+          corCategory="#5FCED4"
+          title="Tipos de pele"
+          oilyImage="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDgvlvTyk_JzmTiMvzmATKp1XNFPycj-LKsGsa07OlrUVxAhgq"
+          oilyTitle="Oleosa"
+          oilyDescription="Uma pele oleosa produz excesso de sebo, o que causa aparência brilhante e tendência a acne, especialmente no nariz T (testa, nariz e queixo)."
+          dryImage="https://escolabelezapura.com.br/wp-content/uploads/2024/06/1.jpg"
+          dryTitle="Seca"
+          dryDescription="Contém áreas ásperas e tensas, com linhas evidentes ou poros minúsculos, possui pele escamativa, que requer hidratação específica para cada região."
+          combinationImage="https://static.stealthelook.com.br/wp-content/uploads/2024/06/bevurecosmetics-skincare.jpg"
+          combinationTitle="Mista"
+          combinationDescription="Apresenta a espinhas, cravos e oleosidade em algumas áreas, combinada à ressecamento, vermelhidão e poros dilatados."
+          normalImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDrXqq2I1Ii8r1EEFvBCSg7nl-6VQm3a9lZ_9Oh4kojkS0eEe"
+          normalTitle="Normal"
+          normalDescription="Possui os seus poros pequenos, com textura aveludada, sensação de relaxamento e tendência a estabilidade."
+        />
+      </div>
 
-      <Footer corFooter={"#5FCED4"} />
+              
+                {/* <Footer corFooter={"#5FCED4"} /> */}
     </div>
   );
 }

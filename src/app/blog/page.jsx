@@ -79,6 +79,7 @@ export default function Blog() {
             <SectionCards corBotao={"#00DAC7"} corTextoBotao={"#fff"} cardData={cardData} />
 
             <Footer corFooter={"#00DAC7"} />
+            
         </div>
     );
 };

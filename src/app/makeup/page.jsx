@@ -51,6 +51,17 @@ export default function Maquiagem() {
             textoSegundoBotao="Sobre"
           />
 
+<OurMission
+              degrade="linear-gradient(180deg,rgb(248, 159, 186) 0%, #FFF 100%)"
+              subtitulo="Skincare Diário"
+              corPrincipal="#F05080"
+              titulo="Rotina Completa para Cuidados com a Pele"
+              descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
+              textoBotao="Ver Produtos"
+              corHover="#f88aab"
+              icones={icones}
+            />
+            
           <div className={styles.contentContainer}>
             <Banner
               image="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/12/tendencias-de-maquiagem-tiktok.png"
@@ -78,16 +89,7 @@ export default function Maquiagem() {
               normalDescription="A segurança dos produtos é fundamental. Escolha maquiagens dermatologicamente testadas e livres de substâncias nocivas para evitar irritações e alergias."
             />
 
-            <OurMission
-              degrade="linear-gradient(180deg,rgb(248, 159, 186) 0%, #FFF 100%)"
-              subtitulo="Skincare Diário"
-              corPrincipal="#F05080"
-              titulo="Rotina Completa para Cuidados com a Pele"
-              descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
-              textoBotao="Ver Produtos"
-              corHover="#f88aab"
-              icones={icones}
-            />
+           
           </div>
         </main>
       </div>
