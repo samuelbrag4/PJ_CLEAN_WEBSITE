@@ -3,8 +3,8 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import Hero from "../components/hero";
 import OurMission from "../components/ourMissionSection";
-import Banner from "../components/banner";
 import SkinTypeGrid from "../components/skinTypeGrid";
+import Banner from "../components/banner";
 import { FaSoap, FaPumpSoap } from "react-icons/fa";
 import { FaDroplet } from "react-icons/fa6";
 import { RiBubbleChartFill } from "react-icons/ri";
@@ -12,57 +12,58 @@ import { RiBubbleChartFill } from "react-icons/ri";
 const icones = [
   {
     icone: <FaSoap size={24} />,
-    tituloIcone: "Limpeza Facial",
+    tituloIcone: "Limpeza Corporal",
     descricaoIcone:
-      "Elimine impurezas e prepare sua pele para os próximos passos",
+      "Remova impurezas com sabonetes específicos para seu tipo de pele",
   },
   {
     icone: <RiBubbleChartFill size={24} />,
     tituloIcone: "Esfoliação",
-    descricaoIcone: "Use 2-3 vezes por semana para renovação celular",
+    descricaoIcone: "Ajuda a renovar a pele e melhorar a absorção dos produtos",
   },
   {
     icone: <FaDroplet size={24} />,
     tituloIcone: "Hidratação",
-    descricaoIcone: "Mantenha sua pele nutrida e protegida diariamente",
+    descricaoIcone: "Previne o ressecamento e mantém a pele suave e protegida",
   },
   {
     icone: <FaPumpSoap size={24} />,
     tituloIcone: "Proteção Solar",
-    descricaoIcone: "Essencial para prevenir o envelhecimento precoce",
+    descricaoIcone: "Protege contra os danos do sol e o envelhecimento precoce",
   },
 ];
 
 const cards = [
   {
-    titulo: "Gua Sha de Quartzo Rosa",
+    titulo: "Escova Corporal a Seco",
     descricao:
-      "Ferramenta de massagem facial que estimula a circulação sanguínea, reduz inchaços e promove relaxamento do rosto.",
+      "Estimula a circulação sanguínea, promove esfoliação suave e melhora a textura da pele antes do banho.",
     imagem:
-      "https://glov.eu/cdn/shop/products/QuartzGuaSha_ef4b3c01-9fe4-4761-b21d-1097fe2307c6.png?v=1649078742",
+      "https://soulbm.com.br/wp-content/uploads/2024/11/soulbm-produto-escova-seca-0-e1735928901607.png",
   },
   {
-    titulo: "Rolo de Jade",
+    titulo: "Massageador Corporal de Madeira",
     descricao:
-      "Massageador que ajuda na absorção de produtos, reduz olheiras e linhas finas, além de aliviar a tensão facial.",
+      "Auxilia na redução da tensão muscular, ativa a circulação e pode ajudar no combate à celulite.",
     imagem:
-      "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/products/89926/89926.png",
+      "https://mlrvosfzmdah.i.optimole.com/w:338/h:338/q:mauto/rt:fill/g:ce/f:avif/id:0bc607dcc5fb2ef9143cb1aad3bc7ee2/https://hakunamatatabrindes.com.br/Carrinho-de-Madeira-para-Massagem.jpg",
   },
   {
-    titulo: "Derma Roller",
+    titulo: "Luvas Esfoliantes",
     descricao:
-      "Estimula a produção de colágeno, melhora a textura da pele e potencializa a penetração de ativos do skincare.",
+      "Removem células mortas, desobstruem os poros e deixam a pele mais macia e pronta para hidratação.",
     imagem:
-      "https://www.swisscollc.com/cdn/shop/products/48009.png?v=1594308069",
+      "https://img.joomcdn.net/e6321fb0fa4e66b13f44c7ca77b8397cec18088d_original.jpeg",
   },
   {
-    titulo: "Esponja Konjac",
+    titulo: "Massageador de Silicone",
     descricao:
-      "Esfoliante natural que limpa suavemente, remove células mortas e equilibra o pH da pele, ideal para uso diário.",
+      "Ideal para aplicar cremes com movimentos circulares, melhora a absorção dos ativos e promove relaxamento.",
     imagem:
-      "https://ikesaki.vtexassets.com/arquivos/ids/269140-800-auto?v=637655991804530000&width=800&height=auto&aspect=true",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_990510-MLA83238645725_032025-F.webp",
   },
-]
+];
+
 
 export default function Corpo() {
   return (
@@ -85,37 +86,46 @@ export default function Corpo() {
       />
 
       <Banner
-        image="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/12/tendencias-de-maquiagem-tiktok.png"
-        imageAlt="Mulher aplicando maquiagem"
-        title="Descubra o poder transformador da maquiagem em sua rotina diária."
-        description="A maquiagem é uma forma de arte e expressão. Aqui, você encontra dicas, produtos e conselhos para criar looks incríveis, desde o básico até os mais elaborados. Aprenda como realçar sua beleza natural, experimentar novas tendências e transformar sua rotina de maquiagem em um momento de criatividade e autoconfiança. Porque maquiar-se é celebrar quem você é."
-        corButton="#DBBD9C"
+        image={
+          "https://simoesfilhoonline.com.br/wp-content/uploads/2020/06/Veja-como-fazer-esfolia%C3%A7%C3%A3o-corporal-e-os-melhores-esfoliantes-caseiros.jpg"
+        }
+        imageAlt={"Mulher aplicando creme no corpo"}
+        title={
+          "Transforme o cuidado com o corpo em um momento de bem-estar e autoestima."
+        }
+        description={
+          "Cada parte do seu corpo merece atenção especial. Nesta página, você encontrará orientações, produtos e dicas para hidratação, esfoliação, massagens e muito mais. Crie uma rotina corporal que respeite as necessidades da sua pele, alivie o estresse do dia a dia e eleve sua autoestima. Porque cuidar do corpo é investir em saúde e amor-próprio."
+        }
+        corButton={"#DBBD9C"}
       />
+
+
 
       <SkinTypeGrid
-        category="Makeup"
+        category="CORPO"
         corCategory="#DBBD9C"
-        title="O que influencia na qualidade da sua maquiagem?"
-        oilyImage="https://topview.com.br/wp-content/uploads/2024/01/retrato-de-mulher-jovem-e-bonita-com-um-produto-de-maquiagem.jpg"
-        oilyTitle="Durabilidade"
-        oilyDescription="A durabilidade da maquiagem depende de fatores como a qualidade dos produtos e a preparação da pele. Produtos de longa duração ajudam a manter o visual intacto por mais tempo."
-        dryImage="https://www.fashionbubbles.com/wp-content/uploads/2024/11/make-azul-bebe-tendencia-2.jpg"
-        dryTitle="Pigmentação"
-        dryDescription="A pigmentação é essencial para cores vibrantes e intensas. Produtos bem pigmentados garantem um acabamento mais profissional e marcante."
-        combinationImage="https://24698e6a.delivery.rocketcdn.me/wp-content/uploads/2022/03/makes-de-euphoria-ideias-de-maquiagens-inspiradas-na-serie-de-sucesso-63.jpg"
-        combinationTitle="Textura"
-        combinationDescription="A textura dos produtos influencia diretamente na aplicação e no acabamento. Texturas leves e uniformes proporcionam um visual mais natural e confortável."
-        normalImage="https://nomoremag.com/wp-content/uploads/2023/04/young-female-model-portrait-10x8-1.jpg"
-        normalTitle="Segurança"
-        normalDescription="A segurança dos produtos é fundamental. Escolha maquiagens dermatologicamente testadas e livres de substâncias nocivas para evitar irritações e alergias."
+        title="O que influencia na saúde e beleza da sua pele corporal?"
+        oilyImage="https://www.gioesteticaavancada.com.br/wp-content/uploads/2020/08/post_thumbnail-d9966bb36fc0dfe546bb23cfb5a2c9f9.jpeg"
+        oilyTitle="Hidratação"
+        oilyDescription="Manter a pele hidratada é essencial para evitar o ressecamento e a descamação. Cremes com ativos como ureia e ácido hialurônico ajudam a reter a umidade e proteger a pele."
+        dryImage="https://nutrimaiaralima.com.br/wp-content/uploads/2020/09/nutricao-no-combate-as-doencas.jpeg"
+        dryTitle="Nutrição"
+        dryDescription="A nutrição da pele ajuda a manter sua elasticidade e maciez. Produtos com vitaminas, óleos vegetais e manteigas naturais nutrem profundamente e restauram a barreira cutânea."
+        combinationImage="https://s2-marieclaire.glbimg.com/zBfNLrL4IMOYPkriNZnYiF85bHU=/0x0:1920x1280/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/l/m/wOdWrASUOrkBLxQcBOPA/ativos-bodycare.jpg"
+        combinationTitle="Rotina"
+        combinationDescription="A consistência nos cuidados é chave para resultados duradouros. Estabelecer uma rotina com limpeza, esfoliação e hidratação melhora a saúde da pele ao longo do tempo."
+        normalImage="https://www.maria.pt/wp-content/uploads/2019/06/1-59.jpg"
+        normalTitle="Proteção"
+        normalDescription="A exposição ao sol sem proteção pode causar manchas e envelhecimento precoce. Use protetor solar diariamente, mesmo em dias nublados, para manter sua pele protegida."
       />
 
+
       <OurMission
-        degrade="linear-gradient(180deg,rgb(241, 213, 182) 0%, #FFF 100%)"
-        subtitulo="Skincare Diário"
+        degrade="linear-gradient(180deg,rgb(248, 223, 194) 0%, #FFF 100%)"
+        subtitulo="Autocuidado Corporal"
         corPrincipal="#DBBD9C"
-        titulo="Rotina Completa para Cuidados com a Pele"
-        descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
+        titulo="Rotina Completa para Cuidados com o Corpo"
+        descricao="Adotar uma rotina de cuidados corporais é essencial para manter a pele saudável, macia e protegida. Conheça os passos fundamentais para cuidar do seu corpo."
         textoBotao="Ver Produtos"
         icones={icones}
       />
@@ -123,10 +133,11 @@ export default function Corpo() {
       <AcessoriesSection
         degrade="linear-gradient(0deg, #d2ad84 0%, #fff 100%)"
         corPrincipal="#DBBD9C"
-        subtitulo="Ferramentas de Beleza"
-        titulo="Acessórios de Massagem Facial"
+        subtitulo="Cuidados Corporais"
+        titulo="Acessórios para Massagem e Relaxamento Corporal"
         cards={cards}
       />
+
 
       <Footer corFooter={"#DBBD9C"} />
     </div>
