@@ -7,10 +7,15 @@
 }
 
 .title {
-  font-family: "Caveat", cursive;
-  font-size: 6rem;
+  font-family: 'Caveat', cursive;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
   color: #333;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .subtitle {
