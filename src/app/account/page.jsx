@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link"; // Importando o componente Link
+import { useState, useEffect } from "react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -16,18 +16,59 @@ import styles from "./account.module.css";
 
 export default function Conta() {
   const [isEditing, setIsEditing] = useState(false);
+  const [userData, setUserData] = useState(null); // Dados do usuário
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-  // Simulação de preferência do usuário
-  const [userPreference, setUserPreference] = useState("skincare"); // Pode ser "skincare", "corpo" ou "make"
+  const userId = "598c43a4-a082-41d2-9fb5-92375a46ed6b"; // Substitua pelo ID do usuário autenticado
 
-  // Definir cores com base na preferência do usuário
-  const categoryColors = {
-    skincare: "#F05080",
-    corpo: "#F05080",
-    make: "#F05080",
+  // Função para buscar dados do usuário
+  const fetchUserData = async () => {
+    try {
+      const response = await fetch(`http://localhost:4000/user/${userId}`);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || "Erro ao buscar dados do usuário."
+        );
+      }
+      const data = await response.json();
+      setUserData(data.user); // A resposta contém o usuário dentro de "user"
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
   };
 
-  const themeColor = categoryColors[userPreference];
+  // Função para atualizar dados do usuário
+  const updateUserData = async (updatedData) => {
+    try {
+      const response = await fetch(`http://localhost:4000/user/${userId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedData),
+      });
+      if (!response.ok) throw new Error("Erro ao atualizar dados do usuário.");
+      const data = await response.json();
+      setUserData(data.user); // Atualiza os dados do usuário com a resposta
+      setSuccessMessage("Dados atualizados com sucesso!");
+      setIsEditing(false);
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  };
+
+  // Função para lidar com o envio do formulário
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const updatedData = Object.fromEntries(formData.entries());
+    updateUserData(updatedData);
+  };
+
+  // Buscar dados do usuário ao carregar o componente
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -35,35 +76,37 @@ export default function Conta() {
 
   return (
     <div>
-      <Header corHeader={themeColor} />
+      <Header corHeader="#F05080" />
       <div className={styles.container}>
         {/* Sidebar */}
         <aside
           className={styles.sidebar}
-          style={{ backgroundColor: themeColor }}
+          style={{ backgroundColor: "#F05080" }}
         >
           <img
             src="https://via.placeholder.com/100"
             alt="Foto do usuário"
             className={styles.userImage}
           />
-          <h2 className={styles.userName}>João Silva</h2>
+          <h2 className={styles.userName}>
+            {userData?.nome || "Carregando..."}
+          </h2>
           <button className={styles.logoutButton}>
             <FontAwesomeIcon icon={faSignOutAlt} /> Sair
           </button>
           <nav className={styles.navLinks}>
             <Link href="/account">
-              <button className={styles.navButton} style={{ color: themeColor }}>
+              <button className={styles.navButton} style={{ color: "#F05080" }}>
                 <FontAwesomeIcon icon={faUser} /> Meu Cadastro
               </button>
             </Link>
             <Link href="/likes">
-              <button className={styles.navButton} style={{ color: themeColor }}>
+              <button className={styles.navButton} style={{ color: "#F05080" }}>
                 <FontAwesomeIcon icon={faHeart} /> Meus Favoritos
               </button>
             </Link>
             <Link href="/comments">
-              <button className={styles.navButton} style={{ color: themeColor }}>
+              <button className={styles.navButton} style={{ color: "#F05080" }}>
                 <FontAwesomeIcon icon={faComment} /> Meus Comentários
               </button>
             </Link>
@@ -79,12 +122,19 @@ export default function Conta() {
               {isEditing ? "Salvar" : "Editar"}
             </button>
           </div>
-          <form className={styles.userForm}>
+          {errorMessage && (
+            <p className={styles.errorMessage}>{errorMessage}</p>
+          )}
+          {successMessage && (
+            <p className={styles.successMessage}>{successMessage}</p>
+          )}
+          <form className={styles.userForm} onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
               <label>Nome</label>
               <input
                 type="text"
-                placeholder="Digite seu nome"
+                name="nome"
+                defaultValue={userData?.nome || ""}
                 disabled={!isEditing}
               />
             </div>
@@ -92,37 +142,32 @@ export default function Conta() {
               <label>Email</label>
               <input
                 type="email"
-                placeholder="Digite seu email"
+                name="email"
+                defaultValue={userData?.email || ""}
                 disabled={!isEditing}
               />
-            </div>
-            <div className={styles.formGroup}>
-              <label>Telefone</label>
-              <input
-                type="text"
-                placeholder="Digite seu telefone"
-                disabled={!isEditing}
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label>Localização</label>
-              <div className={styles.locationInputs}>
-                <input type="text" placeholder="País" disabled={!isEditing} />
-                <input type="text" placeholder="Estado" disabled={!isEditing} />
-                <input type="text" placeholder="Cidade" disabled={!isEditing} />
-              </div>
             </div>
             <div className={styles.formGroup}>
               <label>Idioma</label>
-              <select disabled={!isEditing} className={styles.languageSelect}>
-                <option value="pt">Português</option>
-                <option value="en">Inglês</option>
+              <select
+                name="idioma"
+                defaultValue={userData?.idioma || "pt-BR"}
+                disabled={!isEditing}
+                className={styles.languageSelect}
+              >
+                <option value="pt-BR">Português</option>
+                <option value="en-US">Inglês</option>
               </select>
             </div>
+            {isEditing && (
+              <button type="submit" className={styles.saveButton}>
+                Salvar Alterações
+              </button>
+            )}
           </form>
         </main>
       </div>
-      <Footer corFooter={themeColor} />
+      <Footer corFooter="#F05080" />
     </div>
   );
 }
