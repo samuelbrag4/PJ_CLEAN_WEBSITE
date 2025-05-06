@@ -51,6 +51,7 @@
   width: 100%;
   padding: 2rem 0;
   width: 80%;
+  
 }
 
 .navLink {
@@ -149,7 +150,8 @@
   background-color: #9bf0fa;
   color: #fff;
   position: fixed;
-  top: 315;
+  top: 305;
+  margin-right: 1rem;
   font-weight: bold;
 }
 
@@ -157,15 +159,17 @@
   background-color: #E4D0BA;
   color: #fff;
   position: fixed;
-  top: 315;
+  top: 305;
+  margin-right: 1rem;
   font-weight: bold;
 }
-
+/* tester */
 .makeupCard .cardButton {
   background-color: #ffb7c5;
   color: #fff;
   position: fixed;
-  top: 315;
+  top: 305;
+  margin-right: 1rem;
   font-weight: bold;
 }
 
@@ -173,7 +177,8 @@
   background-color: #78ffe6;
   color: #fff;
   position: fixed;
-  top: 315;
+  top: 305;
+  margin-right: 1rem;
   font-weight: bold;
 }
 
