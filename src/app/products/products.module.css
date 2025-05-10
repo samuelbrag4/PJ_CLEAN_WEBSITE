@@ -109,39 +109,39 @@
 }
 
 .skincare {
-  border-top-color: #aed6f1;
+  border-top-color: #5FCED4;
 }
 
 .skincareTitleColor {
-  color: #3498db;
+  color: #5FCED4;
 }
 
 .skincareTitleColor::after {
-  background-color: #3498db;
+  background-color: #5FCED4;
 }
 
 .make {
-  border-top-color: #f5b7b1;
+  border-top-color: #F05080;
 }
 
 .makeTitleColor {
-  color: #e74c3c;
+  color: #F05080;
 }
 
 .makeTitleColor::after {
-  background-color: #e74c3c;
+  background-color: #F05080;
 }
 
 .body {
-  border-top-color: #a9dfbf;
+  border-top-color: #DBBD9C;
 }
 
 .bodyTitleColor {
-  color: #27ae60;
+  color: #DBBD9C;
 }
 
 .bodyTitleColor::after {
-  background-color: #27ae60;
+  background-color: #DBBD9C;
 }
 
 @media (max-width: 768px) {

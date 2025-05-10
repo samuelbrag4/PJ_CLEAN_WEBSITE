@@ -4,38 +4,20 @@ import { useEffect, useState } from "react";
 import styles from "./testimonials.module.css";
 
 export default function Testimonials() {
-  const [testimonials, setTestimonials] = useState([
-    {
-      name: "Ana Clara",
-      text: "Minha pele nunca esteve tão bonita! As dicas e produtos recomendados aqui são incríveis.",
-      stars: 5,
-      date: "10/04/2025",
-      image: "https://via.placeholder.com/80", 
-    },
-    {
-      name: "João Pedro",
-      text: "Descobri meu tipo de pele e agora sei exatamente como cuidar dela. Obrigado!",
-      stars: 4,
-      date: "08/04/2025",
-      image: "https://via.placeholder.com/80",
-    },
-    {
-      name: "Mariana Silva",
-      text: "Adorei as promoções e os artigos. Tudo muito bem explicado e fácil de entender.",
-      stars: 5,
-      date: "05/04/2025",
-      image: "https://via.placeholder.com/80",
-    },
-    {
-      name: "Lucas Almeida",
-      text: "Os produtos recomendados realmente funcionam. Estou muito satisfeito!",
-      stars: 4,
-      date: "02/04/2025",
-      image: "https://via.placeholder.com/80",
-    },
-  ]);
-
+  const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Buscar avaliações do site no backend
+    fetch("http://localhost:4000/avaliacoes/site")
+      .then((response) => response.json())
+      .then((data) => {
+        setTestimonials(data); // Atualiza o estado com as avaliações
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar avaliações:", error);
+      });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,6 +29,19 @@ export default function Testimonials() {
     return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
   }, [testimonials.length]);
 
+  if (testimonials.length === 0) {
+    return (
+      <section className={styles.testimonials}>
+        <h2 className={styles.title}>O que nossos clientes dizem</h2>
+        <p className={styles.subtitle}>
+          Veja como nossos serviços e produtos transformaram a vida de nossos
+          clientes.
+        </p>
+        <p className={styles.noReviews}>Nenhuma avaliação disponível no momento.</p>
+      </section>
+    );
+  }
+
   return (
     <section className={styles.testimonials}>
       <h2 className={styles.title}>O que nossos clientes dizem</h2>
@@ -57,7 +52,7 @@ export default function Testimonials() {
       <div className={styles.carousel}>
         {testimonials.map((testimonial, index) => (
           <div
-            key={index}
+            key={testimonial.id}
             className={`${styles.card} ${
               index === currentIndex
                 ? styles.active
@@ -69,17 +64,19 @@ export default function Testimonials() {
             }`}
           >
             <img
-              src={testimonial.image}
-              alt={`Foto de ${testimonial.name}`}
+              src={testimonial.fotoUsuario || "https://via.placeholder.com/80"}
+              alt={`Foto de ${testimonial.nomeUsuario}`}
               className={styles.image}
             />
-            <p className={styles.text}>"{testimonial.text}"</p>
-            <p className={styles.name}>- {testimonial.name}</p>
+            <p className={styles.text}>"{testimonial.comentario}"</p>
+            <p className={styles.name}>- {testimonial.nomeUsuario}</p>
             <p className={styles.stars}>
-              {"★".repeat(testimonial.stars)}
-              {"☆".repeat(5 - testimonial.stars)}
+              {"★".repeat(testimonial.nota)}
+              {"☆".repeat(5 - testimonial.nota)}
             </p>
-            <p className={styles.date}>{testimonial.date}</p>
+            <p className={styles.date}>
+              {new Date(testimonial.createdAt).toLocaleDateString("pt-BR")}
+            </p>
           </div>
         ))}
       </div>
