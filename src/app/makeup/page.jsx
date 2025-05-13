@@ -97,13 +97,25 @@ export default function Maquiagem() {
           />
 
           <div className={styles.contentContainer}>
-            <Banner
-              image="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/12/tendencias-de-maquiagem-tiktok.png"
-              imageAlt="Mulher aplicando maquiagem"
-              title="Descubra o poder transformador da maquiagem em sua rotina diária."
-              description="A maquiagem é uma forma de arte e expressão. Aqui, você encontra dicas, produtos e conselhos para criar looks incríveis, desde o básico até os mais elaborados. Aprenda como realçar sua beleza natural, experimentar novas tendências e transformar sua rotina de maquiagem em um momento de criatividade e autoconfiança. Porque maquiar-se é celebrar quem você é."
-              corButton="#F05080"
-            />
+<div style={{ width: "100%", overflow: "hidden" }}>
+  <img
+    src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/12/tendencias-de-maquiagem-tiktok.png"
+    alt="Mulher aplicando maquiagem"
+    style={{
+      width: "100%",
+      height: "auto",
+      objectFit: "cover",
+      maxHeight: "500px",
+    }}
+  />
+</div>
+
+<Banner
+  title="Descubra o poder transformador da maquiagem em sua rotina diária."
+  description="A maquiagem é uma forma de arte e expressão. Aqui, você encontra dicas, produtos e conselhos para criar looks incríveis, desde o básico até os mais elaborados. Aprenda como realçar sua beleza natural, experimentar novas tendências e transformar sua rotina de maquiagem em um momento de criatividade e autoconfiança. Porque maquiar-se é celebrar quem você é."
+  corButton="#F05080"
+/>
+
 
             <SkinTypeGrid
               category="Makeup"
