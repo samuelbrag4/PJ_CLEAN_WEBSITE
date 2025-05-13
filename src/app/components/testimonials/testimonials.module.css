@@ -107,3 +107,11 @@
   font-size: 0.9rem;
   color: #aaa;
 }
+
+.noReviews {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: #666;
+  margin-top: 2rem;
+  text-align: center;
+}

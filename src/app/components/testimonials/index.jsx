@@ -37,7 +37,9 @@ export default function Testimonials() {
           Veja como nossos serviços e produtos transformaram a vida de nossos
           clientes.
         </p>
-        <p className={styles.noReviews}>Nenhuma avaliação disponível no momento.</p>
+        <p className={styles.noReviews}>
+          Nenhuma avaliação disponível no momento.
+        </p>
       </section>
     );
   }
@@ -57,8 +59,9 @@ export default function Testimonials() {
               index === currentIndex
                 ? styles.active
                 : index === (currentIndex + 1) % testimonials.length ||
-                  index === (currentIndex - 1 + testimonials.length) %
-                    testimonials.length
+                  index ===
+                    (currentIndex - 1 + testimonials.length) %
+                      testimonials.length
                 ? styles.visible
                 : styles.inactive
             }`}

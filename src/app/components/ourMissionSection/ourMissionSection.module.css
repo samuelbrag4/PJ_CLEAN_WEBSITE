@@ -2,7 +2,7 @@
   padding: 50px 20px;
   text-align: center;
   margin-top: 4rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .nossaMissaoContainer {
@@ -35,8 +35,10 @@
 
 .nossaMissaoBotao {
   color: #fff;
+  font-weight: bold;
   border: none;
   padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
