@@ -87,7 +87,7 @@ export default function Corpo() {
       <Banner
         image={
           "https://simoesfilhoonline.com.br/wp-content/uploads/2020/06/Veja-como-fazer-esfolia%C3%A7%C3%A3o-corporal-e-os-melhores-esfoliantes-caseiros.jpg"
-        }
+       }
         imageAlt={"Mulher aplicando creme no corpo"}
         title={
           "Transforme o cuidado com o corpo em um momento de bem-estar e autoestima."

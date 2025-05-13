@@ -121,7 +121,7 @@ export default function Skincare() {
         subtitulo="Skincare Diário"
         corPrincipal="#5FCED4"
         titulo="Rotina Completa para Cuidados com a Pele"
-        descricao="Uma rotina de skincare adequada é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
+        descricao="Uma rotina de skincare é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
         textoBotao="Ver Produtos"
         icones={icones}
       />
