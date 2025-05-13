@@ -85,13 +85,6 @@ export default function Corpo() {
       />
 
       <Banner
-        image={
-          "https://simoesfilhoonline.com.br/wp-content/uploads/2020/06/Veja-como-fazer-esfolia%C3%A7%C3%A3o-corporal-e-os-melhores-esfoliantes-caseiros.jpg"
-        }
-        imageAlt={"Mulher aplicando creme no corpo"}
-        title={
-          "Transforme o cuidado com o corpo em um momento de bem-estar e autoestima."
-        }
         description={
           "Cada parte do seu corpo merece atenção especial. Nesta página, você encontrará orientações, produtos e dicas para hidratação, esfoliação, massagens e muito mais. Crie uma rotina corporal que respeite as necessidades da sua pele, alivie o estresse do dia a dia e eleve sua autoestima. Porque cuidar do corpo é investir em saúde e amor-próprio."
         }

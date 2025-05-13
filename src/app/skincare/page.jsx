@@ -83,10 +83,7 @@ export default function Skincare() {
       />
 
       <Banner
-        image={
-          "https://teiacosmeticos.com/cdn/shop/articles/skincare-para-estos-dias-en-casa-395165.jpg?v=1695166167"
-        }
-        imageAlt={"Mulher aplicando creme na pele"}
+     
         title={
           "Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."
         }
