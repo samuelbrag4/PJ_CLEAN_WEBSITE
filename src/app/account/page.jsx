@@ -185,11 +185,6 @@ export default function Conta() {
                 <option value="en-US">Inglês</option>
               </select>
             </div>
-            {isEditing && (
-              <button type="submit" className={styles.saveButton}>
-                Salvar Alterações
-              </button>
-            )}
           </form>
         </main>
       </div>
