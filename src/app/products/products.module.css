@@ -34,12 +34,15 @@
 
 .categoryTitle {
   position: relative;
-  color: #5fced4;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
+  font-family: "Caveat", sans-serif;
   text-align: center;
-  letter-spacing: 0.5px;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 
 .categoryTitle::after {
@@ -54,9 +57,10 @@
 }
 
 .categoryDescription {
+  font-family: 'Inter', sans-serif;
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 2rem;
+  margin: 2rem auto 2rem;
   color: #666;
   font-size: 1.05rem;
   line-height: 1.6;
@@ -70,6 +74,7 @@
 }
 
 .noProducts {
+  font-family: 'Inter', sans-serif;
   text-align: center;
   padding: 2rem;
   color: #777;
@@ -109,39 +114,39 @@
 }
 
 .skincare {
-  border-top-color: #5FCED4;
+  border-top-color: #5fced4;
 }
 
 .skincareTitleColor {
-  color: #5FCED4;
+  color: #5fced4;
 }
 
 .skincareTitleColor::after {
-  background-color: #5FCED4;
+  background-color: #5fced4;
 }
 
 .make {
-  border-top-color: #F05080;
+  border-top-color: #f05080;
 }
 
 .makeTitleColor {
-  color: #F05080;
+  color: #f05080;
 }
 
 .makeTitleColor::after {
-  background-color: #F05080;
+  background-color: #f05080;
 }
 
 .body {
-  border-top-color: #DBBD9C;
+  border-top-color: #dbbd9c;
 }
 
 .bodyTitleColor {
-  color: #DBBD9C;
+  color: #dbbd9c;
 }
 
 .bodyTitleColor::after {
-  background-color: #DBBD9C;
+  background-color: #dbbd9c;
 }
 
 @media (max-width: 768px) {
