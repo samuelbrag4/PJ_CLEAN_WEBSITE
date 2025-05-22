@@ -72,7 +72,7 @@ export default function Produtos() {
             />
 
             <div className={styles.container}>
-                <h1 style={{ textAlign: 'center', color: '#5FCED4', marginBottom: '2rem', fontSize: '2.5rem' }}>
+                <h1 style={{ fontFamily: 'Caveat', fontSize: '64px', fontStyle: 'normal', fontWeight: '700', lineHeight: '60px',  textAlign: 'center', color: '#DBBD9C', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
                     Nossos Produtos
                 </h1>
                 
