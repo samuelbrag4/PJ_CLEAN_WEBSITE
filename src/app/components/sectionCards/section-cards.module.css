@@ -20,6 +20,14 @@
     gap: 2rem;
 }
 
+.nenhumCard {
+  color: #888;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
 .botao {
     width: 14%;
     padding: 1rem;

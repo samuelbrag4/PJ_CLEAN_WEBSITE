@@ -1,42 +1,99 @@
 .categoriaBlog {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    padding: 0;
-    width: 100%;
-    
-    background: linear-gradient(to bottom, #00DAC7, #FFFFFF);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+  height: 25rem;
+  gap: 1rem;
+  background: linear-gradient(to bottom, #ffffff, #00dac7, #ffffff);
 }
 
 .categoriaImagem {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 30rem;
+  height: 20rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .imagem {
-    width: 100%;
-    height: 80%;
+  width: 90%;
+  height: 80%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .categoriaTexto {
-    width: 40%;
-    margin-left: 2rem;
+  width: 30rem;
+  margin-left: 2rem;
+  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .titulo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #000;
+  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
 }
 
 .texto {
-    font-size: 1.2rem;
-    color: #000;
-    margin-top: 2rem;
-    font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: #000;
+  margin-top: 2rem;
+  font-family: "Inter", sans-serif;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+.texto:hover {
+  opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .categoriaBlog {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .categoriaTexto {
+    width: 100%;
+    margin-left: 0;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .categoriaImagem {
+    width: 100%;
+    height: 15rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .categoriaBlog {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .categoriaImagem {
+    display: none;
+  }
+  .categoriaTexto {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .titulo {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .texto {
+    font-size: 1rem;
+  }
 }

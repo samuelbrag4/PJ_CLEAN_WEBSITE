@@ -1,12 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./section-cards.module.css";
 import Card from "../card";
 
 const SectionCards = ({ cardData = [], corBotao, corTextoBotao }) => {
+    const [expanded, setExpanded] = useState(false);
+
+    const mostrarCards = expanded ? cardData : cardData.slice(0, 3);
+
     return (
         <section className={styles.sectionCards}>
             <div className={styles.cards}>
-                {cardData.length > 0 ? (
-                    cardData.map((card, index) => (
+                {mostrarCards.length > 0 ? (
+                    mostrarCards.map((card, index) => (
                         <Card
                             key={index}
                             capa={card.capa}
@@ -20,12 +27,18 @@ const SectionCards = ({ cardData = [], corBotao, corTextoBotao }) => {
                         />
                     ))
                 ) : (
-                    <p>Nenhum artigo encontrado.</p>
+                    <p className={styles.nenhumCard}>Nenhum artigo foi encontrado no momento. Volte mais tarde para novidades!</p>
                 )}
             </div>
-            <button className={styles.botao} style={{ backgroundColor: corBotao, color: corTextoBotao }}>
-                Encontre mais artigos
-            </button>
+            {cardData.length > 3 && (
+                <button
+                    className={styles.botao}
+                    style={{ backgroundColor: corBotao, color: corTextoBotao }}
+                    onClick={() => setExpanded((prev) => !prev)}
+                >
+                    {expanded ? "Ver Menos" : "Encontre mais artigos"}
+                </button>
+            )}
         </section>
     );
 };
