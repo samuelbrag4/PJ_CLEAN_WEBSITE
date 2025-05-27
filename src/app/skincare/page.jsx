@@ -82,21 +82,9 @@ export default function Skincare() {
         textoSegundoBotao={"Vídeos"}
       />
 
-<div style={{ width: "100%", overflow: "hidden" }}>
-  <img
-    src="https://teiacosmeticos.com/cdn/shop/articles/skincare-para-estos-dias-en-casa-395165.jpg?v=1695166167"
-    alt="Mulher aplicando creme na pele"
-    style={{
-      width: "100%",
-      height: "auto",
-      objectFit: "cover",
-      maxHeight: "500px",
-    }}
-  />
-</div>
-
 <Banner
   title="Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."
+  image={"https://static.stealthelook.com.br/wp-content/uploads/2023/07/skincare-cuidados-pele-casal-dicas-casal-beleza-steal-the-look-20230713221140.jpg"}
   description="Sua pele é única e merece cuidados personalizados. Aqui, você encontra dicas, produtos e conselhos para criar um ritual de skincare personalizado que vai desde a limpeza diária até os tratamentos mais específicos. Saiba como produtos certos podem tratar suas preocupações específicas e transformar sua rotina em um momento para si em qualquer momento. Porque cuidar da pele é cuidar de você."
   corButton="#5FCED4"
 />
