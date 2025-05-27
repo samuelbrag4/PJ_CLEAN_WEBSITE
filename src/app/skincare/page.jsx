@@ -82,13 +82,14 @@ export default function Skincare() {
         textoSegundoBotao={"Vídeos"}
       />
 
-<Banner
-  title="Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."
-  image={"https://static.stealthelook.com.br/wp-content/uploads/2023/07/skincare-cuidados-pele-casal-dicas-casal-beleza-steal-the-look-20230713221140.jpg"}
-  description="Sua pele é única e merece cuidados personalizados. Aqui, você encontra dicas, produtos e conselhos para criar um ritual de skincare personalizado que vai desde a limpeza diária até os tratamentos mais específicos. Saiba como produtos certos podem tratar suas preocupações específicas e transformar sua rotina em um momento para si em qualquer momento. Porque cuidar da pele é cuidar de você."
-  corButton="#5FCED4"
-/>
-
+      <Banner
+        title="Transforme sua rotina de skincare em um ritual de autocuidado e bem-estar."
+        image={
+          "https://images.elle.com.br/2024/02/kit-de-skincare-xoxotsumi.jpeg"
+        }
+        description="Sua pele é única e merece cuidados personalizados. Aqui, você encontra dicas, produtos e conselhos para criar um ritual de skincare personalizado que vai desde a limpeza diária até os tratamentos mais específicos. Saiba como produtos certos podem tratar suas preocupações específicas e transformar sua rotina em um momento para si em qualquer momento. Porque cuidar da pele é cuidar de você."
+        corButton="#5FCED4"
+      />
 
       <div style={{ marginBottom: "5rem" }}>
         <SkinTypeGrid
