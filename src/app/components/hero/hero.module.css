@@ -1,6 +1,6 @@
 .hero {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     width: 80%;
@@ -70,12 +70,12 @@
 }
 
 .containerImagem {
-    max-width: 40%;
-    flex: 1 1 100%;
+    max-width: 45%;
+    flex: 0 1 45%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .imagem {
