@@ -30,11 +30,12 @@
   padding: 2.5rem 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   border-top: 4px solid #5fced4;
+  font-family: 'Inter', sans-serif;
 }
 
 .categoryTitle {
   position: relative;
-  font-family: "Caveat", sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: center;
   font-size: 2rem;
   font-style: normal;
@@ -45,6 +46,9 @@
   margin-bottom: 1rem;
 }
 
+.heroTitulo {
+  font-family: 'Inter', sans-serif;
+}
 .categoryTitle::after {
   content: "";
   position: absolute;
@@ -54,6 +58,7 @@
   width: 80px;
   height: 3px;
   background-color: #dbbd9c;
+  font-family: 'Inter', sans-serif;
 }
 
 .categoryDescription {
