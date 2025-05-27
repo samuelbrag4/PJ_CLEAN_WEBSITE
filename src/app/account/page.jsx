@@ -11,75 +11,98 @@ import {
   faEdit,
   faEye,
   faEyeSlash,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import styles from "./account.module.css";
+import {
+  getProfile,
+  updateProfile,
+  deleteAccount,
+} from "../services/authService";
+import { useRouter } from "next/navigation";
+import Loading from "../components/loading/Loading";
 
 export default function Conta() {
   const [isEditing, setIsEditing] = useState(false);
-  const [userData, setUserData] = useState(null); // Dados do usuário
+  const [userData, setUserData] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    async function fetchProfile() {
+      const result = await getProfile();
+      if (result.success) {
+        setUserData(result.data);
+      } else {
+        setErrorMessage(result.message);
+      }
+    }
+    fetchProfile();
+  }, []);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const userId = "598c43a4-a082-41d2-9fb5-92375a46ed6b"; // Substitua pelo ID do usuário autenticado
+  const handleEdit = () => {
+    if (isEditing) {
+      document.querySelector("form").requestSubmit();
+    } else {
+      setIsEditing(true);
+    }
+  };
 
-  // Função para buscar dados do usuário
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch(`http://localhost:4000/user/${userId}`);
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(
-          errorData.message || "Erro ao buscar dados do usuário."
-        );
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    router.push("/login");
+  };
+
+  const handleDeleteAccount = async () => {
+    if (
+      confirm(
+        "Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita."
+      )
+    ) {
+      const result = await deleteAccount();
+      if (result.success) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        router.push("/signup");
+      } else {
+        setErrorMessage(result.message);
       }
-      const data = await response.json();
-      setUserData(data.user); // A resposta contém o usuário dentro de "user"
-    } catch (error) {
-      setErrorMessage(error.message);
     }
   };
 
-  // Função para atualizar dados do usuário
-  const updateUserData = async (updatedData) => {
-    try {
-      const response = await fetch(`http://localhost:4000/user/${userId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedData),
-      });
-      if (!response.ok) throw new Error("Erro ao atualizar dados do usuário.");
-      const data = await response.json();
-      setUserData(data.user); // Atualiza os dados do usuário com a resposta
-      setSuccessMessage("Dados atualizados com sucesso!");
-      setIsEditing(false);
-    } catch (error) {
-      setErrorMessage(error.message);
-    }
-  };
-
-  // Função para lidar com o envio do formulário
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const updatedData = Object.fromEntries(formData.entries());
-    updateUserData(updatedData);
+    const updatedData = {
+      nome: formData.get("nome"),
+      senha: formData.get("senha") || undefined,
+      idioma: formData.get("idioma"),
+    };
+    // Remove senha se não foi alterada
+    if (!updatedData.senha) delete updatedData.senha;
+
+    const result = await updateProfile(updatedData);
+    if (result.success) {
+      setUserData(result.data);
+      setSuccessMessage("Dados atualizados com sucesso!");
+      setIsEditing(false);
+    } else {
+      setErrorMessage(result.message);
+    }
   };
 
-  // Buscar dados do usuário ao carregar o componente
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
-  const handleEdit = () => {
-    setIsEditing(!isEditing);
-  };
+  if (!userData) {
+    return <Loading texto="Carregando..." />;
+  }
 
   return (
     <div>
@@ -91,15 +114,21 @@ export default function Conta() {
           style={{ backgroundColor: "#F05080" }}
         >
           <img
-            src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src={
+              userData?.fotoPerfil ||
+              "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            }
             alt="Foto do usuário"
             className={styles.userImage}
           />
           <h2 className={styles.userName}>
             {userData?.nome || "Carregando..."}
           </h2>
-          <button className={styles.logoutButton}>
+          <button className={styles.logoutButton} onClick={handleLogout}>
             <FontAwesomeIcon icon={faSignOutAlt} /> Sair
+          </button>
+          <button className={styles.deleteButton} onClick={handleDeleteAccount}>
+            <FontAwesomeIcon icon={faTrash} /> Excluir Conta
           </button>
           <nav className={styles.navLinks}>
             <Link href="/account">
@@ -151,7 +180,7 @@ export default function Conta() {
                 type="email"
                 name="email"
                 defaultValue={userData?.email || ""}
-                disabled={!isEditing}
+                disabled
               />
             </div>
             <div className={styles.formGroup}>
@@ -160,14 +189,16 @@ export default function Conta() {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="senha"
-                  placeholder="Digite sua senha"
+                  placeholder="Digite sua nova senha"
                   disabled={!isEditing}
                   className={styles.passwordInput}
+                  autoComplete="new-password"
                 />
                 <button
                   type="button"
                   className={styles.togglePasswordButton}
                   onClick={togglePasswordVisibility}
+                  tabIndex={-1}
                 >
                   <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                 </button>

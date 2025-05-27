@@ -39,7 +39,7 @@ export default function Home() {
 
       <SectionVideo />
 
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       <BlogSection />
 

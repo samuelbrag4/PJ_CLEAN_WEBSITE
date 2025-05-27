@@ -3,16 +3,39 @@
 import styles from "./login.module.css";
 import Link from "next/link";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
+  const { login, loading } = useAuth();
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleLogin = (event) => {
-    event.preventDefault(); // Evita o comportamento padrão do formulário
-    console.log("Formulário enviado!"); // Log para depuração
-    router.push("/home"); // Redireciona para a página "home"
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    if (error) setError("");
+    if (success) setSuccess("");
   };
+
+  const handleLogin = async (event) => {
+  event.preventDefault();
+  if (!form.email || !form.password) {
+    setError("Preencha todos os campos.");
+    return;
+  }
+  const result = await login(form.email, form.password);
+  if (!result.success) {
+    setError(result.message || "Credenciais inválidas.");
+  } else {
+    setSuccess("Login realizado com sucesso! Redirecionando...");
+    setTimeout(() => {
+      router.push("/account"); // ou "/dashboard" se preferir
+    }, 1500);
+  }
+};
 
   return (
     <div className={styles.signupContainer}>
@@ -25,25 +48,33 @@ export default function Login() {
               name="email"
               placeholder="E-mail"
               className={styles.signupInput}
+              value={form.email}
+              onChange={handleChange}
+              disabled={loading}
+              autoComplete="email"
             />
             <input
               type="password"
               name="password"
               placeholder="Senha"
               className={styles.signupInput}
+              value={form.password}
+              onChange={handleChange}
+              disabled={loading}
+              autoComplete="current-password"
             />
-            <button type="submit" className={styles.signupButton}>
-              Entrar
+            <button type="submit" className={styles.signupButton} disabled={loading}>
+              {loading ? "Entrando..." : "Entrar"}
             </button>
+            {error && <div className={styles.signupError}>{error}</div>}
+            {success && <div className={styles.signupSuccess}>{success}</div>}
           </form>
           <div className={styles.signupDivider}>ou</div>
-          <button className={styles.signupSocialButton}>
-            <FaGoogle className={styles.iconGoogle} size={30} /> Entre com o
-            Google
+          <button className={styles.signupSocialButton} disabled>
+            <FaGoogle className={styles.iconGoogle} size={30} /> Entre com o Google
           </button>
-          <button className={styles.signupSocialButton}>
-            <FaFacebook className={styles.iconFacebook} size={30} /> Entre com o
-            Facebook
+          <button className={styles.signupSocialButton} disabled>
+            <FaFacebook className={styles.iconFacebook} size={30} /> Entre com o Facebook
           </button>
           <p className={styles.signupFooter}>
             Não tem uma conta?{" "}
