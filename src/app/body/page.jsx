@@ -86,7 +86,7 @@ export default function Corpo() {
 
       <Banner
         image={
-          "https://simoesfilhoonline.com.br/wp-content/uploads/2020/06/Veja-como-fazer-esfolia%C3%A7%C3%A3o-corporal-e-os-melhores-esfoliantes-caseiros.jpg"
+          "https://ohwell.com.br/cdn/shop/files/AnyConv.com__fotos-site-3_2048x.webp?v=1747224483"
        }
         imageAlt={"Mulher aplicando creme no corpo"}
         title={
