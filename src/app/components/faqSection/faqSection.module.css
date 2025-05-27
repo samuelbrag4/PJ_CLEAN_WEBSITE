@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-family: "Inter", sans-serif;
+  font-family: "Caveat", cursive;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -75,7 +75,7 @@
 }
 
 .subtitle {
-  font-family: "Inter", sans-serif;
+  font-family: Caveat, cursive;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
@@ -132,15 +132,17 @@
 }
 
 .githubLink {
-  font-family: "Inter", sans-serif; /* Fonte Inter */
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
   background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
   background-size: 400% 400%;
-  animation: gradientBackground 5s ease infinite; /* Adiciona a animação */
-  -webkit-background-clip: text; /* Faz o gradiente aplicar apenas ao texto */
-  -webkit-text-fill-color: transparent; /* Torna o fundo do texto transparente */
+  animation: gradientBackground 5s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   transition: transform 0.3s ease;
 }
 
