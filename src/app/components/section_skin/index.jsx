@@ -343,8 +343,7 @@ const SectionSkin = () => {
             </ul>
           </div>
         )}
-
-        {popupContent && (
+{popupContent && (
           <div className={styles.popup}>
             <div className={styles.popupContent}>
               <h2 className={styles.popupTitle}>{popupContent.title}</h2>

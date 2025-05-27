@@ -12,29 +12,29 @@ export default function PopularProducts() {
   ];
 
   return (
-    <section className={styles["produtos-populares"]}>
-      <h2 className={styles["produtos-populares-h2"]}>Produtos populares</h2>
-      <p className={styles["produtos-populares-p"]}>
+    <section className={styles.popularProducts}>
+      <h2 className={styles.title}>Produtos populares</h2>
+      <p className={styles.subtitle}>
         Os produtos mais procurados da internet! Onde você encontra eles? Aqui mesmo.
       </p>
 
-      <div className={styles["cards-container"]}>
+      <div className={styles.cardsContainer}>
         {produtos.map((produto) => (
           <div key={produto.id} className={styles.card}>
             <img
               src={produto.imagem}
               alt={produto.nome}
-              className={styles["card-image"]}
+              className={styles.image}
             />
-            <div className={styles["card-legenda"]}>
-              <p className={styles["card-title"]}>{produto.nome}</p>
+            <div className={styles.cardContent}>
+              <p className={styles.productName}>{produto.nome}</p>
             </div>
           </div>
         ))}
       </div>
 
       <Link href="/products">
-        <button className={styles["ver-mais"]}>Ver mais</button>
+        <button className={styles.button}>Ver mais</button>
       </Link>
     </section>
   );

@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-family: "Inter", sans-serif;
+  font-family: Caveat, cursive;
   font-size: 54px;
   font-style: normal;
   font-weight: 700;
@@ -44,7 +44,7 @@
 }
 
 .subtitle {
-  font-family: "Inter", sans-serif;
+  font-family: "Caveat", cursive;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
@@ -111,7 +111,6 @@
   color: #333;
   font-family: "Inter", sans-serif;
 }
-
 
 .disposalDescription,
 .impactDescription {

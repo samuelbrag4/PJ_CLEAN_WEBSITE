@@ -15,7 +15,7 @@
 }
 
 .title {
-  font-family:"Inter", sans-serif;
+  font-family: "Caveat", cursive;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
@@ -118,6 +118,3 @@
   border-radius: 60px; /* opcional para cantos arredondados */
   object-fit: cover; /* para evitar esticamento da imagem */
 }
-
-
-
