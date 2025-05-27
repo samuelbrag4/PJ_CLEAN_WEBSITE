@@ -18,31 +18,31 @@ export default function SustainabilitySection() {
 
   const disposalItems = [
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746538733767.svg?token=exp=1746539778~hmac=216a644eb7fe0d130469e6fbd41b9d9f",
+      iconUrl: "https://cepel.vteximg.com.br/arquivos/ids/169421-1000-1000/38643-Adesivo.png?v=637922803733630000",
       iconAlt: "Lixeira Azul",
       title: "Azul",
       description: "Papel e papelão.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539379084.svg?token=exp=1746540285~hmac=2480563b486bc87c307064f157209942",
+      iconUrl: "https://bravidistribuidora.agilecdn.com.br/2734_1.jpg",
       iconAlt: "Lixeira Verde",
       title: "Verde",
       description: "Vidro.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539438750.svg?token=exp=1746540339~hmac=758207724ada2d8d107d1bf0812306cd",
+      iconUrl: "https://images.tcdn.com.br/img/img_prod/793949/lixeira_coleta_seletiva_60l_basculante_amarela_611_1_20200902133943.png",
       iconAlt: "Lixeira Amarela",
       title: "Amarelo",
       description: "Metais.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539482399.svg?token=exp=1746540383~hmac=bfec6a7d9fa32e1830a84cf9e458f80a",
+      iconUrl: "https://images.tcdn.com.br/img/img_prod/793949/lixeira_coleta_seletiva_60l_basculante_vermelha_617_1_20200902134651.png",
       iconAlt: "Lixeira Vermelha",
       title: "Vermelho",
       description: "Plásticos.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539532792.svg?token=exp=1746540433~hmac=70717094aa6dd96d11c041ca02c8c7db",
+      iconUrl: "https://cepel.vteximg.com.br/arquivos/ids/169477-1000-1000/3.png?v=637932296562400000",
       iconAlt: "Lixeira Marrom",
       title: "Marrom",
       description: "Resíduos orgânicos.",
@@ -51,28 +51,28 @@ export default function SustainabilitySection() {
 
   const impactItems = [
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539736059.svg?token=exp=1746540636~hmac=19dca99b2c330991273f395f8f7ecb21",
+      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTclGVC9iiZtqZjJPjv-m-mrMC3xFbfFp1vlA&s",
       iconAlt: "Descarte Inadequado",
       title: "Descarte Inadequado de Cosméticos",
       description:
         "No Brasil, o mercado de beleza produz cerca de 78 milhões de toneladas de lixo anualmente, composto principalmente por embalagens plásticas. Esmaltes contêm compostos tóxicos como tolueno e formaldeídos, que podem contaminar o solo e a água.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539802750.svg?token=exp=1746540703~hmac=f17a4a6b040ee2bb67e86040d0dd0a7e",
+      iconUrl: "https://cdn.dooca.store/1857/posts/capa-lixo.jpg?v=1702491689",
       iconAlt: "Impactos Ambientais",
       title: "Impactos Ambientais",
       description:
         "Substâncias químicas como parabenos e microplásticos afetam organismos aquáticos e entram na cadeia alimentar humana.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539871481.svg?token=exp=1746540772~hmac=0d60a64bf91f5dacd2af081f48e0ff26",
+      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9w9esuiNKFyR18nOe8A-1DzT9ewLn8C5k0A&s",
       iconAlt: "ONGs",
       title: "Desconsideração das ONGs",
       description:
         "Apesar dos esforços de ONGs, muitas iniciativas sustentáveis são ignoradas por consumidores e empresas.",
     },
     {
-      iconUrl: "https://cdn-user-icons.flaticon.com/186924/186924339/1746539967802.svg?token=exp=1746540868~hmac=6b3dfc3b2c286378248037c0f04ac583",
+      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfMO6LlaZ_2MzBXRZnKZYylTZErrw3ly9MCg&s",
       iconAlt: "Empresas",
       title: "Empresas de Alto Impacto",
       description:
