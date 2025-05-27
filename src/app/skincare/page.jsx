@@ -114,6 +114,7 @@ export default function Skincare() {
         corButton="#5FCED4"
       />
 
+
       <div style={{ marginBottom: "5rem", fontFamily: 'Inter' }}>
         <SkinTypeGrid
           category="Skincare"
@@ -144,6 +145,26 @@ export default function Skincare() {
         descricao="Uma rotina de skincare é essencial para manter a saúde da sua pele. Conheça os passos fundamentais para uma pele radiante e saudável em qualquer idade."
         textoBotao="Ver Produtos"
         icones={icones}
+      />
+
+<SkinTypeGrid
+        category="SKINCARE"
+        corCategory="#DBBD9C"
+        title="O que influencia na saúde e beleza da sua pele do rosto?"
+        oilyImage="https://s3.us-east-1.amazonaws.com/vnda-cockpit/www-kurmyhomespa-com-br/2023/09/15/65049a69c5b49Blog---imagens--520535px-2.png"
+        oilyTitle=" Limpeza Facial"
+        oilyDescription="Remover impurezas, oleosidade e resíduos de maquiagem é essencial. Uma boa limpeza prepara a pele para os próximos passos da rotina e evita poros obstruídos e acne."
+        dryImage="https://revistaabm.com.br/storage/2021/04/15/95bb51711c02939ce0c954927a43b5920cf90d23.jpg"
+        dryTitle="Esfoliação Facial"
+        dryDescription="A esfoliação facial renova a pele, removendo células mortas e promovendo luminosidade. Deve ser feita de 1 a 2 vezes por semana com produtos suaves e adequados ao seu tipo de pele.
+
+"
+        combinationImage="https://confarma.com.br/wp-content/uploads/2024/08/portrait-of-a-beautiful-young-woman-applying-moist-2023-11-27-05-16-09-utc-scaled.jpg"
+        combinationTitle="Hidratação Facial"
+        combinationDescription="Manter a pele hidratada é fundamental para preservar a elasticidade, prevenir linhas finas e dar viço ao rosto. Géis, séruns ou cremes devem ser escolhidos conforme seu tipo de pele."
+        normalImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqq3IRi8WhwxmBJMYLpApFhD8u4O35gMliQCfH8BHAz6saWYHpIVNqZ2saaBKqebOo_HE&usqp=CAU"
+        normalTitle="Proteção Solar Facial"
+        normalDescription="O protetor solar é o passo mais importante da rotina de skincare. Ele previne manchas, rugas e câncer de pele. Deve ser usado todos os dias, mesmo em ambientes fechados."
       />
 
       <AcessoriesSection

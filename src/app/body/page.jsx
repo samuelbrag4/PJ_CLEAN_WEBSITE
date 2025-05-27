@@ -62,6 +62,20 @@ const cards = [
     imagem:
       "https://http2.mlstatic.com/D_NQ_NP_2X_990510-MLA83238645725_032025-F.webp",
   },
+  {
+    titulo: "Kit 12 Pedras Quentes Basalto Vulcânico",
+    descricao:
+      "Usadas aquecidas, relaxam músculos e reduzem o estresse.",
+    imagem:
+      "https://acdn-us.mitiendanube.com/stores/004/875/884/products/kit-12-pedras-quentes-basalto-vulcanico-414_1_800-ff9f751fc343b0245e17290830749596-480-0.jpg",
+  },
+  {
+    titulo: "Bastão Massageador Com Espinhos",
+    descricao:
+      "Bastão Massageador Com Espinhos - Liveup - Live Up",
+    imagem:
+      "https://a-static.mlcdn.com.br/800x560/bastao-massageador-com-espinhos-liveup-live-up/futushop/1099p/c812715ea6c694babd478423c5125c9c.jpeg",
+  },
 ];
 
 export default function Corpo() {

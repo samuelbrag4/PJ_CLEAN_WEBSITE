@@ -68,6 +68,20 @@ export default function Maquiagem() {
       imagem:
         "https://acrilicostore.fbitsstatic.net/img/p/organizador-de-maquiagem-4-gavetas-com-bandeja-para-batom-70136/256618-5.jpg?w=1000&h=1000&v=no-change&qs=ignore",
     },
+    {
+      titulo: "Paleta de Mistura",
+      descricao:
+        "Super útil para misturar base, corretivo ou batons personalizados.",
+      imagem:
+        "https://cdn.awsli.com.br/600x700/2670/2670488/produto/267856509/paleta-de-maquiagem-straight-inox-palette-mp-03_2--make--5z6apy20d5.jpg",
+    },
+    {
+      titulo: "Espelho com Iluminação",
+      descricao:
+        "Oferece luz ideal para aplicar maquiagem em qualquer ambiente.",
+      imagem:
+        "https://m.media-amazon.com/images/I/51vO6NWLj7L.jpg",
+    },
   ];
 
   return (
