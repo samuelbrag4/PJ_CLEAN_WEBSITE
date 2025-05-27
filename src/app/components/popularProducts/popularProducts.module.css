@@ -39,7 +39,7 @@
 }
 
 .produtos-populares-h2 {
-  font-family: 'Caveat', cursive;
+  font-family:"Inter", sans-serif;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -57,7 +57,7 @@
   line-height: 1.6;
   width: 50%;
   text-align: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;;
 }
 
 .cards-container {
@@ -170,7 +170,7 @@
   
   .card-title {
     text-align: center;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.1rem;
     color: #333;
     margin-top: 0.5rem;
