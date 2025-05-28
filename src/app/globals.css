@@ -16,10 +16,3 @@ html {
   color: #ffffff; 
   background-color: #00dac7; 
 }
-
-:focus {
-  outline: 2px dashed;
-  outline-offset: 4px;
-  outline-color: linear-gradient(90deg, #00DAC7, #F05080, #DBBD9C, #49F6FF);
-  border-radius: 4px; 
-}
