@@ -1,8 +1,8 @@
 "use client";
 
-import { createContext, useState, useContext, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { createContext, useContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import { login, register, logout } from "../services/authService";
 
 const AuthContext = createContext({});
@@ -23,23 +23,24 @@ export function AuthProvider({ children }) {
       }
     }
     setLoading(false);
+    // eslint-disable-next-line
   }, []);
 
-  const handleLogin = async (email, password) => {
-  setLoading(true);
-  const { success, data, message } = await login(email, password);
-  if (success && data.token && data.user) {
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("user", JSON.stringify(data.user));
-    Cookies.set("token", data.token, { expires: 1, path: "/" });
-    setUser(data.user);
-    setLoading(false);
-    return { success: true };
-  } else {
-    setLoading(false);
-    return { success: false, message: message || "Credenciais inválidas." };
-  }
-};
+  const handleLogin = async (email, senha) => {
+    setLoading(true);
+    const { success, data, message } = await login(email, senha);
+    if (success && data.token) {
+      localStorage.setItem("token", data.token);
+      Cookies.set("token", data.token, { expires: 1, path: "/" });
+      localStorage.setItem("user", JSON.stringify({ email }));
+      setUser({ email });
+      setLoading(false);
+      return { success: true };
+    } else {
+      setLoading(false);
+      return { success: false, message: message || "Credenciais inválidas." };
+    }
+  };
 
   const handleRegister = async (userData) => {
     setLoading(true);
@@ -52,7 +53,10 @@ export function AuthProvider({ children }) {
   const handleLogout = () => {
     logout();
     setUser(null);
-    router.push("/");
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    Cookies.remove("token", { path: "/" });
+    router.push("/login");
   };
 
   return (
@@ -63,7 +67,7 @@ export function AuthProvider({ children }) {
         login: handleLogin,
         register: handleRegister,
         logout: handleLogout,
-        isAuthenticated: !!user,
+        setUser,
       }}
     >
       {children}

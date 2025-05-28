@@ -23,6 +23,7 @@ import {
 } from "../services/authService";
 import { useRouter } from "next/navigation";
 import Loading from "../components/loading/Loading";
+import { useAuth } from "../context/AuthContext";
 
 export default function Conta() {
   const [isEditing, setIsEditing] = useState(false);
@@ -31,6 +32,14 @@ export default function Conta() {
   const [successMessage, setSuccessMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const { user, loading } = useAuth();
+
+  // Redireciona para login se não estiver autenticado
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push("/login");
+    }
+  }, [loading, user, router]);
 
   useEffect(() => {
     async function fetchProfile() {
@@ -44,15 +53,15 @@ export default function Conta() {
     fetchProfile();
   }, []);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  const togglePasswordVisibility = () => setShowPassword((v) => !v);
 
   const handleEdit = () => {
     if (isEditing) {
-      document.querySelector("form").requestSubmit();
+      document.getElementById("userForm").requestSubmit();
     } else {
       setIsEditing(true);
+      setSuccessMessage("");
+      setErrorMessage("");
     }
   };
 
@@ -81,13 +90,14 @@ export default function Conta() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
     const formData = new FormData(e.target);
     const updatedData = {
       nome: formData.get("nome"),
       senha: formData.get("senha") || undefined,
       idioma: formData.get("idioma"),
     };
-    // Remove senha se não foi alterada
     if (!updatedData.senha) delete updatedData.senha;
 
     const result = await updateProfile(updatedData);
@@ -113,21 +123,28 @@ export default function Conta() {
           className={styles.sidebar}
           style={{ backgroundColor: "#F05080" }}
         >
-          <img
-            src={
-              userData?.fotoPerfil ||
-              "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            }
-            alt="Foto do usuário"
-            className={styles.userImage}
-          />
           <h2 className={styles.userName}>
+            <FontAwesomeIcon icon={faUser} style={{ marginRight: 8 }} />
             {userData?.nome || "Carregando..."}
           </h2>
           <button className={styles.logoutButton} onClick={handleLogout}>
             <FontAwesomeIcon icon={faSignOutAlt} /> Sair
           </button>
-          <button className={styles.deleteButton} onClick={handleDeleteAccount}>
+          <button
+            className={styles.deleteButton}
+            style={{
+              background: "#ff4d4f",
+              color: "#fff",
+              border: "none",
+              marginTop: "1rem",
+              borderRadius: "6px",
+              padding: "0.5rem 1rem",
+              fontWeight: "bold",
+              cursor: "pointer",
+              transition: "background 0.3s",
+            }}
+            onClick={handleDeleteAccount}
+          >
             <FontAwesomeIcon icon={faTrash} /> Excluir Conta
           </button>
           <nav className={styles.navLinks}>
@@ -164,7 +181,11 @@ export default function Conta() {
           {successMessage && (
             <p className={styles.successMessage}>{successMessage}</p>
           )}
-          <form className={styles.userForm} onSubmit={handleSubmit}>
+          <form
+            className={styles.userForm}
+            id="userForm"
+            onSubmit={handleSubmit}
+          >
             <div className={styles.formGroup}>
               <label>Nome</label>
               <input

@@ -19,7 +19,8 @@ apiClient.interceptors.request.use(
 
 export const login = async (email, password) => {
   try {
-    const response = await apiClient.post("/login", { email, senha: password });
+    // Corrigido: endpoint correto é /auth/login
+    const response = await apiClient.post("/auth/login", { email, senha: password });
     return { success: true, data: response.data };
   } catch (error) {
     return {
@@ -34,7 +35,6 @@ export const login = async (email, password) => {
 
 export const register = async (userData) => {
   try {
-    // Altere aqui para o endpoint correto:
     const response = await apiClient.post("/auth/register", userData);
     return { success: true, data: response.data };
   } catch (error) {
@@ -57,8 +57,11 @@ export const logout = () => {
 
 export const getProfile = async () => {
   try {
-    const response = await apiClient.get("/perfil");
-    return { success: true, data: response.data.user };
+    const response = await apiClient.get("/auth/perfil");
+    return {
+      success: true,
+      data: response.data.user ? response.data.user : response.data,
+    };
   } catch (error) {
     return { success: false, message: "Erro ao buscar perfil." };
   }
@@ -66,7 +69,7 @@ export const getProfile = async () => {
 
 export const updateProfile = async (data) => {
   try {
-    const response = await apiClient.put("/perfil", data);
+    const response = await apiClient.put("/user/update", data);
     return { success: true, data: response.data.updatedUser };
   } catch (error) {
     return {
@@ -81,7 +84,7 @@ export const updateProfile = async (data) => {
 
 export const deleteAccount = async () => {
   try {
-    await apiClient.delete("/perfil");
+    await apiClient.delete("/user/delete");
     return { success: true };
   } catch (error) {
     return { success: false, message: "Erro ao excluir conta." };

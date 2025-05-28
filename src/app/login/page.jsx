@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export default function Login() {
   const router = useRouter();
   const { login, loading } = useAuth();
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({ email: "", senha: "" }); // <-- senha!
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -21,21 +21,21 @@ export default function Login() {
   };
 
   const handleLogin = async (event) => {
-  event.preventDefault();
-  if (!form.email || !form.password) {
-    setError("Preencha todos os campos.");
-    return;
-  }
-  const result = await login(form.email, form.password);
-  if (!result.success) {
-    setError(result.message || "Credenciais inválidas.");
-  } else {
-    setSuccess("Login realizado com sucesso! Redirecionando...");
-    setTimeout(() => {
-      router.push("/account"); // ou "/dashboard" se preferir
-    }, 1500);
-  }
-};
+    event.preventDefault();
+    if (!form.email || !form.senha) { // <-- senha!
+      setError("Preencha todos os campos.");
+      return;
+    }
+    const result = await login(form.email, form.senha); // <-- senha!
+    if (!result.success) {
+      setError(result.message || "Credenciais inválidas.");
+    } else {
+      setSuccess("Login realizado com sucesso! Redirecionando...");
+      setTimeout(() => {
+        router.push("/account");
+      }, 1500);
+    }
+  };
 
   return (
     <div className={styles.signupContainer}>
@@ -55,10 +55,10 @@ export default function Login() {
             />
             <input
               type="password"
-              name="password"
+              name="senha" // <-- senha!
               placeholder="Senha"
               className={styles.signupInput}
-              value={form.password}
+              value={form.senha}
               onChange={handleChange}
               disabled={loading}
               autoComplete="current-password"
