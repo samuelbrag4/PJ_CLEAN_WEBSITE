@@ -13,19 +13,6 @@
   border: 1.5px solid #f05080;
 }
 
-@keyframes gradientBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Sidebar moderna */
 .sidebar {
   width: 220px;
   padding: 2rem 1rem;
@@ -35,21 +22,62 @@
   text-align: center;
   box-shadow: 0 2px 12px rgba(240,80,128,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 180px;
 }
 .sidebar:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 18px rgba(240,80,128,0.15);
 }
 
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatarCircle {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #dbbd9c 40%, #f05080 100%);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
+  letter-spacing: 2px;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.userImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
+}
+
 .userName {
   font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 0.3rem;
   letter-spacing: 1px;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.memberSince {
+  font-size: 0.95rem;
+  color: #f7e7e7;
+  margin-bottom: 1.5rem;
 }
 
 .logoutButton, .deleteButton {
@@ -121,13 +149,16 @@
   padding: 2.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(240,80,128,0.06);
+  min-width: 0;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 1.2rem;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .title {
@@ -135,36 +166,76 @@
   color: #f05080;
   font-weight: bold;
   letter-spacing: 1px;
+  margin-right: 1.5rem;
 }
 
 .editButton {
   background: linear-gradient(90deg, #f05080 60%, #dbbd9c 100%);
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 50px;
+  padding: 0.7rem 1.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
+  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
+  position: relative;
+  z-index: 1;
 }
 .editButton:hover {
   background: #d04070;
-  transform: scale(1.05);
+  transform: scale(1.07);
+}
+
+.savingSpinner {
+  color: #f05080;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  animation: fadeIn 0.3s;
+}
+.savedCheck {
+  color: #2ecc71;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.7);}
+  to { opacity: 1; transform: scale(1);}
 }
 
 .userForm {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+  background: #faf9f6;
+  border-radius: 10px;
+  padding: 1.2rem 1rem 1.2rem 1.5rem;
+  box-shadow: 0 1px 6px rgba(240,80,128,0.04);
+  transition: box-shadow 0.3s;
+}
+.sectionTitle {
+  font-size: 1.1rem;
+  color: #f05080;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.2rem;
 }
 
 .formGroup label {
@@ -209,6 +280,9 @@
   cursor: pointer;
   font-size: 1.1rem;
   color: #f05080;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .errorMessage {
@@ -218,6 +292,7 @@
   padding: 0.7rem 1rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  animation: fadeIn 0.3s;
 }
 
 .successMessage {
@@ -227,6 +302,70 @@
   padding: 0.7rem 1rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  animation: fadeIn 0.3s;
+}
+
+/* Modal de confirmação */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px 0 rgba(80,80,80,0.18);
+  max-width: 95vw;
+  min-width: 320px;
+  text-align: center;
+  animation: fadeIn 0.2s;
+}
+.modal h2 {
+  color: #f05080;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.modalActions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.modalCancel {
+  background: #faf9f6;
+  color: #f05080;
+  border: 1.5px solid #f05080;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.modalCancel:hover {
+  background: #f05080;
+  color: #fff;
+}
+.modalDelete {
+  background: linear-gradient(90deg, #ff4d4f 60%, #ffb3b3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.modalDelete:hover {
+  background: #d9363e;
 }
 
 /* Responsividade */
@@ -241,6 +380,7 @@
     width: 100%;
     text-align: center;
     margin-bottom: 1.5rem;
+    min-width: 0;
   }
   .mainContent {
     padding: 1.2rem;
@@ -273,5 +413,10 @@
   .editButton {
     font-size: 0.85rem;
     padding: 0.3rem 0.6rem;
+  }
+  .avatarCircle, .userImage {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
   }
 }
