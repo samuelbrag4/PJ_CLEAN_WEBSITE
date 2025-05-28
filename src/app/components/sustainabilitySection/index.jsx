@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import styles from "./sustainabilitySection.module.css";
-import Image from "next/image";
 
 export default function SustainabilitySection() {
   const [expandedDisposalItem, setExpandedDisposalItem] = useState(null);
@@ -88,64 +87,42 @@ export default function SustainabilitySection() {
         utilizando embalagens recicláveis e ingredientes naturais.
       </p>
 
-      <div className={styles.disposal}>
-        <h3 className={styles.subtitle}>Descarte Sustentável de Cosméticos</h3>
-        <p className={styles.text}>
-          Antes de descartar seus cosméticos, lave os frascos para remover
-          resíduos e descarte-os no lixo correto:
-        </p>
-        <ul className={styles.disposalList}>
-          {disposalItems.map((item, index) => (
-            <li
-              key={index}
-              className={styles.disposalItem}
-              onClick={() => toggleDisposalItem(index)}
-            >
-              <div className={styles.disposalHeader}>
-                <span className={styles.icon}>
-                  <img
-                    src={item.iconUrl}
-                    alt={item.iconAlt}
-                    width={40}
-                    height={40}
-                  />
-                </span>
-                <strong className={styles.titleIcon}>{item.title}</strong>
-              </div>
-              {expandedDisposalItem === index && (
-                <p className={styles.disposalDescription}>{item.description}</p>
-              )}
-            </li>
-          ))}
-        </ul>
+      <h3 className={styles.subtitle}>Descarte Sustentável de Cosméticos</h3>
+      <div className={styles.cardsRow}>
+        {disposalItems.map((item, index) => (
+          <div
+            key={index}
+            className={`${styles.card} ${expandedDisposalItem === index ? styles.expanded : ""}`}
+            onClick={() => toggleDisposalItem(index)}
+            tabIndex={0}
+            title="Clique para ver mais"
+          >
+            <img src={item.iconUrl} alt={item.iconAlt} className={styles.cardIcon} />
+            <span className={styles.cardTitle}>{item.title}</span>
+            {expandedDisposalItem === index && (
+              <span className={styles.cardDescription}>{item.description}</span>
+            )}
+          </div>
+        ))}
       </div>
 
-      <div className={styles.impact}>
-        <h3 className={styles.subtitle}>Impactos do Descarte Inadequado</h3>
-        <ul className={styles.impactList}>
-          {impactItems.map((item, index) => (
-            <li
-              key={index}
-              className={styles.impactItem}
-              onClick={() => toggleImpactItem(index)}
-            >
-              <div className={styles.impactHeader}>
-                <span className={styles.icon}>
-                  <img
-                    src={item.iconUrl}
-                    alt={item.iconAlt}
-                    width={40}
-                    height={40}
-                  />
-                </span>
-                <p>{item.title}</p>
-              </div>
-              {expandedImpactItem === index && (
-                <p className={styles.impactDescription}>{item.description}</p>
-              )}
-            </li>
-          ))}
-        </ul>
+      <h3 className={styles.subtitle}>Impactos do Descarte Inadequado</h3>
+      <div className={styles.cardsRow}>
+        {impactItems.map((item, index) => (
+          <div
+            key={index}
+            className={`${styles.card} ${expandedImpactItem === index ? styles.expanded : ""}`}
+            onClick={() => toggleImpactItem(index)}
+            tabIndex={0}
+            title="Clique para ver mais"
+          >
+            <img src={item.iconUrl} alt={item.iconAlt} className={styles.cardIcon} />
+            <span className={styles.cardTitle}>{item.title}</span>
+            {expandedImpactItem === index && (
+              <span className={styles.cardDescription}>{item.description}</span>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

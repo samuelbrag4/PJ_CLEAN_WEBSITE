@@ -1,186 +1,107 @@
 .sustainability {
-  padding: 4rem 2rem;
-  border-radius: 25px;
-  text-align: center;
-  overflow: hidden;
-  width: 80%;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 3rem auto 2rem auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(80,80,80,0.08);
 }
 
 .title {
-  font-family: Caveat, cursive;
-  font-size: 54px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgb(51, 51, 51);
-  text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
-  margin-bottom: 2rem;
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  color: #00dac7;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .text {
-  font-family: "Inter", sans-serif; /* Fonte Inter */
-  font-size: 1rem;
-  width: 60%;
-  color: #555;
-  margin-bottom: 3rem;
-  line-height: 1.8;
-}
-
-.disposal,
-.impact {
-  margin-top: 3rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .subtitle {
-  font-family: "Caveat", cursive;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #333; /* Cor mais suave */
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  font-size: 1.2rem;
+  color: #f05080;
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  font-weight: 600;
 }
 
-.disposalList,
-.impactList {
-  list-style: none;
-  padding: 0;
+.cardsRow {
   display: flex;
   flex-wrap: wrap;
+  gap: 1.2rem;
   justify-content: center;
-  gap: 1.5rem;
-  align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+  margin-bottom: 1.5rem;
 }
 
-.disposalItem,
-.impactItem {
-  border-radius: 12px;
-  padding: 1.5rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 25%; /* Define a largura dos cards */
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  margin: 0.5rem;
+.card {
+  background: #faf9f6;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.07);
+  padding: 1.1rem 1rem 0.7rem 1rem;
+  min-width: 120px;
+  max-width: 170px;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribui o conteúdo interno */
-}
-
-.disposalItem:hover,
-.impactItem:hover {
-  transform: scale(1.05);
-}
-
-.titleIcon {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  color: #333;
-  text-align: center;
-}
-
-.disposalHeader,
-.impactHeader {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #ffffff;
-  padding: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  position: relative;
+  border: 2px solid transparent;
+}
+.card:hover, .card:focus {
+  box-shadow: 0 6px 18px rgba(0,218,199,0.13);
+  background: #eafaf1;
+  transform: translateY(-3px) scale(1.04);
+  border-color: #00dac7;
+  outline: none;
+}
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.7rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap: 0.5rem;
-  font-size: 1.2rem;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 1px 4px rgba(80,80,80,0.07);
+}
+.cardTitle {
   font-weight: bold;
-  color: #333;
-  font-family: "Inter", sans-serif;
+  color: #f05080;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
 }
-
-.disposalDescription,
-.impactDescription {
-  font-family: "Inter", sans-serif;
-  margin-top: 1rem;
-  font-size: 1rem;
+.cardDescription {
+  margin-top: 0.5rem;
   color: #555;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  flex-grow: 1; /* Faz o texto ocupar o espaço disponível */
+  font-size: 0.98rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  box-shadow: 0 1px 4px rgba(80,80,80,0.05);
+  animation: fadeIn 0.3s;
 }
-
-.disposalItem:hover .disposalDescription,
-.impactItem:hover .impactDescription {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Animação de entrada */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
 }
 
-.disposalItem,
-.impactItem {
-  animation: fadeIn 0.5s ease;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .disposalItem,
-  .impactItem {
-    width: 45%; /* Ajusta a largura para tablets */
+@media (max-width: 700px) {
+  .cardsRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
   }
-
-  .text {
-    font-size: 1.3rem;
-  }
-
-  .subtitle {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .disposalItem,
-  .impactItem {
-    width: 100%; /* Cada item ocupa 100% da largura em celulares */
-  }
-
-  .text {
-    font-size: 1.2rem;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-  }
-
-  .icon {
-    font-size: 1.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
+  .card {
+    min-width: 90vw;
+    max-width: 98vw;
   }
 }
