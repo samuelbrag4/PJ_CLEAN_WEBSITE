@@ -9,27 +9,32 @@ import Footer from "../components/footer";
 import LikeCard from "../components/likeCard";
 import styles from "./likes.module.css";
 
+function getInitials(nome) {
+  if (!nome) return "";
+  const parts = nome.trim().split(" ");
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 export default function Likes() {
-  const [likes, setLikes] = useState([]); // Lista de curtidas
-  const [userData, setUserData] = useState(null); // Dados do usuário
-  const [errorMessage, setErrorMessage] = useState(""); // Mensagem de erro
+  const [likes, setLikes] = useState([]);
+  const [userData, setUserData] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const userId = "509464ea-c444-43b2-a626-c14a40347efd"; // ID do usuário autenticado
+  const userId = "509464ea-c444-43b2-a626-c14a40347efd";
 
-  // Função para buscar curtidas do usuário
   const fetchUserLikes = async () => {
     try {
       const response = await fetch(`http://localhost:4000/likes/user/${userId}`);
       if (!response.ok) throw new Error("Erro ao buscar curtidas do usuário.");
       const data = await response.json();
-      setLikes(data.likes || []); // Atualiza a lista de curtidas
-      setUserData(data.user || null); // Atualiza os dados do usuário
+      setLikes(data.likes || []);
+      setUserData(data.user || null);
     } catch (error) {
       setErrorMessage(error.message);
     }
   };
 
-  // Buscar curtidas ao carregar o componente
   useEffect(() => {
     fetchUserLikes();
   }, []);
@@ -39,29 +44,37 @@ export default function Likes() {
       <Header corHeader="#F05080" />
       <div className={styles.container}>
         {/* Sidebar */}
-        <aside className={styles.sidebar} style={{ backgroundColor: "#F05080" }}>
-          <img
-            src={userData?.fotoPerfil || "https://via.placeholder.com/100"}
-            alt="Foto do usuário"
-            className={styles.userImage}
-          />
+        <aside className={styles.sidebar}>
+          <div className={styles.avatarWrapper}>
+            {userData?.fotoPerfil ? (
+              <img
+                src={userData.fotoPerfil}
+                alt="Foto do usuário"
+                className={styles.userImage}
+              />
+            ) : (
+              <div className={styles.avatarCircle}>
+                {getInitials(userData?.nome)}
+              </div>
+            )}
+          </div>
           <h2 className={styles.userName}>{userData?.nome || "Carregando..."}</h2>
-          <button className={styles.logoutButton}>
+          <button className={styles.logoutButton} title="Sair da conta">
             <FontAwesomeIcon icon={faSignOutAlt} /> Sair
           </button>
           <nav className={styles.navLinks}>
             <Link href="/account">
-              <button className={styles.navButton} style={{ color: "#F05080" }}>
+              <button className={styles.navButton} title="Meu Cadastro">
                 <FontAwesomeIcon icon={faUser} /> Meu Cadastro
               </button>
             </Link>
             <Link href="/likes">
-              <button className={styles.navButton} style={{ color: "#F05080" }}>
+              <button className={styles.navButton} title="Meus Favoritos">
                 <FontAwesomeIcon icon={faHeart} /> Meus Favoritos
               </button>
             </Link>
             <Link href="/comments">
-              <button className={styles.navButton} style={{ color: "#F05080" }}>
+              <button className={styles.navButton} title="Meus Comentários">
                 <FontAwesomeIcon icon={faComment} /> Meus Comentários
               </button>
             </Link>
@@ -71,11 +84,7 @@ export default function Likes() {
         {/* Main Content */}
         <main className={styles.mainContent}>
           <h1 className={styles.title}>Minhas Curtidas</h1>
-
-          {/* Mensagem de erro */}
           {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
-
-          {/* Lista de curtidas */}
           <div className={styles.likesList}>
             {likes.length > 0 ? (
               likes.map((like) => (

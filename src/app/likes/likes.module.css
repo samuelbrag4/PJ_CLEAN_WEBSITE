@@ -1,171 +1,208 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 80%;
-    margin: 10rem auto;
-    background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
-    background-size: 400% 400%;
-    animation: gradientBackground 5s ease infinite;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  @keyframes gradientBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  .sidebar {
-    width: 200px;
-    padding: 1.5rem;
-    border-radius: 8px;
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .sidebar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .userImage {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 2px solid #fff;
-  }
-  
-  .userName {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .logoutButton {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    text-decoration: underline;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .logoutButton:hover {
-    color: #dbbd9c;
-    transform: scale(1.1);
-  }
-  
-  .navLinks {
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2.5rem;
+  max-width: 900px;
+  margin: 6rem auto 4rem auto;
+  background: rgba(255,255,255,0.7);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(80,80,80,0.15);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid #f05080;
+}
+
+.sidebar {
+  width: 220px;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f05080 60%, #dbbd9c 100%);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(240,80,128,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 180px;
+}
+.sidebar:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(240,80,128,0.15);
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatarCircle {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #dbbd9c 40%, #f05080 100%);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
+  letter-spacing: 2px;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.userImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
+}
+
+.userName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoutButton {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logoutButton:hover {
+  background: #fff;
+  color: #f05080;
+}
+
+.navLinks {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.navButton {
+  background: #fff;
+  color: #f05080;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navButton:hover {
+  background: #f05080;
+  color: #fff;
+}
+
+.mainContent {
+  flex: 1;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(240,80,128,0.06);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: #f05080;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.likesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.noLikesMessage {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #ff4d4f;
+  background: #fff0f0;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.7);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container {
     flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .navButton {
-    background-color: #f2f2f2;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.2s, color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .navButton:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05);
-    color: inherit; /* Mantém a cor dinâmica */
-  }
-  
-  .mainContent {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .title {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .likesList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
+    padding: 1.2rem;
     gap: 1rem;
+    max-width: 98vw;
   }
-  
-  .cardTitle {
-    font-family: "Pacifico", cursive;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .cardImage {
+  .sidebar {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .cardDescription,
-  .cardReview {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .cardButton {
-    background-color: #f05080;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 1.5rem;
+    min-width: 0;
   }
-  
-  .cardButton:hover {
-    background-color: #d04070;
-    transform: scale(1.05);
+  .mainContent {
+    padding: 1.2rem;
   }
-  
-  .noLikesMessage {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #777;
+  .title {
+    font-size: 1.5rem;
   }
+}
+
+@media (max-width: 480px) {
+  .userName {
+    font-size: 1.1rem;
+  }
+  .logoutButton, .navButton {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  .avatarCircle, .userImage {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}
