@@ -1,50 +1,104 @@
 "use client";
 
-import styles from "./page.module.css";
+import styles from "./login/login.module.css";
 import Link from "next/link";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { useState } from "react";
+import { useAuth } from "./context/AuthContext";
 import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-export default function Login() {
+export default function LoginPage() {
   const router = useRouter();
+  const { login, loading } = useAuth();
+  const [form, setForm] = useState({ email: "", senha: "" });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = (event) => {
-    event.preventDefault(); // Evita o comportamento padrão do formulário
-    console.log("Redirecionando para a página inicial..."); // Log para depuração
-    router.push("/home"); // Redireciona para a página "home"
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    if (error) setError("");
+    if (success) setSuccess("");
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    if (!form.email || !form.senha) {
+      setError("Preencha todos os campos.");
+      return;
+    }
+    const result = await login(form.email, form.senha);
+    if (!result.success) {
+      setError(result.message || "Credenciais inválidas.");
+    } else {
+      setSuccess("Login realizado com sucesso! Redirecionando...");
+      setTimeout(() => {
+        router.push("/account");
+      }, 1500);
+    }
   };
 
   return (
     <div className={styles.signupContainer}>
       <div className={styles.signupBox}>
         <div className={styles.signupLeft}>
-          <h2 className={styles.signupTitle}>Entre</h2>
+          <h2 className={styles.signupTitle}>Bem-vindo de volta!</h2>
+          <p className={styles.signupSubtitle}>
+            Faça login para acessar sua conta.
+          </p>
           <form className={styles.signupForm} onSubmit={handleLogin}>
             <input
               type="email"
               name="email"
               placeholder="E-mail"
               className={styles.signupInput}
+              value={form.email}
+              onChange={handleChange}
+              disabled={loading}
+              autoComplete="email"
             />
-            <input
-              type="password"
-              name="password"
-              placeholder="Senha"
-              className={styles.signupInput}
-            />
-            <button type="submit" className={styles.signupButton}>
-              Entrar
+            <div className={styles.passwordWrapper}>
+              <input
+                type={showPassword ? "text" : "password"}
+                name="senha"
+                placeholder="Senha"
+                className={styles.signupInput}
+                value={form.senha}
+                onChange={handleChange}
+                disabled={loading}
+                autoComplete="current-password"
+              />
+              <button
+                type="button"
+                className={styles.togglePasswordButton}
+                onClick={() => setShowPassword((v) => !v)}
+                tabIndex={-1}
+                aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+              >
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+              </button>
+            </div>
+            <button type="submit" className={styles.signupButton} disabled={loading}>
+              {loading ? "Entrando..." : "Entrar"}
             </button>
+            {error && (
+              <div className={styles.signupError}>
+                <span className={styles.iconError}>⚠️</span> {error}
+              </div>
+            )}
+            {success && (
+              <div className={styles.signupSuccess}>
+                <span className={styles.spinner}></span>
+                {success}
+              </div>
+            )}
           </form>
-          <div className={styles.signupDivider}>ou</div>
-          <button className={styles.signupSocialButton}>
-            <FaGoogle className={styles.iconGoogle} size={30} /> Entre com o
-            Google
-          </button>
-          <button className={styles.signupSocialButton}>
-            <FaFacebook className={styles.iconFacebook} size={30} /> Entre com o
-            Facebook
-          </button>
+          <div className={styles.signupLinks}>
+            <Link href="/forgot-password" className={styles.signupLink}>
+              Esqueceu a senha?
+            </Link>
+          </div>
           <p className={styles.signupFooter}>
             Não tem uma conta?{" "}
             <Link href="/signup" className={styles.signupLink}>
