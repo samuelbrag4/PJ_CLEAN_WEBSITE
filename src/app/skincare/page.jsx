@@ -32,6 +32,7 @@ export default function Skincare() {
       tituloIcone: "Proteção Solar",
       descricaoIcone: "Essencial para prevenir o envelhecimento precoce",
     },
+    
   ];
 
   const cards = [
@@ -54,7 +55,7 @@ export default function Skincare() {
       descricao:
         "Estimula a produção de colágeno, melhora a textura da pele e potencializa a penetração de ativos do skincare.",
       imagem:
-        "https://www.swisscollc.com/cdn/shop/products/48009.png?v=1594308069",
+        "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/csm/csm27669/r/42.jpg",
     },
     {
       titulo: "Esponja Konjac",
@@ -63,6 +64,34 @@ export default function Skincare() {
       imagem:
         "https://ikesaki.vtexassets.com/arquivos/ids/269140-800-auto?v=637655991804530000&width=800&height=auto&aspect=true",
     },
+    {
+      titulo: "Máscara Facial de Argila Verde",
+      descricao:
+        "Controla a oleosidade, limpa profundamente os poros e ajuda na redução de cravos e espinhas.",
+      imagem:
+        "https://cdn.awsli.com.br/244/244021/produto/7132966/eb22370495.jpg",
+    },
+    {
+      titulo: "Tônico Facial de Rosas",
+      descricao:
+        "Refresca, acalma a pele e equilibra o pH, preparando o rosto para melhor absorção dos cuidados seguintes.",
+      imagem:
+        "https://epocacosmeticos.vteximg.com.br/arquivos/ids/234001-800-800/7898587672146.jpg?v=636403098569100000",
+    },
+    {
+      titulo: "Sérum de Vitamina C",
+      descricao:
+        "Ilumina a pele, uniformiza o tom e combate os radicais livres, promovendo firmeza e elasticidade.",
+      imagem:
+        "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/Z51364/aa7eb939-feed-4bc7-a53c-c8207c7939ec-51364-1.jpg",
+    },
+    {
+      titulo: "Gel de Limpeza Facial",
+      descricao:
+        "Remove impurezas e excesso de oleosidade sem ressecar, deixando a pele fresca, limpa e equilibrada.",
+      imagem:
+        "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/Z51329/8e55915c-bbc7-48e7-9a29-5456fe6781a7-vult-51329-gel-limpeza-antioleosidade-frontal-01.jpg",
+    }
   ];
 
   return (
