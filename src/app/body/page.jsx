@@ -62,6 +62,34 @@ const cards = [
     imagem:
       "https://http2.mlstatic.com/D_NQ_NP_2X_990510-MLA83238645725_032025-F.webp",
   },
+  {
+    titulo: "Rolo Facial de Quartzo",
+    descricao:
+      "Estimula a circulação do rosto, ajuda na redução de inchaços e promove um aspecto mais saudável à pele.",
+    imagem:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_813866-MLB45678987304_042021-F.webp",
+  },
+  {
+    titulo: "Escova de Banho de Cerdas Naturais",
+    descricao:
+      "Ideal para esfoliação e limpeza profunda durante o banho, deixando a pele mais suave e revitalizada.",
+    imagem:
+      "https://cdn.awsli.com.br/600x700/1358/1358225/produto/148866583/escova-de-banho-cerdas-naturais-2utmhc8k1f.jpg",
+  },
+  {
+    titulo: "Pente de Madeira",
+    descricao:
+      "Desembaraça os fios sem agredir, reduz o frizz e evita a quebra, ideal para um cuidado capilar natural.",
+    imagem:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_961456-MLB45296782624_032021-F.webp",
+  },
+  {
+    titulo: "Esponja Konjac",
+    descricao:
+      "Feita de fibras vegetais, proporciona uma limpeza suave e natural, ideal para peles sensíveis e delicadas.",
+    imagem:
+      "https://down-br.img.susercontent.com/file/efbeef7b4e974b9da36706b6499c2fc0",
+  },
 ];
 
 export default function Corpo() {
