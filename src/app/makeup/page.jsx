@@ -68,6 +68,34 @@ export default function Maquiagem() {
       imagem:
         "https://acrilicostore.fbitsstatic.net/img/p/organizador-de-maquiagem-4-gavetas-com-bandeja-para-batom-70136/256618-5.jpg?w=1000&h=1000&v=no-change&qs=ignore",
     },
+    {
+      titulo: "Delineador em Gel",
+      descricao:
+        "Proporciona um acabamento mais intenso e preciso, ideal para criar linhas finas ou grossas com facilidade.",
+      imagem:
+        "https://cdn.awsli.com.br/2258/2258692/produto/315171742/delineador-em-gel-ruby-rose-1ggujqncay.png",
+    },
+    {
+      titulo: "Paleta de Sombras Nude",
+      descricao:
+        "Com uma variedade de tons neutros, é perfeita para criar looks suaves e elegantes, do dia a noite.",
+      imagem:
+        "https://images.tcdn.com.br/img/img_prod/826475/paleta_de_sombras_nude_dalla_689_1_91cbd8f37d24d542b8d30b046491c2fa.png",
+    },
+    {
+      titulo: "Lábios Matte",
+      descricao:
+        "Batom de acabamento matte com longa duração, que garante lábios perfeitos e sem retoques durante o dia.",
+      imagem:
+        "https://i8.amplience.net/i/Cosnova/5305520",
+    },
+    {
+      titulo: "Fixador de Maquiagem",
+      descricao:
+        "Prolonga a durabilidade da maquiagem, mantendo o rosto fresco e com aspecto impecável durante o dia todo.",
+      imagem:
+        "https://cdn.sistemawbuy.com.br/arquivos/cad5cc7133685cdd8d0d7880d11cba96/produtos/668dab35e7691/b554be9b70-668dab6f1be5d.jpg",
+    }
   ];
 
   return (
