@@ -63,32 +63,32 @@ const cards = [
       "https://http2.mlstatic.com/D_NQ_NP_2X_990510-MLA83238645725_032025-F.webp",
   },
   {
-    titulo: "Rolo Facial de Quartzo",
+    titulo: "Bucha Vegetal Natural",
     descricao:
-      "Estimula a circulação do rosto, ajuda na redução de inchaços e promove um aspecto mais saudável à pele.",
+      "Feita de fibras naturais, promove esfoliação eficaz durante o banho, ajudando na renovação celular e deixando a pele mais macia.",
     imagem:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_813866-MLB45678987304_042021-F.webp",
+      "https://cdn.awsli.com.br/2500x2500/1994/1994328/produto/180911782/74487acd59.jpg",
   },
   {
-    titulo: "Escova de Banho de Cerdas Naturais",
+    titulo: "Pedra-Pomes para Pés",
     descricao:
-      "Ideal para esfoliação e limpeza profunda durante o banho, deixando a pele mais suave e revitalizada.",
+      "Ideal para remover calosidades e asperezas dos pés, deixando a pele mais lisa e suave ao toque.",
     imagem:
-      "https://cdn.awsli.com.br/600x700/1358/1358225/produto/148866583/escova-de-banho-cerdas-naturais-2utmhc8k1f.jpg",
+      "https://images.tcdn.com.br/img/img_prod/159791/lixa_de_madeira_para_pes_mista_com_pedra_pomes_01_ou_12_unidades_4859_1_20240718174555.jpg",
   },
   {
-    titulo: "Pente de Madeira",
+    titulo: "Óleo Corporal Hidratante",
     descricao:
-      "Desembaraça os fios sem agredir, reduz o frizz e evita a quebra, ideal para um cuidado capilar natural.",
+      "Rico em nutrientes e antioxidantes, hidrata profundamente, deixando a pele nutrida, luminosa e com toque sedoso.",
     imagem:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_961456-MLB45296782624_032021-F.webp",
+      "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B49418/NSPA-OL-DES-HID-CPO-QUIN-AMEN_V3_B49418.jpg",
   },
   {
-    titulo: "Esponja Konjac",
+    titulo: "Ventosas de Silicone",
     descricao:
-      "Feita de fibras vegetais, proporciona uma limpeza suave e natural, ideal para peles sensíveis e delicadas.",
+      "Utilizadas para massagens com efeito de vácuo, ajudam a ativar a circulação, aliviar tensões e potencialmente reduzir celulites.",
     imagem:
-      "https://down-br.img.susercontent.com/file/efbeef7b4e974b9da36706b6499c2fc0",
+      "https://m.media-amazon.com/images/I/51hRSfKXSBL._AC_UF1000,1000_QL80_.jpg",
   },
 ];
 
