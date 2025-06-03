@@ -279,6 +279,20 @@ const SectionSkin = () => {
               <span className={styles.skinType}>{result}</span>
             </h2>
             <ul className={styles.resultDetails}>
+            {result === "Oleosa" && (
+                <>
+                  <li>Sensação: Pegajosa, oleosa logo após a limpeza.</li>
+                  <li>
+                    Aparência: Brilho excessivo (zona T: testa, nariz, queixo).
+                  </li>
+                  <li>Toque: Lisa demais, quase escorregando.</li>
+                  <li>Problemas comuns: Cravos, espinhas, poros dilatados.</li>
+                  <li>
+                    Dica: Pega um papel toalha umas 2h depois de lavar o rosto.
+                    Se sair encharcado, bingo: pele oleosa.
+                  </li>
+                </>
+              )}
               {result === "Seca" && (
                 <>
                   <li>
@@ -293,20 +307,6 @@ const SectionSkin = () => {
                   <li>
                     Dica: Após lavar o rosto, sente a pele esticada ou
                     desconfortável? Provavelmente é seca.
-                  </li>
-                </>
-              )}
-              {result === "Oleosa" && (
-                <>
-                  <li>Sensação: Pegajosa, oleosa logo após a limpeza.</li>
-                  <li>
-                    Aparência: Brilho excessivo (zona T: testa, nariz, queixo).
-                  </li>
-                  <li>Toque: Lisa demais, quase escorregando.</li>
-                  <li>Problemas comuns: Cravos, espinhas, poros dilatados.</li>
-                  <li>
-                    Dica: Pega um papel toalha umas 2h depois de lavar o rosto.
-                    Se sair encharcado, bingo: pele oleosa.
                   </li>
                 </>
               )}

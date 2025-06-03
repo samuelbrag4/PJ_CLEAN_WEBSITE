@@ -139,6 +139,7 @@ export default function Blog() {
             key={cat}
             onClick={() => setCategoriaSelecionada(cat)}
             style={{
+              fontFamily: 'Inter, sans-serif',
               background: categoriaSelecionada === cat ? corAtual : "#fff",
               color: categoriaSelecionada === cat ? "#fff" : corAtual,
               border: `2px solid ${corAtual}`,

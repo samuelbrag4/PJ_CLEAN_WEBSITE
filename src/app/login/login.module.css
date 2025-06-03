@@ -157,6 +157,7 @@
 .signupLink {
   color: #f05080;
   text-decoration: none;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
 }
 .signupLink:hover {

@@ -9,7 +9,7 @@
   background-size: 400% 400%;
   position: relative;
   overflow: hidden;
-  margin-top: 4rem;
+  margin-top: 12rem;
 }
 
 .containerInformacao {
@@ -56,11 +56,15 @@
   flex-wrap: wrap;
 }
 .selo {
-  background: #fff;
-  color: #f05080;
+  background: linear-gradient(90deg, #f05080, #dbbd9c);
+  background-size: 400% 400%;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+  color: #fff;
   border-radius: 16px;
   padding: 0.3rem 1rem;
-  font-size: 0.98rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -89,7 +93,6 @@
   z-index: 1;
 }
 .heroPrimeiroBotao:hover {
-  background: #dbbd9c !important;
   color: #fff;
   transform: scale(1.06);
 }
