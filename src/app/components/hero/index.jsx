@@ -5,8 +5,6 @@ const Hero = ({
   heroTitulo,
   heroTexto,
   heroSubtitulo = "Sua beleza, sua confiança. Produtos testados e aprovados por milhares de clientes!",
-  textoPrimeiroBotao,
-  textoSegundoBotao,
   linkImage,
   textoAlt,
   corBotao,
@@ -37,16 +35,6 @@ const Hero = ({
           <span className={styles.selo}><FaShieldAlt /> Site seguro</span>
           <span className={styles.selo}><FaUsers /> +10 mil clientes</span>
           <span className={styles.selo}><FaCheckCircle /> Dermatologicamente testado</span>
-        </div>
-        <div className={styles.heroBotoes}>
-          <button
-            className={styles.heroPrimeiroBotao}
-            style={{ backgroundColor: corBotao }}
-          >
-            {textoPrimeiroBotao}
-            <span className={styles.pulse}></span>
-          </button>
-          <button className={styles.heroSegundoBotao}>{textoSegundoBotao}</button>
         </div>
         <button
           className={styles.scrollDown}
