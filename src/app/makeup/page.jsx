@@ -159,6 +159,26 @@ export default function Maquiagem() {
               titulo="Acessórios Essenciais para Maquiagem"
               cards={cards}
             />
+
+
+<SkinTypeGrid
+  category="Maquiagem"
+  corCategory="#F05080"
+  title="O que impacta na qualidade da sua maquiagem?"
+  oilyImage="https://s2-marieclaire.glbimg.com/-qoEIaVQO8kosFL9WRjgh1O_IMo=/0x0:1080x608/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2024/C/A/XBpBUcRp2b4h1gInNU3Q/clipdown.app-448018408-784096320174849-9039574458607882360-n-1-.jpg"
+  oilyTitle="Acabamento Matte"
+  oilyDescription="Para peles oleosas, um acabamento matte é ideal, pois controla a oleosidade e garante que a maquiagem permaneça intacta durante o dia."
+  dryImage="https://www.maybelline.com.br/-/media/project/loreal/brand-sites/mny/americas/br/artigos/2024/rosto/categoria-pai/make-glow/extensao-cilios-2.jpg?rev=e762fa8b824145639fd37e9f3922b68c&cx=0.45&cy=0.58&cw=650&ch=650&hash=A139FA9FD5F211C4F3076C588B61D622"
+  dryTitle="Hidratação e Luminosidade"
+  dryDescription="Peles secas se beneficiam de produtos que oferecem hidratação e um toque luminoso, para evitar que a maquiagem fique craquelada."
+  combinationImage="https://www.maybelline.com.br/-/media/project/loreal/brand-sites/mny/americas/br/artigos/2024/rosto/categoria-pai/tendencia-maquiagem-natural/maquiagem-natural.jpg?rev=01961784b0a34aecb0fc5527ebe32fff&cx=0.45&cy=0.43&cw=650&ch=650&hash=431438EEF2A81887006ECDABE1F66D10"
+  combinationTitle="Acabamento Natural"
+  combinationDescription="Para peles mistas, produtos com acabamento natural são ideais. Eles proporcionam uma cobertura equilibrada, sem deixar a pele oleosa ou ressecada."
+  normalImage="https://www.adoromaquiagem.com.br/wp-content/uploads/2024/04/horizontal-shot-pleased-woman-closes-eyes-smiles-broadly-holds-cosmetic-brushes-applying-makeup-wears-headband-casual-t-shirt-isolated-beige-background-facial-skin-care-concept-scaled.webp"
+  normalTitle="Versatilidade"
+  normalDescription="Peles normais podem usar uma variedade maior de produtos, permitindo que a maquiagem tenha diferentes acabamentos e texturas, do matte ao glow."
+/>
+
           </div>
         </main>
       </div>
