@@ -20,31 +20,31 @@ export default function SustainabilitySection() {
       iconUrl: "https://cepel.vteximg.com.br/arquivos/ids/169421-1000-1000/38643-Adesivo.png?v=637922803733630000",
       iconAlt: "Lixeira Azul",
       title: "Azul",
-      description: "Papel e papelão.",
+      description: "Papel e papelão",
     },
     {
       iconUrl: "https://bravidistribuidora.agilecdn.com.br/2734_1.jpg",
       iconAlt: "Lixeira Verde",
       title: "Verde",
-      description: "Vidro.",
+      description: "Vidro",
     },
     {
       iconUrl: "https://images.tcdn.com.br/img/img_prod/793949/lixeira_coleta_seletiva_60l_basculante_amarela_611_1_20200902133943.png",
       iconAlt: "Lixeira Amarela",
       title: "Amarelo",
-      description: "Metais.",
+      description: "Metais",
     },
     {
       iconUrl: "https://images.tcdn.com.br/img/img_prod/793949/lixeira_coleta_seletiva_60l_basculante_vermelha_617_1_20200902134651.png",
       iconAlt: "Lixeira Vermelha",
       title: "Vermelho",
-      description: "Plásticos.",
+      description: "Plásticos",
     },
     {
       iconUrl: "https://cepel.vteximg.com.br/arquivos/ids/169477-1000-1000/3.png?v=637932296562400000",
       iconAlt: "Lixeira Marrom",
       title: "Marrom",
-      description: "Resíduos orgânicos.",
+      description: "Resíduos orgânicos",
     },
   ];
 

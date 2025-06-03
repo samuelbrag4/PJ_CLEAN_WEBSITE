@@ -35,10 +35,23 @@
 
 .itemActive {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  animation: gradientBackground 5s ease infinite; /* Adiciona a animação */
-  background: linear-gradient(-45deg, #dbbd9c, #f05080, #00dac7, #49f6ff);
+  background: linear-gradient(90deg, #5fced4, #00dac7, #f05080, #dbbd9c);
   background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+  opacity: 0.9;
   color: #fff;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .question {

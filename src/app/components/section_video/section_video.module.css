@@ -130,21 +130,6 @@
   margin-top: 3rem;
 }
 
-.startButton {
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
-  color: #fff;
-  background-color: #00dac7;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.startButton:hover {
-  background-color: #00b8a5;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .card {

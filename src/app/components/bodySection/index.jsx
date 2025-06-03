@@ -14,7 +14,7 @@ export default function BodySection() {
         <p className={styles.subtitle}>
           Descubra como manter seu corpo saudável e radiante com dicas de <strong>hidratação</strong>, <strong>limpeza</strong> e cuidados diários. Transforme sua rotina e sinta-se bem consigo mesmo!
         </p>
-        <Link href="/bodycare">
+        <Link href="/body">
           <button className={styles.button}>Ver Mais</button>
         </Link>
       </div>

@@ -84,7 +84,8 @@
 .cardDescription {
   margin-top: 0.5rem;
   color: #555;
-  font-size: 0.98rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.94rem;
   text-align: center;
   background: #fff;
   border-radius: 8px;
