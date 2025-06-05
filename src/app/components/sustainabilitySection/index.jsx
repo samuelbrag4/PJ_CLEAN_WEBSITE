@@ -54,7 +54,7 @@ export default function SustainabilitySection() {
       iconAlt: "Descarte Inadequado",
       title: "Descarte Inadequado de Cosméticos",
       description:
-        "No Brasil, o mercado de beleza produz cerca de 78 milhões de toneladas de lixo anualmente, composto principalmente por embalagens plásticas. Esmaltes contêm compostos tóxicos como tolueno e formaldeídos, que podem contaminar o solo e a água.",
+        "O mercado de beleza no Brasil gera milhões de toneladas de lixo, principalmente plástico. Esmaltes contêm toxinas que poluem solo e água.",
     },
     {
       iconUrl: "https://cdn.dooca.store/1857/posts/capa-lixo.jpg?v=1702491689",
