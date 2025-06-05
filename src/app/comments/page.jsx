@@ -24,7 +24,7 @@ export default function Comments() {
 
   const fetchUserComments = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/comments/user/${userId}`);
+      const response = await fetch(`https://clean-2tds.coolify.fps92.dev/comments/user/${userId}`);
       if (!response.ok) throw new Error("Erro ao buscar comentários do usuário.");
       const data = await response.json();
       setComments(data.comments || []);

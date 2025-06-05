@@ -27,13 +27,21 @@ export default function ArticlePage() {
 
   useEffect(() => {
     if (!articleId) return;
-    fetch(`http://localhost:4000/artigos/${articleId}`)
-      .then((res) => res.json())
+    fetch(`https://clean-2tds.coolify.fps92.dev/artigos/${articleId}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
       .then((data) => {
         setArtigo(data.artigo || data); // ajuste conforme resposta da sua API
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch((error) => {
+        console.error('Fetch error:', error);
+        setLoading(false);
+      });
   }, [articleId]);
 
   if (loading) {

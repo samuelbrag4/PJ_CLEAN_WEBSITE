@@ -26,7 +26,7 @@ export default function Contato() {
     setStatusMessage(""); // Limpa a mensagem de status
 
     try {
-      const response = await fetch("http://localhost:4000/send-email", {
+      const response = await fetch("https://clean-2tds.coolify.fps92.dev/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

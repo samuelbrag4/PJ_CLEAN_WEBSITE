@@ -36,7 +36,7 @@ export default function Produtos() {
   );
 
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("http://localhost:4000/https://clean-2tds.coolify.fps92.dev/products")
       .then((r) => r.json())
       .then((data) => {
         setProducts(data.products);
@@ -47,7 +47,7 @@ export default function Produtos() {
 
   // Buscar likes do usuário logado ao carregar a página
   useEffect(() => {
-    fetch("http://localhost:4000/likes/user/me", { credentials: "include" })
+    fetch("https://clean-2tds.coolify.fps92.dev/likes/user/me", { credentials: "include" })
       .then((r) => r.json())
       .then((data) => setLikes(data.likes || []))
       .catch(() => setLikes([]));
@@ -59,7 +59,7 @@ export default function Produtos() {
     const token = localStorage.getItem("token"); // <-- Pegue o token aqui, antes de usar!
     if (like) {
       // Descurtir
-      await fetch(`http://localhost:4000/likes/${like.id}`, {
+      await fetch(`https://clean-2tds.coolify.fps92.dev/likes/${like.id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ export default function Produtos() {
       setLikes((prev) => prev.filter((l) => l.id !== like.id));
     } else {
       // Curtir
-      const res = await fetch("http://localhost:4000/likes", {
+      const res = await fetch("https://clean-2tds.coolify.fps92.dev/likes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

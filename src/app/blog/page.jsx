@@ -26,7 +26,7 @@ export default function Blog() {
   const corAtual = coresCategoria[categoriaSelecionada] || "#00DAC7";
 
   useEffect(() => {
-    fetch("http://localhost:4000/blogcards")
+    fetch("https://clean-2tds.coolify.fps92.dev/blogcards")
       .then((res) => res.json())
       .then((data) => {
         setCardData(data.cards);

@@ -29,7 +29,7 @@ export default function Likes() {
   const fetchUserLikes = async () => {
     try {
       const token = localStorage.getItem("token"); // ou onde você salva o token
-      const response = await fetch("http://localhost:4000/likes/user/me", {
+      const response = await fetch("https://clean-2tds.coolify.fps92.dev/likes/user/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
