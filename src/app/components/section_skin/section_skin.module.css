@@ -195,12 +195,20 @@
   transform: scale(1.5);
 }
 
+.submitButtonContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 2rem;
+}
+
 .submitButton {
   background: linear-gradient(145deg, #5fced4, #5fced4);
   color: #fff;
   border: none;
   padding: 1rem 2rem;
   border-radius: 12px;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
@@ -210,7 +218,6 @@
 }
 
 .submitButton:hover {
-  background-color: #5fced4;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
   transform: scale(1.05);
 }

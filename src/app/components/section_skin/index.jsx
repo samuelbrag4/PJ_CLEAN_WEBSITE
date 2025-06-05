@@ -254,9 +254,9 @@ const SectionSkin = () => {
             </label>
           </fieldset>
 
-          <button type="submit" className={styles.submitButton}>
-            Descobrir meu tipo de pele
-          </button>
+          <div className={styles.submitButtonContainer}>
+            <button className={styles.submitButton}>Descobrir meu tipo de pele</button>
+          </div>
           <p className={styles.disclaimer}>
             Este formulário é apenas uma orientação e não substitui uma
             avaliação profissional. Para ter certeza sobre seu tipo de pele,
@@ -279,7 +279,7 @@ const SectionSkin = () => {
               <span className={styles.skinType}>{result}</span>
             </h2>
             <ul className={styles.resultDetails}>
-            {result === "Oleosa" && (
+              {result === "Oleosa" && (
                 <>
                   <li>Sensação: Pegajosa, oleosa logo após a limpeza.</li>
                   <li>
@@ -343,7 +343,7 @@ const SectionSkin = () => {
             </ul>
           </div>
         )}
-{popupContent && (
+        {popupContent && (
           <div className={styles.popup}>
             <div className={styles.popupContent}>
               <h2 className={styles.popupTitle}>{popupContent.title}</h2>

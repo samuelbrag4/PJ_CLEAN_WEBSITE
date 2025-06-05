@@ -167,7 +167,8 @@
   min-width: 180px;
   padding: 0.7rem 1rem;
   border: 1.5px solid #dbbd9c;
-  border-radius: 8px;
+  border-radius: 4rem;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   outline: none;
   transition: border 0.2s;
@@ -178,9 +179,10 @@
 }
 
 .select, .priceInput {
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.5rem;
   border: 1.5px solid #dbbd9c;
-  border-radius: 8px;
+  border-radius: 4rem;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   min-width: 120px;
   outline: none;
