@@ -21,11 +21,10 @@
 }
 
 .nenhumCard {
-  color: #888;
-  text-align: center;
-  margin: 2rem 0;
-  font-size: 1.1rem;
-  font-style: italic;
+    font-family: "Inter", sans-serif;
+    padding: 2rem;
+    color: #777;
+    font-style: italic;
 }
 
 .botao {
