@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./section-cards.module.css";
-import Card from "../card";
+import Card from "../cards";
 
 const SectionCards = ({ cardData = [], corBotao, corTextoBotao }) => {
     const [expanded, setExpanded] = useState(false);

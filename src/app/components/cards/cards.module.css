@@ -1,0 +1,153 @@
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.15s;
+  width: 100%;
+  max-width: 330px;
+  min-height: 380px;
+  padding: 0.5rem;
+}
+
+.card:hover {
+  border-color: #bfa77a;
+  transform: translateY(-2px) scale(1.01);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageCard {
+  max-width: 90%;
+  max-height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.categoriaBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 0.15rem 0.7rem;
+  border-radius: 12px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.60rem;
+  font-weight: 500;
+  background: #f8f6f1;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+  text-transform: uppercase;
+  opacity: 1;
+  border: 1px solid #e5e5e5;
+}
+
+.textCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 0.8rem 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.tituloCard {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.3rem;
+  min-height: 1.7rem;
+  letter-spacing: 0.01em;
+}
+
+.precoMarca {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.preco {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #5fced4;
+}
+
+.marcaLink {
+  font-size: 0.92rem;
+  color: #bfa77a;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid #bfa77a;
+  transition: color 0.2s;
+}
+
+.marcaLink:hover {
+  color: #f05080;
+  border-bottom: 1px solid #f05080;
+}
+
+.descricaoWrapper {
+  margin-bottom: 0.6rem;
+  min-height: 36px;
+}
+
+.descricao {
+  color: #888;
+  font-size: 0.93rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.botaoCard {
+  background: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 0.35rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+}
+
+.botaoCard:hover {
+  background: #e5e5e5;
+  color: #f05080;
+  border-color: #f05080;
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-left: 0.2rem;
+  transition: transform 0.2s, color 0.2s;
+  color: #bfa77a;
+  opacity: 0.7;
+}
+
+.likeButton:hover {
+  transform: scale(1.1);
+  color: #f05080;
+  opacity: 1;
+}

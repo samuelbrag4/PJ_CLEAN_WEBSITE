@@ -4,7 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Hero from "../components/hero";
-import Card from "../components/card";
+import Card from "../components/cards";
 import styles from "./products.module.css";
 
 const PRODUCTS_PER_PAGE = 10;
@@ -191,7 +191,7 @@ export default function Produtos() {
           {/* Filtro por preço */}
           <input
             type="number"
-            placeholder="Preço mínimo"
+            placeholder="Preço mín"
             value={filter.precoMin}
             min={0}
             onChange={(e) =>
@@ -203,7 +203,7 @@ export default function Produtos() {
           <span style={{ margin: "0 0.5rem" }}>-</span>
           <input
             type="number"
-            placeholder="Preço máximo"
+            placeholder="Preço máx"
             value={filter.precoMax}
             min={0}
             onChange={(e) =>
