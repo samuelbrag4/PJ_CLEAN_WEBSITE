@@ -44,44 +44,6 @@ export default function FAQSection() {
     },
   ];
 
-  const team = [
-    {
-      name: "Samuel Braga",
-      role: "Product Owner",
-      github: "https://github.com/samuelbrag4",
-    },
-    {
-      name: "Jéssica Prestelo",
-      role: "Scrum Master",
-      github: "https://github.com/jessicaprestelo1201",
-    },
-    {
-      name: "Fernanda Alves",
-      role: "Desenvolvedora",
-      github: "https://github.com/F3rNnd4",
-    },
-    {
-      name: "Nathalia Santos",
-      role: "Desenvolvedora",
-      github: "https://github.com/Nathsanfer",
-    },
-    {
-      name: "Gabriela Moleta",
-      role: "Desenvolvedora",
-      github: "https://github.com/gabriela-moleta",
-    },
-    {
-      name: "Alexandra Cristinha",
-      role: "Desenvolvedora",
-      github: "https://github.com/Alexandraaversani",
-    },
-    {
-      name: "Nicole Cau",
-      role: "Desenvolvedora",
-      github: "https://github.com/Nickcau1203",
-    },
-  ];
-
   return (
     <section className={styles.faq}>
       <h2 className={styles.title}>Perguntas Frequentes</h2>
@@ -109,32 +71,7 @@ export default function FAQSection() {
           </div>
         ))}
       </div>
-      <div className={styles.team}>
-        <h3 className={styles.subtitle}>Conheça Nossa Equipe</h3>
-        <ul className={styles.teamList}>
-          {team.map((member, index) => (
-            <li key={index} className={styles.teamMember}>
-              <img
-                src={`${member.github}.png`}
-                alt={`Foto de perfil de ${member.name}`}
-                className={styles.profilePic}
-              />
-              <div>
-                <p className={styles.memberName}>{member.name}</p>
-                <p className={styles.memberRole}>{member.role}</p>
-                <a
-                  href={member.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.githubLink}
-                >
-                  GitHub
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      
       <div className={styles.extra}>
         <p>Não encontrou o que procurava?</p>
         <Link href="/contact">

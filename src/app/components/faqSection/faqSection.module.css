@@ -83,86 +83,6 @@
   transform: rotate(180deg);
 }
 
-.team {
-  margin-top: 3rem;
-}
-
-.subtitle {
-  font-family: Caveat, cursive;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #333;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 3px #0000001a;
-}
-
-.teamList {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
-}
-
-.teamMember {
-  text-align: center;
-  max-width: 150px;
-  flex: 1 1 150px; /* Permite que os cards cresçam igualmente */
-  display: flex;
-  flex-direction: column; /* Garante que o conteúdo interno seja empilhado */
-  justify-content: space-between; /* Distribui o conteúdo interno */
-  align-items: center;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.profilePic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-
-.memberName {
-  font-family: "Inter", sans-serif; /* Fonte Inter */
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.memberRole {
-  font-family: "Inter", sans-serif; /* Fonte Inter */
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 0.5rem;
-}
-
-.githubLink {
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none;
-  background: linear-gradient(-45deg, #00dac7, #f05080, #dbbd9c, #49f6ff);
-  background-size: 400% 400%;
-  animation: gradientBackground 5s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  transition: transform 0.3s ease;
-}
-
-.githubLink:hover {
-  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-}
-
 .extra {
   margin-top: 2rem;
   text-align: center;
@@ -231,15 +151,6 @@
     font-size: 0.9rem;
     padding: 0.6rem 1rem;
   }
-
-  .teamList {
-    flex-direction: column; /* Alinha os cards em coluna */
-    gap: 1rem; /* Espaçamento entre os cards */
-  }
-
-  .teamMember {
-    max-width: 100%; /* Faz os cards ocuparem toda a largura disponível */
-  }
 }
 
 @media (max-width: 480px) {
@@ -257,12 +168,12 @@
     padding: 0.5rem 0.8rem;
   }
 
-  .teamList {
-    flex-direction: column; /* Alinha os cards em coluna */
-    gap: 0.8rem; /* Reduz o espaçamento entre os cards */
+
+  .question {
+    font-size: 0.9rem;
   }
 
-  .teamMember {
-    max-width: 100%; /* Faz os cards ocuparem toda a largura disponível */
+  .answer {
+    font-size: 0.8rem;
   }
 }
