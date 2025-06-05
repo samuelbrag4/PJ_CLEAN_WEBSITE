@@ -3,7 +3,6 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import styles from "./articleTeste.module.css";
-import { useParams } from "next/navigation";
 
 function formatDate(dateStr) {
   if (!dateStr) return "";
@@ -33,8 +32,6 @@ const artigoFake = {
 };
 
 export default function ArticlePage() {
-  const { id } = useParams();
-
   let fontes = [];
   try {
     fontes = Array.isArray(JSON.parse(artigoFake.fontes))
