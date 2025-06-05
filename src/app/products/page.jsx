@@ -141,9 +141,6 @@ export default function Produtos() {
         heroTexto={
           "Já sabe do que precisa, mas não tem ideia de onde comprar? Venha, vamos te ajudar! Aqui você encontrará produtos perfeitos para o que tem em mente."
         }
-        textoPrimeiroBotao={"Ler Mais"}
-        corBotao={"#DBBD9C"}
-        textoSegundoBotao={"Sobre"}
       />
 
       <div className={styles.container}>
