@@ -68,6 +68,34 @@ export default function Maquiagem() {
       imagem:
         "https://acrilicostore.fbitsstatic.net/img/p/organizador-de-maquiagem-4-gavetas-com-bandeja-para-batom-70136/256618-5.jpg?w=1000&h=1000&v=no-change&qs=ignore",
     },
+    {
+      titulo: "Delineador em Gel",
+      descricao:
+        "Proporciona um acabamento mais intenso e preciso, ideal para criar linhas finas ou grossas com facilidade.",
+      imagem:
+        "https://cdn.awsli.com.br/2258/2258692/produto/315171742/delineador-em-gel-ruby-rose-1ggujqncay.png",
+    },
+    {
+      titulo: "Paleta de Sombras Nude",
+      descricao:
+        "Com uma variedade de tons neutros, é perfeita para criar looks suaves e elegantes, do dia a noite.",
+      imagem:
+        "https://images.tcdn.com.br/img/img_prod/826475/paleta_de_sombras_nude_dalla_689_1_91cbd8f37d24d542b8d30b046491c2fa.png",
+    },
+    {
+      titulo: "Lábios Matte",
+      descricao:
+        "Batom de acabamento matte com longa duração, que garante lábios perfeitos e sem retoques durante o dia.",
+      imagem:
+        "https://i8.amplience.net/i/Cosnova/5305520",
+    },
+    {
+      titulo: "Fixador de Maquiagem",
+      descricao:
+        "Prolonga a durabilidade da maquiagem, mantendo o rosto fresco e com aspecto impecável durante o dia todo.",
+      imagem:
+        "https://cdn.sistemawbuy.com.br/arquivos/cad5cc7133685cdd8d0d7880d11cba96/produtos/668dab35e7691/b554be9b70-668dab6f1be5d.jpg",
+    }
   ];
 
   return (
@@ -131,6 +159,26 @@ export default function Maquiagem() {
               titulo="Acessórios Essenciais para Maquiagem"
               cards={cards}
             />
+
+
+<SkinTypeGrid
+  category="Maquiagem"
+  corCategory="#F05080"
+  title="O que impacta na qualidade da sua maquiagem?"
+  oilyImage="https://s2-marieclaire.glbimg.com/-qoEIaVQO8kosFL9WRjgh1O_IMo=/0x0:1080x608/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2024/C/A/XBpBUcRp2b4h1gInNU3Q/clipdown.app-448018408-784096320174849-9039574458607882360-n-1-.jpg"
+  oilyTitle="Acabamento Matte"
+  oilyDescription="Para peles oleosas, um acabamento matte é ideal, pois controla a oleosidade e garante que a maquiagem permaneça intacta durante o dia."
+  dryImage="https://www.maybelline.com.br/-/media/project/loreal/brand-sites/mny/americas/br/artigos/2024/rosto/categoria-pai/make-glow/extensao-cilios-2.jpg?rev=e762fa8b824145639fd37e9f3922b68c&cx=0.45&cy=0.58&cw=650&ch=650&hash=A139FA9FD5F211C4F3076C588B61D622"
+  dryTitle="Hidratação e Luminosidade"
+  dryDescription="Peles secas se beneficiam de produtos que oferecem hidratação e um toque luminoso, para evitar que a maquiagem fique craquelada."
+  combinationImage="https://www.maybelline.com.br/-/media/project/loreal/brand-sites/mny/americas/br/artigos/2024/rosto/categoria-pai/tendencia-maquiagem-natural/maquiagem-natural.jpg?rev=01961784b0a34aecb0fc5527ebe32fff&cx=0.45&cy=0.43&cw=650&ch=650&hash=431438EEF2A81887006ECDABE1F66D10"
+  combinationTitle="Acabamento Natural"
+  combinationDescription="Para peles mistas, produtos com acabamento natural são ideais. Eles proporcionam uma cobertura equilibrada, sem deixar a pele oleosa ou ressecada."
+  normalImage="https://www.adoromaquiagem.com.br/wp-content/uploads/2024/04/horizontal-shot-pleased-woman-closes-eyes-smiles-broadly-holds-cosmetic-brushes-applying-makeup-wears-headband-casual-t-shirt-isolated-beige-background-facial-skin-care-concept-scaled.webp"
+  normalTitle="Versatilidade"
+  normalDescription="Peles normais podem usar uma variedade maior de produtos, permitindo que a maquiagem tenha diferentes acabamentos e texturas, do matte ao glow."
+/>
+
           </div>
         </main>
       </div>

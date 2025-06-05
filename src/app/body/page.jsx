@@ -162,6 +162,24 @@ export default function Corpo() {
         cards={cards}
       />
 
+<SkinTypeGrid
+  category="CORPO"
+  corCategory="#DBBD9C"
+  title="Fatores que impactam a pele do corpo no dia a dia"
+  oilyImage="https://www.psicologoeterapia.com.br/wp-content/uploads/estresse-e-psicologia-2.jpg"
+  oilyTitle="Estresse"
+  oilyDescription="O estresse libera hormônios como o cortisol, que afetam diretamente a barreira da pele, tornando-a mais sensível e propensa a inflamações e alergias. Técnicas de relaxamento ajudam no equilíbrio corporal."
+  dryImage="https://widoctor.com.br/wp-content/uploads/2020/05/hot-weather-temperatures.jpg"
+  dryTitle="Clima"
+  dryDescription="Mudanças bruscas de temperatura, vento frio ou calor excessivo ressecam e sensibilizam a pele do corpo. Ajustar os cuidados conforme a estação é essencial para evitar danos."
+  combinationImage="https://static1.minhavida.com.br/articles/d3/81/c6/ba/apertada-orig-1.jpg"
+  combinationTitle="Roupas"
+  combinationDescription="Tecidos sintéticos e roupas muito apertadas dificultam a respiração da pele, podendo causar irritações, suor excessivo e até acne corporal. Prefira tecidos naturais como algodão."
+  normalImage="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3523556:1718716527/WhatsApp%20Image%202024-06-18%20at%2010.15.40.jpeg?f=16x9&h=574&w=1020&$p$f$h$w=65f706d"
+  normalTitle="Banhos Prolongados"
+  normalDescription="Banhos muito quentes e demorados removem a oleosidade natural da pele, deixando-a ressecada e vulnerável. Opte por água morna e evite o uso excessivo de sabonetes agressivos."
+/>
+
       <Footer corFooter={"#DBBD9C"} />
     </div>
   );
