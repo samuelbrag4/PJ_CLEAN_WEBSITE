@@ -138,7 +138,8 @@
 
 .button {
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
   color: #fff;
   background-color: #f05080;
   border: none;
