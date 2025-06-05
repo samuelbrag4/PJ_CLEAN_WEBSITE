@@ -164,7 +164,7 @@
 }
 
 .searchInput {
-  flex: 1 1 220px;
+  flex: 1 1 180px;
   min-width: 180px;
   padding: 0.7rem 1rem;
   border: 1.5px solid #dbbd9c;
@@ -180,13 +180,34 @@
   border-color: #5fced4;
 }
 
-.select, .priceInput {
+.select {
+  padding: 0.7rem 2.5rem 0.7rem 1.5rem; 
+  flex: 1 1 100px;
+  min-width: 100px;
+  border: 1.5px solid #dbbd9c;
+  border-radius: 4rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  min-width: 160px;
+  outline: none;
+  transition: border 0.2s;
+  background: #faf9f6;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 20 20' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M5.516 7.548a.625.625 0 0 1 .884-.032L10 10.885l3.6-3.369a.625.625 0 1 1 .852.916l-4.025 3.77a.625.625 0 0 1-.852 0l-4.025-3.77a.625.625 0 0 1-.032-.884z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  background-size: 1rem;
+}
+
+.priceInput  {
   padding: 0.7rem 1.5rem;
   border: 1.5px solid #dbbd9c;
   border-radius: 4rem;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  min-width: 120px;
+  min-width: 135px;
   outline: none;
   transition: border 0.2s;
   background: #faf9f6;

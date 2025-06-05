@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Card from "../card";
+import Card from "../cards";
 import styles from "./articles-carousel.module.css";
 
 const ArticlesCarousel = ({ articles, arrowColor }) => {
