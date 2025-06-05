@@ -1,0 +1,353 @@
+.aboutBg {
+  position: relative;
+}
+
+.aboutMain {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.projetoSection {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(80,80,80,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.7s;
+}
+
+.projetoGrid {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.imgGrupoWrapper {
+  flex-shrink: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px 0 #00dac744;
+  background: #fff;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.imgGrupo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.titulo {
+  font-family: "Caveat", cursive;
+  font-size: 2.7rem;
+  color: #f05080;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.desc {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  font-family: "Inter", sans-serif;
+}
+
+.lista {
+  color: #444;
+  font-size: 1.08rem;
+  margin-left: 1.2rem;
+  margin-bottom: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.cardsSection {
+  margin-bottom: 2rem;
+}
+
+.subtitulo {
+  font-size: 2rem;
+  color: #00dac7;
+  font-family: "Caveat", cursive;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Carrossel 3D giratório */
+.carousel3dWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.carousel3dBtn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #dbbd9c44;
+  color: #f05080;
+  font-size: 2.2rem;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 3;
+}
+.carousel3dBtn:hover {
+  background: #f05080;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.carousel3dScene {
+  width: 380px;
+  height: 480px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.4,2,.3,1);
+}
+
+.carousel3dCard {
+  position: absolute;
+  top: 0; left: 0;
+  width: 340px;
+  min-height: 420px;
+  background: rgba(255,255,255,0.98);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px 0 rgba(240,80,128,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 2;
+  opacity: 1;
+  transition: box-shadow 0.3s, transform 1s cubic-bezier(.4,2,.3,1);
+}
+
+.cardsGridTutores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.card, .cardTutor {
+  background: rgba(255,255,255,0.98);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px 0 rgba(240,80,128,0.10);
+  width: 340px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.7s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cardTutor {
+  min-height: 340px;
+  width: 320px;
+}
+
+.card:hover, .cardTutor:hover, .carousel3dCard:hover {
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 12px 36px 0 #f0508055, 0 0 0 4px #00dac733;
+  background: #faf9f6;
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 22px;
+  background: radial-gradient(circle at 70% 30%, #f0508033 0%, transparent 70%);
+  opacity: 0.18;
+  z-index: 0;
+  transition: opacity 0.3s;
+  animation: glowPulse 2.5s infinite alternate;
+}
+@keyframes glowPulse {
+  0% { opacity: 0.18; }
+  100% { opacity: 0.32; }
+}
+
+.cardFotoWrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 12px #dbbd9c44;
+  border: 4px solid #fff;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.cardFoto, .cardFotoTutor {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.card:hover .cardFoto, .cardTutor:hover .cardFotoTutor, .carousel3dCard:hover .cardFoto {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  z-index: 2;
+}
+
+.cardNome {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f05080;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.cardFuncao {
+  font-size: 1.05rem;
+  color: #00dac7;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.cardAvaliacao {
+  font-size: 1.05rem;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  min-height: 60px;
+}
+
+.cardLinks {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+.cardLinks a {
+  color: #dbbd9c;
+  font-size: 1.7rem;
+  transition: color 0.2s, transform 0.2s;
+}
+.cardLinks a:hover {
+  color: #f05080;
+  transform: scale(1.15);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInCarousel {
+  from { opacity: 0; transform: scale(0.92) translateY(40px);}
+  to { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+@media (max-width: 900px) {
+  .aboutMain {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+  }
+  .carousel3dWrapper {
+    gap: 0.5rem;
+  }
+  .carousel3dScene {
+    width: 98vw;
+    height: 420px;
+  }
+  .carousel3dCard {
+    width: 95vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 1.5rem 0.7rem;
+  }
+  .carousel3dBtn {
+    font-size: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+  .cardsGridTutores {
+    gap: 1.2rem;
+  }
+  .card, .cardTutor {
+    width: 95vw;
+    min-width: 0;
+    max-width: 98vw;
+    padding: 1.5rem 0.7rem;
+  }
+  .projetoSection {
+    padding: 1.2rem 0.7rem;
+  }
+  .imgGrupoWrapper {
+    max-width: 98vw;
+  }
+  .projetoGrid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutMain {
+    gap: 2rem;
+  }
+  .titulo, .subtitulo {
+    font-size: 1.3rem;
+  }
+  .cardNome {
+    font-size: 1.05rem;
+  }
+  .cardFuncao {
+    font-size: 0.98rem;
+  }
+  .cardAvaliacao {
+    font-size: 0.95rem;
+    min-height: 40px;
+  }
+}
