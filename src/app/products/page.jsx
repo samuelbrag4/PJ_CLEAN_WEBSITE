@@ -108,6 +108,7 @@ export default function Produtos() {
   return (
     <>
       <Header corHeader={"#DBBD9C"} />
+      
       <Hero
         linkImage={
           "https://i.pinimg.com/736x/9e/13/13/9e131361b677fcf08ceb74d7156d5636.jpg"
@@ -125,7 +126,7 @@ export default function Produtos() {
         <h1
           style={{
             fontFamily: "Caveat",
-            fontSize: "64px",
+            fontSize: "54px",
             fontWeight: "700",
             lineHeight: "60px",
             textAlign: "center",

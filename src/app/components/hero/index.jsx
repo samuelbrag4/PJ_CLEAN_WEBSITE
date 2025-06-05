@@ -7,7 +7,6 @@ const Hero = ({
   heroSubtitulo = "Sua beleza, sua confiança. Produtos testados e aprovados por milhares de clientes!",
   linkImage,
   textoAlt,
-  corBotao,
   onScrollClick,
 }) => {
   return (
