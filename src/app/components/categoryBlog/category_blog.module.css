@@ -42,7 +42,8 @@
   left: 14px;
   background: #f05080;
   color: #fff;
-  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
   font-weight: bold;
   padding: 0.3rem 1rem;
   border-radius: 16px;

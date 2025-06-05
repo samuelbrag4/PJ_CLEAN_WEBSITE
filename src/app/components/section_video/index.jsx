@@ -51,7 +51,6 @@ const SectionVideo = () => {
         Vivemos em um mundo tão agitado que, pensar em parar uns minutos para
         cuidar de si mesmo, pode não ser tão fácil assim.
       </p>
-      <button className={styles.startButton}>Começar</button>
     </section>
   );
 };

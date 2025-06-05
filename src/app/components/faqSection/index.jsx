@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./faqSection.module.css";
+import Link from "next/link";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -92,10 +93,7 @@ export default function FAQSection() {
               openIndex === index ? styles.itemActive : ""
             }`}
           >
-            <div
-              className={styles.question}
-              onClick={() => toggleFAQ(index)}
-            >
+            <div className={styles.question} onClick={() => toggleFAQ(index)}>
               {faq.question}
               <span
                 className={`${styles.icon} ${
@@ -139,7 +137,11 @@ export default function FAQSection() {
       </div>
       <div className={styles.extra}>
         <p>Não encontrou o que procurava?</p>
-        <button className={styles.askButton}>Clique aqui para perguntar</button>
+        <Link href="/contact">
+          <button className={styles.askButton}>
+            Clique aqui para perguntar
+          </button>
+        </Link>
       </div>
     </section>
   );
