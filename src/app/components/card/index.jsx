@@ -13,11 +13,11 @@ const Card = ({
   preco,
   marca,
   linkMarca,
-  isLiked,         
-  onToggleLike,   
+  isLiked,
+  onToggleLike,
 }) => {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{ borderColor: corBorda }}>
       <div className={styles.imageWrapper}>
         <img className={styles.imageCard} src={capa} alt={textoAlt} />
         <span
@@ -33,7 +33,7 @@ const Card = ({
           <span className={styles.preco}>
             R$ {preco?.toFixed(2) || "--"}
           </span>
-          {marca && linkMarca && (
+          {marca && (
             <a
               href={linkMarca}
               className={styles.marcaLink}
@@ -48,19 +48,26 @@ const Card = ({
         <div className={styles.descricaoWrapper}>
           <p className={styles.descricao}>{descricao}</p>
         </div>
-        <Link href={caminhoArtigo} className={styles.botaoCard} style={{ borderColor: corBorda }}>
-          Ver Mais
-        </Link>
-        {/* Botão de curtir/descurtir */}
-        {typeof isLiked !== "undefined" && onToggleLike && (
-          <button
-            className={styles.likeButton}
-            onClick={() => onToggleLike()}
-            aria-label={isLiked ? "Descurtir" : "Curtir"}
+        <div className={styles.cardActions}>
+          <Link
+            href={caminhoArtigo}
+            className={styles.botaoCard}
+            style={{ borderColor: corBorda }}
           >
-            {isLiked ? "❤️" : "🤍"}
-          </button>
-        )}
+            Ver Mais
+          </Link>
+          {/* Botão de curtir/descurtir */}
+          {typeof isLiked !== "undefined" && onToggleLike && (
+            <button
+              className={styles.likeButton}
+              onClick={() => onToggleLike()}
+              aria-label={isLiked ? "Descurtir" : "Curtir"}
+              title={isLiked ? "Descurtir" : "Curtir"}
+            >
+              {isLiked ? "❤️" : "🤍"}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

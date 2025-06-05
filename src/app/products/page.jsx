@@ -14,16 +14,14 @@ export default function Produtos() {
   const [loading, setLoading] = useState(true);
 
   // Likes do usuário logado
-  const [likes, setLikes] = useState([]); // <-- AGORA está dentro do componente
+  const [likes, setLikes] = useState([]);
 
   // Busca, filtros e ordenação
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState({
     categoria: "",
-    marca: "",
     precoMin: "",
     precoMax: "",
-    avaliacao: "",
   });
   const [sort, setSort] = useState("novidades");
   const [page, setPage] = useState(1);
@@ -56,7 +54,7 @@ export default function Produtos() {
   // Função para curtir/descurtir produto
   async function handleToggleLike(produtoId) {
     const like = likes.find((l) => l.produtoId === produtoId);
-    const token = localStorage.getItem("token"); // <-- Pegue o token aqui, antes de usar!
+    const token = localStorage.getItem("token");
     if (like) {
       // Descurtir
       await fetch(`https://clean-2tds.coolify.fps92.dev/likes/${like.id}`, {
@@ -101,39 +99,21 @@ export default function Produtos() {
       );
     }
 
-    // Filtros avançados
+    // Filtro por categoria
     if (filter.categoria)
       filtered = filtered.filter((p) => p.categoria === filter.categoria);
-    if (filter.marca)
-      filtered = filtered.filter((p) => p.categoriaMarca === filter.marca);
+
+    // Filtro por preço
     if (filter.precoMin)
       filtered = filtered.filter((p) => p.preco >= Number(filter.precoMin));
     if (filter.precoMax)
       filtered = filtered.filter((p) => p.preco <= Number(filter.precoMax));
-    // Aqui, usando comentários como "avaliação"
-    if (filter.avaliacao)
-      filtered = filtered.filter(
-        (p) => (p._count?.comentarios || 0) >= Number(filter.avaliacao)
-      );
 
     // Ordenação
     if (sort === "preco-asc")
       filtered = filtered.slice().sort((a, b) => a.preco - b.preco);
     if (sort === "preco-desc")
       filtered = filtered.slice().sort((a, b) => b.preco - a.preco);
-    // Aqui, usando curtidas como "mais vendidos"
-    if (sort === "mais-vendidos")
-      filtered = filtered
-        .slice()
-        .sort((a, b) => (b._count?.curtidas || 0) - (a._count?.curtidas || 0));
-    // Aqui, usando comentários como "melhor avaliação"
-    if (sort === "avaliacao")
-      filtered = filtered
-        .slice()
-        .sort(
-          (a, b) => (b._count?.comentarios || 0) - (a._count?.comentarios || 0)
-        );
-    // "novidades" = ordem original
 
     return filtered;
   }, [products, search, filter, sort]);
@@ -144,19 +124,6 @@ export default function Produtos() {
     (page - 1) * PRODUCTS_PER_PAGE,
     page * PRODUCTS_PER_PAGE
   );
-
-  // Marcas únicas para filtro
-  const marcas = useMemo(
-    () => [...new Set(products.map((p) => p.categoriaMarca))],
-    [products]
-  );
-
-  // Favoritar produto
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]
-    );
-  };
 
   if (loading) {
     return <div className={styles.loadingContainer}>Carregando...</div>;
@@ -197,7 +164,67 @@ export default function Produtos() {
 
         {/* Barra de busca e filtros */}
         <div className={styles.filtersBar}>
-          {/* ...seus inputs e selects de filtro... */}
+          {/* Pesquisa por nome */}
+          <input
+            type="text"
+            placeholder="Buscar produto..."
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setPage(1);
+            }}
+            className={styles.searchInput}
+          />
+
+          {/* Filtro por categoria */}
+          <select
+            value={filter.categoria}
+            onChange={(e) =>
+              setFilter((prev) => ({ ...prev, categoria: e.target.value }))
+            }
+            className={styles.select}
+          >
+            <option value="">Todas as categorias</option>
+            <option value="skincare">Skincare</option>
+            <option value="make">Make</option>
+            <option value="body">Body</option>
+          </select>
+
+          {/* Filtro por preço */}
+          <input
+            type="number"
+            placeholder="Preço mínimo"
+            value={filter.precoMin}
+            min={0}
+            onChange={(e) =>
+              setFilter((prev) => ({ ...prev, precoMin: e.target.value }))
+            }
+            className={styles.priceInput}
+            style={{ width: 110 }}
+          />
+          <span style={{ margin: "0 0.5rem" }}>-</span>
+          <input
+            type="number"
+            placeholder="Preço máximo"
+            value={filter.precoMax}
+            min={0}
+            onChange={(e) =>
+              setFilter((prev) => ({ ...prev, precoMax: e.target.value }))
+            }
+            className={styles.priceInput}
+            style={{ width: 110 }}
+          />
+
+          {/* Ordenação por preço */}
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+            className={styles.select}
+          >
+            <option value="novidades">Novidades</option>
+            <option value="preco-asc">Menor preço</option>
+            <option value="preco-desc">Maior preço</option>
+          </select>
         </div>
 
         {/* Grid de produtos */}
@@ -231,7 +258,7 @@ export default function Produtos() {
                 isLiked={!!likes.find((like) => like.produtoId === product.id)}
                 onToggleLike={() => handleToggleLike(product.id)}
               />
-              
+
               {/* Avaliação em estrelas (baseada em comentários só para visual) */}
               <div className={styles.stars}>
                 {Array.from({ length: 5 }).map((_, i) => (
