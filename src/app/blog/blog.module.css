@@ -1,0 +1,60 @@
+/* Estilo para a barra de busca */
+.searchBar {
+  width: 80%;
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--corAtual);
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.searchBarIcon {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.searchBarInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.searchBarInput::placeholder {
+  color: #fff;
+}
+
+.categoryFilters {
+  width: 80%;
+  margin: 2rem auto 0 auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.categoryButton {
+  font-family: "Inter", sans-serif;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoryButton.selected {
+  background: var(--corAtual);
+  color: #fff;
+  border: 2px solid var(--corAtual);
+}
+
+.categoryButton.unselected {
+  background: #fff;
+  color: var(--corAtual);
+  border: 2px solid var(--corAtual);
+}
