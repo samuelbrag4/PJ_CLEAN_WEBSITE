@@ -9,8 +9,7 @@
   border: 2px solid #f7f7f7;
   min-width: 260px;
   max-width: 320px;
-  height: 500px;         
-  max-height: 560px;    
+  height: auto;         
   position: relative;
 }
 .card:hover {
@@ -140,11 +139,28 @@
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
   box-shadow: 0 2px 8px rgba(240, 80, 128, 0.08);
 }
+
 .botaoCard:hover {
   background: #dbbd9c;
   color: #fff;
   border-color: #dbbd9c;
   transform: scale(1.06);
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #f05080;
+  transition: transform 0.15s, filter 0.15s;
+  filter: drop-shadow(0 1px 4px rgba(240,80,128,0.08));
+}
+
+.likeButton:hover {
+  transform: scale(1.15) rotate(-8deg);
+  filter: brightness(1.2);
 }
 
 @media (max-width: 600px) {

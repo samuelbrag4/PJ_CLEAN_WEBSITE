@@ -2,11 +2,11 @@
 
 import styles from "./likeCard.module.css";
 
-export default function LikeCard({ type, image, description, review, link }) {
+export default function LikeCard({ type, title, image, description, review, link }) {
   return (
     <div className={styles.card}>
       <h2 className={styles.cardTitle}>
-        {type === "produto" ? "Curtida de Produto" : "Curtida de Avaliação"}
+        {type === "produto" ? (title || "Curtida de Produto") : "Curtida de Avaliação"}
       </h2>
       {type === "produto" && (
         <>

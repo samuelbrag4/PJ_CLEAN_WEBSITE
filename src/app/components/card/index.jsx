@@ -13,6 +13,8 @@ const Card = ({
   preco,
   marca,
   linkMarca,
+  isLiked,         
+  onToggleLike,   
 }) => {
   return (
     <div className={styles.card}>
@@ -49,6 +51,16 @@ const Card = ({
         <Link href={caminhoArtigo} className={styles.botaoCard} style={{ borderColor: corBorda }}>
           Ver Mais
         </Link>
+        {/* Botão de curtir/descurtir */}
+        {typeof isLiked !== "undefined" && onToggleLike && (
+          <button
+            className={styles.likeButton}
+            onClick={() => onToggleLike()}
+            aria-label={isLiked ? "Descurtir" : "Curtir"}
+          >
+            {isLiked ? "❤️" : "🤍"}
+          </button>
+        )}
       </div>
     </div>
   );

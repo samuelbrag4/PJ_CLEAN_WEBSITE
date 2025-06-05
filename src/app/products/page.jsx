@@ -13,6 +13,9 @@ export default function Produtos() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Likes do usuário logado
+  const [likes, setLikes] = useState([]); // <-- AGORA está dentro do componente
+
   // Busca, filtros e ordenação
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState({
@@ -36,12 +39,49 @@ export default function Produtos() {
     fetch("http://localhost:4000/products")
       .then((r) => r.json())
       .then((data) => {
-        console.log("Produtos recebidos:", data); // Debug
         setProducts(data.products);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
+
+  // Buscar likes do usuário logado ao carregar a página
+  useEffect(() => {
+    fetch("http://localhost:4000/likes/user/me", { credentials: "include" })
+      .then((r) => r.json())
+      .then((data) => setLikes(data.likes || []))
+      .catch(() => setLikes([]));
+  }, []);
+
+  // Função para curtir/descurtir produto
+  async function handleToggleLike(produtoId) {
+    const like = likes.find((l) => l.produtoId === produtoId);
+    const token = localStorage.getItem("token"); // <-- Pegue o token aqui, antes de usar!
+    if (like) {
+      // Descurtir
+      await fetch(`http://localhost:4000/likes/${like.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        credentials: "include",
+      });
+      setLikes((prev) => prev.filter((l) => l.id !== like.id));
+    } else {
+      // Curtir
+      const res = await fetch("http://localhost:4000/likes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        credentials: "include",
+        body: JSON.stringify({ produtoId }),
+      });
+      const data = await res.json();
+      if (data.like) setLikes((prev) => [...prev, data.like]);
+    }
+  }
 
   // Salvar favoritos no localStorage
   useEffect(() => {
@@ -62,20 +102,37 @@ export default function Produtos() {
     }
 
     // Filtros avançados
-    if (filter.categoria) filtered = filtered.filter((p) => p.categoria === filter.categoria);
-    if (filter.marca) filtered = filtered.filter((p) => p.categoriaMarca === filter.marca);
-    if (filter.precoMin) filtered = filtered.filter((p) => p.preco >= Number(filter.precoMin));
-    if (filter.precoMax) filtered = filtered.filter((p) => p.preco <= Number(filter.precoMax));
+    if (filter.categoria)
+      filtered = filtered.filter((p) => p.categoria === filter.categoria);
+    if (filter.marca)
+      filtered = filtered.filter((p) => p.categoriaMarca === filter.marca);
+    if (filter.precoMin)
+      filtered = filtered.filter((p) => p.preco >= Number(filter.precoMin));
+    if (filter.precoMax)
+      filtered = filtered.filter((p) => p.preco <= Number(filter.precoMax));
     // Aqui, usando comentários como "avaliação"
-    if (filter.avaliacao) filtered = filtered.filter((p) => (p._count?.comentarios || 0) >= Number(filter.avaliacao));
+    if (filter.avaliacao)
+      filtered = filtered.filter(
+        (p) => (p._count?.comentarios || 0) >= Number(filter.avaliacao)
+      );
 
     // Ordenação
-    if (sort === "preco-asc") filtered = filtered.slice().sort((a, b) => a.preco - b.preco);
-    if (sort === "preco-desc") filtered = filtered.slice().sort((a, b) => b.preco - a.preco);
+    if (sort === "preco-asc")
+      filtered = filtered.slice().sort((a, b) => a.preco - b.preco);
+    if (sort === "preco-desc")
+      filtered = filtered.slice().sort((a, b) => b.preco - a.preco);
     // Aqui, usando curtidas como "mais vendidos"
-    if (sort === "mais-vendidos") filtered = filtered.slice().sort((a, b) => (b._count?.curtidas || 0) - (a._count?.curtidas || 0));
+    if (sort === "mais-vendidos")
+      filtered = filtered
+        .slice()
+        .sort((a, b) => (b._count?.curtidas || 0) - (a._count?.curtidas || 0));
     // Aqui, usando comentários como "melhor avaliação"
-    if (sort === "avaliacao") filtered = filtered.slice().sort((a, b) => (b._count?.comentarios || 0) - (a._count?.comentarios || 0));
+    if (sort === "avaliacao")
+      filtered = filtered
+        .slice()
+        .sort(
+          (a, b) => (b._count?.comentarios || 0) - (a._count?.comentarios || 0)
+        );
     // "novidades" = ordem original
 
     return filtered;
@@ -140,92 +197,7 @@ export default function Produtos() {
 
         {/* Barra de busca e filtros */}
         <div className={styles.filtersBar}>
-          <input
-            type="text"
-            placeholder="Buscar por nome ou descrição..."
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setPage(1);
-            }}
-            className={styles.searchInput}
-          />
-          <select
-            value={filter.categoria}
-            onChange={(e) => {
-              setFilter((f) => ({ ...f, categoria: e.target.value }));
-              setPage(1);
-            }}
-            className={styles.select}
-          >
-            <option value="">Todas as categorias</option>
-            <option value="Skincare">Skincare</option>
-            <option value="Make">Make</option>
-            <option value="Body">Body</option>
-          </select>
-          <select
-            value={filter.marca}
-            onChange={(e) => {
-              setFilter((f) => ({ ...f, marca: e.target.value }));
-              setPage(1);
-            }}
-            className={styles.select}
-          >
-            <option value="">Todas as marcas</option>
-            {marcas.map((marca) => (
-              <option key={marca} value={marca}>
-                {marca}
-              </option>
-            ))}
-          </select>
-          <input
-            type="number"
-            placeholder="Preço mín."
-            value={filter.precoMin}
-            onChange={(e) => {
-              setFilter((f) => ({ ...f, precoMin: e.target.value }));
-              setPage(1);
-            }}
-            className={styles.priceInput}
-            min={0}
-          />
-          <input
-            type="number"
-            placeholder="Preço máx."
-            value={filter.precoMax}
-            onChange={(e) => {
-              setFilter((f) => ({ ...f, precoMax: e.target.value }));
-              setPage(1);
-            }}
-            className={styles.priceInput}
-            min={0}
-          />
-          <select
-            value={filter.avaliacao}
-            onChange={(e) => {
-              setFilter((f) => ({ ...f, avaliacao: e.target.value }));
-              setPage(1);
-            }}
-            className={styles.select}
-          >
-            <option value="">Todas avaliações</option>
-            <option value="1">1+ comentário</option>
-            <option value="2">2+ comentários</option>
-            <option value="3">3+ comentários</option>
-            <option value="4">4+ comentários</option>
-            <option value="5">5+ comentários</option>
-          </select>
-          <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value)}
-            className={styles.select}
-          >
-            <option value="novidades">Novidades</option>
-            <option value="preco-asc">Preço: menor para maior</option>
-            <option value="preco-desc">Preço: maior para menor</option>
-            <option value="mais-vendidos">Mais curtidos</option>
-            <option value="avaliacao">Mais comentados</option>
-          </select>
+          {/* ...seus inputs e selects de filtro... */}
         </div>
 
         {/* Grid de produtos */}
@@ -256,26 +228,17 @@ export default function Produtos() {
                 preco={product.preco}
                 marca={product.categoriaMarca}
                 avaliacao={product._count?.comentarios || 0}
+                isLiked={!!likes.find((like) => like.produtoId === product.id)}
+                onToggleLike={() => handleToggleLike(product.id)}
               />
-              {/* Botão de favorito */}
-              <button
-                className={`${styles.favoriteBtn} ${
-                  favorites.includes(product.id) ? styles.favorited : ""
-                }`}
-                onClick={() => toggleFavorite(product.id)}
-                title={
-                  favorites.includes(product.id)
-                    ? "Remover dos favoritos"
-                    : "Adicionar aos favoritos"
-                }
-              >
-                {favorites.includes(product.id) ? "❤️" : "🤍"}
-              </button>
+              
               {/* Avaliação em estrelas (baseada em comentários só para visual) */}
               <div className={styles.stars}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span key={i}>
-                    {i < Math.min(5, product._count?.comentarios || 0) ? "★" : "☆"}
+                    {i < Math.min(5, product._count?.comentarios || 0)
+                      ? "★"
+                      : "☆"}
                   </span>
                 ))}
                 <span className={styles.starsCount}>

@@ -3,7 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faHeart, faComment, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faHeart,
+  faComment,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import LikeCard from "../components/likeCard";
@@ -21,15 +26,18 @@ export default function Likes() {
   const [userData, setUserData] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const userId = "509464ea-c444-43b2-a626-c14a40347efd";
-
   const fetchUserLikes = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/likes/user/${userId}`);
+      const token = localStorage.getItem("token"); // ou onde você salva o token
+      const response = await fetch("http://localhost:4000/likes/user/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        credentials: "include", // se usar cookies também
+      });
       if (!response.ok) throw new Error("Erro ao buscar curtidas do usuário.");
       const data = await response.json();
       setLikes(data.likes || []);
-      setUserData(data.user || null);
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -58,7 +66,9 @@ export default function Likes() {
               </div>
             )}
           </div>
-          <h2 className={styles.userName}>{userData?.nome || "Carregando..."}</h2>
+          <h2 className={styles.userName}>
+            {userData?.nome || "Carregando..."}
+          </h2>
           <button className={styles.logoutButton} title="Sair da conta">
             <FontAwesomeIcon icon={faSignOutAlt} /> Sair
           </button>
@@ -84,21 +94,28 @@ export default function Likes() {
         {/* Main Content */}
         <main className={styles.mainContent}>
           <h1 className={styles.title}>Minhas Curtidas</h1>
-          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+          {errorMessage && (
+            <p className={styles.errorMessage}>{errorMessage}</p>
+          )}
           <div className={styles.likesList}>
             {likes.length > 0 ? (
               likes.map((like) => (
                 <LikeCard
                   key={like.id}
-                  type={like.produto.categoria}
-                  image={like.produto.imagem || "https://via.placeholder.com/150"}
+                  type="produto"
+                  title={like.produto.nome}
+                  image={
+                    like.produto.imagem || "https://via.placeholder.com/150"
+                  }
                   description={like.produto.descricao}
                   review={`Preço: R$ ${like.produto.preco.toFixed(2)}`}
                   link={`/produto/${like.produto.id}`}
                 />
               ))
             ) : (
-              <p className={styles.noLikesMessage}>Você ainda não tem curtidas.</p>
+              <p className={styles.noLikesMessage}>
+                Você ainda não tem curtidas.
+              </p>
             )}
           </div>
         </main>
