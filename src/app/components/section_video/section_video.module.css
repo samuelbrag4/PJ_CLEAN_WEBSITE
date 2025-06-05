@@ -81,55 +81,6 @@
   position: relative;
 }
 
-.videoContainer {
-  width: 100%;
-  height: 50%;
-  background-color: #ddd;
-  position: relative;
-}
-
-.videoOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.playButton {
-  background-color: #bffcff;
-  color: #ffffff; 
-  border: none;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.videoLabel {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  font-size: 3rem;
-  color: #ffffff;
-}
-
-.footerText {
-  font-size: 1.2rem;
-  color: #333;
-  text-align: justify;
-  line-height: 1.8;
-  margin-top: 3rem;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .card {

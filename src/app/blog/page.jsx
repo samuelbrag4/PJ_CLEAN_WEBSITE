@@ -109,7 +109,7 @@ export default function Blog() {
       </div>
 
       {/* Carrossel de artigos */}
-      <ArticlesCarousel articles={cardData} />
+      <ArticlesCarousel articles={cardData} arrowColor={corAtual} />
 
       {/* Cards filtrados */}
       <SectionCards

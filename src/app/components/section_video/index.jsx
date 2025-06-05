@@ -28,6 +28,12 @@ const SectionVideo = () => {
             reconhecendo a necessidade de equilibrar a saúde mental e física em
             suas vidas.
           </p>
+
+          <p className={styles.mainText}>
+            Você sabia que autocuidado é tão importante como cuidar da saúde?
+            Vivemos em um mundo tão agitado que, pensar em parar uns minutos
+            para cuidar de si mesmo, pode não ser tão fácil assim.
+          </p>
         </div>
 
         {/* Segundo Subcard */}
@@ -36,21 +42,19 @@ const SectionVideo = () => {
             <h3>Autocuidado: importância, como praticar e dicas</h3>
             <p>By Clean</p>
           </div>
-          <div className={styles.videoContainer}>
-            <div className={styles.videoOverlay}>
-              <button className={styles.playButton}>▶</button>
-              <span className={styles.videoLabel}>VOGUE</span>
-            </div>
-          </div>
+          {/* Vídeo do YouTube */}
+          <iframe
+            width="650"
+            height="330"
+            src="https://www.youtube.com/embed/g9DoQlCJ1yQ?si=IujdHFaClCPzZs_p"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-
-      {/* Texto e botão abaixo */}
-      <p className={styles.footerText}>
-        Você sabia que autocuidado é tão importante como cuidar da saúde?
-        Vivemos em um mundo tão agitado que, pensar em parar uns minutos para
-        cuidar de si mesmo, pode não ser tão fácil assim.
-      </p>
     </section>
   );
 };

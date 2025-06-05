@@ -13,8 +13,7 @@
   justify-content: center;
 }
 .arrow {
-  background: #00DAC7;
-  color: #fff;
+  color: #fff; /* Cor do ícone */
   border: none;
   border-radius: 50%;
   width: 2.5rem;
