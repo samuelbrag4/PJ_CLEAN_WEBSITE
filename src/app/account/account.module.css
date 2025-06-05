@@ -5,160 +5,26 @@
   gap: 2rem;
   padding: 2.5rem;
   max-width: 900px;
-  margin: 6rem auto 4rem auto;
-  background: rgba(255,255,255,0.7);
+  margin: 10rem auto 4rem auto;
   border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(80,80,80,0.15);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid #f05080;
-}
-
-.sidebar {
-  width: 220px;
-  padding: 2rem 1rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f05080 60%, #dbbd9c 100%);
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 2px 12px rgba(240,80,128,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-  min-width: 180px;
-}
-.sidebar:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(240,80,128,0.15);
-}
-
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.avatarCircle {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #dbbd9c 40%, #f05080 100%);
-  color: #fff;
-  border-radius: 50%;
-  font-size: 2.2rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.5rem auto;
-  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
-  letter-spacing: 2px;
-  user-select: none;
-  transition: background 0.3s;
-}
-
-.userImage {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 0.5rem auto;
-  box-shadow: 0 2px 8px rgba(240,80,128,0.08);
-}
-
-.userName {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  letter-spacing: 1px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.memberSince {
-  font-size: 0.95rem;
-  color: #f7e7e7;
-  margin-bottom: 1.5rem;
-}
-
-.logoutButton, .deleteButton {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.logoutButton {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
-  font-weight: 500;
-  transition: background 0.3s, color 0.3s;
-  margin-bottom: 0.5rem;
-}
-.logoutButton:hover {
-  background: #fff;
-  color: #f05080;
-}
-
-.deleteButton {
-  background: linear-gradient(90deg, #ff4d4f 60%, #ffb3b3 100%);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-  margin-top: 1rem;
-}
-.deleteButton:hover {
-  background: #d9363e;
-}
-
-.navLinks {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.navButton {
-  background: #fff;
-  color: #f05080;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.navButton:hover {
-  background: #f05080;
-  color: #fff;
 }
 
 .mainContent {
   flex: 1;
-  background: #fff;
-  padding: 2.5rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(240,80,128,0.06);
   min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1.2rem;
+  gap: 2rem;
+  padding: 1.5rem;
   margin-bottom: 2rem;
-  position: relative;
 }
 
 .title {
@@ -170,7 +36,7 @@
 }
 
 .editButton {
-  background: linear-gradient(90deg, #f05080 60%, #dbbd9c 100%);
+  background: #f05080;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -178,7 +44,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: 0.3s;
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -212,20 +78,20 @@
 .userForm {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  margin-top: 1.5rem;
+  gap: 1rem;
+  width: 100%;
 }
 
 .section {
   margin-bottom: 1.5rem;
-  background: #faf9f6;
+  background: #f3f2f0d3;
   border-radius: 10px;
   padding: 1.2rem 1rem 1.2rem 1.5rem;
   box-shadow: 0 1px 6px rgba(240,80,128,0.04);
   transition: box-shadow 0.3s;
 }
 .sectionTitle {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #f05080;
   font-weight: 600;
   margin-bottom: 1.2rem;
@@ -236,6 +102,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .formGroup label {
@@ -249,11 +116,10 @@
 .languageSelect {
   font-size: 1rem;
   padding: 0.6rem;
-  border: 1.5px solid #dbbd9c;
+  border: none;
   border-radius: 8px;
-  background-color: #faf9f6;
-  color: #333;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #525151;
+  transition: 0.3s;
 }
 
 .formGroup input:focus,

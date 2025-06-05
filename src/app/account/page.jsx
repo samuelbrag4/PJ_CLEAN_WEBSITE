@@ -16,6 +16,7 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/header";
+import AsideAccount from "../components/aside";
 import Footer from "../components/footer";
 import styles from "./account.module.css";
 import {
@@ -38,6 +39,16 @@ function formatDate(dateString) {
   if (!dateString) return "";
   const date = new Date(dateString);
   return date.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
+}
+
+function handleDeleteAccount() {
+  // Aqui você pode colocar a lógica real de deletar conta se quiser
+  alert("Excluir conta!");
+}
+
+function handleLogout() {
+
+  alert("Logout!");
 }
 
 export default function Conta() {
@@ -143,58 +154,13 @@ export default function Conta() {
       <Header corHeader="#F05080" />
       <div className={styles.container}>
         {/* Sidebar */}
-        <aside className={styles.sidebar}>
-          <div className={styles.avatarWrapper}>
-            {userData?.fotoPerfil ? (
-              <img
-                src={userData.fotoPerfil}
-                alt="Foto do usuário"
-                className={styles.userImage}
-              />
-            ) : (
-              <div className={styles.avatarCircle}>
-                {getInitials(userData?.nome)}
-              </div>
-            )}
-          </div>
-          <h2 className={styles.userName}>
-            {userData?.nome || "Carregando..."}
-          </h2>
-          <div className={styles.memberSince}>
-            Membro desde: {formatDate(userData?.createdAt)}
-          </div>
-          <button
-            className={styles.logoutButton}
-            onClick={handleLogout}
-            title="Sair da conta"
-          >
-            <FontAwesomeIcon icon={faSignOutAlt} /> Sair
-          </button>
-          <button
-            className={styles.deleteButton}
-            onClick={handleDeleteAccount}
-            title="Excluir conta"
-          >
-            <FontAwesomeIcon icon={faTrash} /> Excluir Conta
-          </button>
-          <nav className={styles.navLinks}>
-            <Link href="/account">
-              <button className={styles.navButton} title="Meu Cadastro">
-                <FontAwesomeIcon icon={faUser} /> Meu Cadastro
-              </button>
-            </Link>
-            <Link href="/likes">
-              <button className={styles.navButton} title="Meus Favoritos">
-                <FontAwesomeIcon icon={faHeart} /> Meus Favoritos
-              </button>
-            </Link>
-            <Link href="/comments">
-              <button className={styles.navButton} title="Meus Comentários">
-                <FontAwesomeIcon icon={faComment} /> Meus Comentários
-              </button>
-            </Link>
-          </nav>
-        </aside>
+        <AsideAccount
+          userData={userData}
+          getInitials={getInitials}
+          formatDate={formatDate}
+          handleLogout={handleLogout}
+          handleDeleteAccount={handleDeleteAccount}
+        />
 
         {/* Main Content */}
         <main className={styles.mainContent}>

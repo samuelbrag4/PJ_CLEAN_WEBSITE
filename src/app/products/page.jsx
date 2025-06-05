@@ -36,7 +36,7 @@ export default function Produtos() {
   );
 
   useEffect(() => {
-    fetch("http://localhost:4000/https://clean-2tds.coolify.fps92.dev/products")
+    fetch("https://clean-2tds.coolify.fps92.dev/products")
       .then((r) => r.json())
       .then((data) => {
         setProducts(data.products);
