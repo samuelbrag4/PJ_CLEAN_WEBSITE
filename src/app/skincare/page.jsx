@@ -158,6 +158,27 @@ export default function Skincare() {
         cards={cards}
       />
 
+<div style={{ marginBottom: "5rem" }}>
+  <SkinTypeGrid
+    category="Skincare"
+    corCategory="#5FCED4"
+    title="Fatores que afetam a saúde da sua pele"
+    oilyImage="https://etica-ambiental.com.br/wp-content/webp-express/webp-images/uploads/2021/08/2021-08-14-controle-da-poluicao-industrial-780x408.jpg.webp"
+    oilyTitle="Poluição"
+    oilyDescription="A exposição diária à poluição urbana favorece o acúmulo de impurezas na pele, obstruindo poros e acelerando o envelhecimento cutâneo. A limpeza facial diária é essencial."
+    dryImage="https://www.saudebemestar.pt/media/88614/hidratacao.jpg"
+    dryTitle="Ingestão de Água"
+    dryDescription="A hidratação começa de dentro para fora. Beber água com regularidade melhora a firmeza, elasticidade e aparência geral da pele, além de auxiliar na prevenção do ressecamento."
+    combinationImage="https://blog.sabin.com.br/wp-content/uploads/2022/01/como-melhorar-a-qualidade-do-sono-1760x990.jpeg.webp"
+    combinationTitle="Qualidade do Sono"
+    combinationDescription="Dormir bem regula os hormônios, reduz o estresse oxidativo e favorece a regeneração celular. A falta de sono prejudica o brilho natural da pele e aumenta olheiras."
+    normalImage="https://media.istockphoto.com/id/1433432507/pt/foto/healthy-eating-plate-with-vegan-or-vegetarian-food-in-woman-hands-healthy-plant-based-diet.jpg?s=612x612&w=0&k=20&c=lPfTCIGT7ovIrSGlC11bdwq_p5BP62AhCAE4_MEJN2g="
+    normalTitle="Alimentação"
+    normalDescription="Alimentos ricos em vitaminas, antioxidantes e gorduras boas nutrem a pele de dentro para fora, enquanto dietas desequilibradas podem causar inflamações e acne."
+  />
+</div>
+
+
       <Footer corFooter={"#5FCED4"} />
     </div>
   );
