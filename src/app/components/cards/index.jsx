@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./cards.module.css";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const Card = ({
   capa,
@@ -65,7 +66,7 @@ const Card = ({
               aria-label={isLiked ? "Descurtir" : "Curtir"}
               title={isLiked ? "Descurtir" : "Curtir"}
             >
-              {isLiked ? "❤️" : "🤍"}
+              {isLiked ? <FaHeart color="#ff0000" /> : <FaRegHeart />}
             </button>
           )}
         </div>
