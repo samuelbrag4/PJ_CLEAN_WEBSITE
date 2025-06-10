@@ -1,0 +1,38 @@
+.pageContainer {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.mainContent {
+  width: 80%;
+  margin: 0 auto;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 110px;
+  box-sizing: border-box;
+}
+
+.returnRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+
+.returnLink {
+  color: #888;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 32px 0 24px 0;
+}

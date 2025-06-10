@@ -1,0 +1,71 @@
+.tagsRow {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tag {
+  background: #E6F7F9;
+  color: #00B6C7;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.date {
+  margin-left: auto;
+  color: #727171;
+  font-size: 14px;
+}
+
+.title {
+  text-align: center;
+  font-family: cursive;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 24px 0 15px 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 16px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+  width: 100%;
+}
+
+.articleImage {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.paragraph {
+  margin-bottom: 18px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.sectionTitle, .sectionTitleTwo {
+  font-weight: 700;
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 15px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.list {
+  margin-left: 24px;
+  margin-bottom: 32px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}

@@ -1,0 +1,52 @@
+.accordionContainer {
+  width: 100%;
+}
+
+.accordionButton {
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.sectionBibliTitle {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+}
+
+.accordionIcon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.accordionContent {
+  width: 100%;
+  animation: fadeIn 0.3s;
+}
+
+.bibliList {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 32px;
+  margin-top: 2rem;
+  padding-left: 18px;
+  color: #222;
+}
+
+.link {
+  color: #999;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
