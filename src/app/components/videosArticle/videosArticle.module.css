@@ -1,0 +1,60 @@
+.sectionVideoTitle {
+  width: 100%;
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+
+.videosRow {
+  margin: 20px 0 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.videoThumb {
+  position: relative;
+  width: 250px;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.videoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0.5px) brightness(0.85);
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #fff;
+  opacity: 0.85;
+  pointer-events: none;
+  text-shadow: 0 2px 8px #000;
+}
+
+.videoCaption {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
