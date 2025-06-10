@@ -41,7 +41,7 @@ export default function Blog() {
       descricao: "Dicas de maquiagem simples e práticas para o dia a dia.",
       categoria: "Maquiagem",
       corCategoria: "#F05080",
-      caminhoPage: "/articleBlog/3", // Link para a página específica
+      caminhoPage: "/pagesArticles/articleBlog3", // Link para a página específica
     },
     {
       id: "4",
