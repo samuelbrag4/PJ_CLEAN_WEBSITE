@@ -12,20 +12,3 @@
   width: 100%;
   justify-content: center;
 }
-.arrow {
-  color: #fff; /* Cor do ícone */
-  border: none;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.arrow:disabled {
-  background: #b2f2ea;
-  cursor: not-allowed;
-}

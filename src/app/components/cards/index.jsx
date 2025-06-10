@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./cards.module.css";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const Card = ({
   capa,
@@ -30,7 +31,12 @@ const Card = ({
       <div className={styles.textCard}>
         <h3 className={styles.tituloCard}>{titulo}</h3>
         <div className={styles.precoMarca}>
-          <span className={styles.preco}>R$ {preco?.toFixed(2) || "--"}</span>
+          <span
+            className={styles.preco}
+            style={{ color: corCategoria || "#f05080" }}
+          >
+            R$ {preco?.toFixed(2) || "--"}
+          </span>
           {marca && (
             <a
               href={linkMarca}
@@ -65,7 +71,7 @@ const Card = ({
               aria-label={isLiked ? "Descurtir" : "Curtir"}
               title={isLiked ? "Descurtir" : "Curtir"}
             >
-              {isLiked ? "❤️" : "🤍"}
+              {isLiked ? <FaHeart color="#ff0000" /> : <FaRegHeart />}
             </button>
           )}
         </div>

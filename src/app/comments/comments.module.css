@@ -138,6 +138,7 @@
 }
 
 .title {
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   color: #f05080;
   font-weight: bold;
@@ -194,6 +195,7 @@
 }
 
 .errorMessage {
+  font-family: "Inter", sans-serif;
   color: #ff4d4f;
   background: #fff0f0;
   border-radius: 6px;

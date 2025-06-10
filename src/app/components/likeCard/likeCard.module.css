@@ -1,70 +1,80 @@
 .card {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(240,80,128,0.10);
-    padding: 0;
-    margin: 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    overflow: hidden;
-    max-width: 340px;
-    min-width: 260px;
-    transition: box-shadow 0.2s;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 32px rgba(240,80,128,0.18);
-  }
-  
-  .cardImage {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background: #f8f8f8;
-    border-bottom: 2px solid #f05080;
-  }
-  
-  .cardTitle {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #f05080;
-    margin: 1rem 1.2rem 0.5rem 1.2rem;
-    text-align: left;
-    letter-spacing: 0.5px;
-  }
-  
-  .cardDescription {
-    font-size: 1rem;
-    color: #444;
-    margin: 0 1.2rem 0.8rem 1.2rem;
-    text-align: left;
-    min-height: 48px;
-  }
-  
-  .cardReview {
-    font-size: 1rem;
-    color: #888;
-    margin: 0 1.2rem 1.2rem 1.2rem;
-    text-align: left;
-  }
-  
-  .cardButton {
-    background: #f05080;
-    color: #fff;
-    border: none;
-    border-radius: 0 0 18px 18px;
-    padding: 0.9rem 0;
-    font-size: 1.08rem;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.2s, transform 0.2s;
-    box-shadow: 0 1px 4px rgba(240,80,128,0.08);
-    margin: 0;
-  }
-  
-  .cardButton:hover {
-    background: #db3a6b;
-    transform: translateY(-2px) scale(1.03);
-  }
+  background: #fff;
+  border-radius: 12px;
+  border: 1.5px solid #5fced4;
+  box-shadow: 0 2px 10px rgba(95, 206, 212, 0.07);
+  padding: 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  max-width: 340px;
+  min-width: 260px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(95, 206, 212, 0.13);
+  border-color: #5fced4;
+}
+
+.cardImage {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background: #f7f7f7;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #222;
+  margin: 1rem 1.2rem 0.5rem 1.2rem;
+  text-align: left;
+  letter-spacing: 0.01em;
+  min-height: 1.7rem;
+}
+
+.cardDescription {
+  font-size: 0.98rem;
+  color: #888;
+  margin: 0.8rem 1.2rem 0.8rem 1.2rem;
+  text-align: left;
+  min-height: 48px;
+  line-height: 1.4;
+}
+
+.cardReview {
+  font-size: 1rem;
+  color: #888;
+  margin: 0 1.2rem 1.2rem 1.2rem;
+  text-align: left;
+}
+
+.cardButton {
+  background: none;
+  color: #5fced4;
+  border: 1.5px solid #5fced4;
+  border-radius: 16px;
+  padding: 0.7rem 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 90%;
+  margin: 1rem auto 1rem auto;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: none;
+  display: block;
+}
+
+.cardButton:hover {
+  background: #5fced4;
+  color: #fff;
+  border-color: #5fced4;
+  transform: translateY(-2px) scale(1.03);
+}
