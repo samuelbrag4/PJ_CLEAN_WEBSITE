@@ -8,6 +8,7 @@ import { FaSearch } from "react-icons/fa";
 import styles from "./blog.module.css";
 import ArticleCard from "../components/articleCard";
 
+
 export default function Blog() {
   const categorias = ["Todos", "Skincare", "Corpo", "Maquiagem"];
   const [busca, setBusca] = useState("");
@@ -31,7 +32,7 @@ export default function Blog() {
       descricao: "Aprenda como cuidar da sua pele com essas dicas incríveis.",
       categoria: "Skincare",
       corCategoria: "#5FCED4",
-      caminhoPage: "/articleBlog/2", 
+      caminhoPage: "/pagesArticles/articleBlog2", 
     },
     {
       id: "3",
