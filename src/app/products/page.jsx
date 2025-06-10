@@ -6,6 +6,7 @@ import Header from "../components/header";
 import Hero from "../components/hero";
 import Card from "../components/cards";
 import styles from "./products.module.css";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 const PRODUCTS_PER_PAGE = 10;
 
@@ -45,7 +46,9 @@ export default function Produtos() {
 
   // Buscar likes do usuário logado ao carregar a página
   useEffect(() => {
-    fetch("https://clean-2tds.coolify.fps92.dev/likes/user/me", { credentials: "include" })
+    fetch("https://clean-2tds.coolify.fps92.dev/likes/user/me", {
+      credentials: "include",
+    })
       .then((r) => r.json())
       .then((data) => setLikes(data.likes || []))
       .catch(() => setLikes([]));
@@ -132,7 +135,7 @@ export default function Produtos() {
   return (
     <>
       <Header corHeader={"#DBBD9C"} />
-      
+
       <Hero
         linkImage={
           "https://i.pinimg.com/736x/9e/13/13/9e131361b677fcf08ceb74d7156d5636.jpg"
@@ -261,9 +264,11 @@ export default function Produtos() {
               <div className={styles.stars}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span key={i}>
-                    {i < Math.min(5, product._count?.comentarios || 0)
-                      ? "★"
-                      : "☆"}
+                    {i < Math.min(5, product._count?.comentarios || 0) ? (
+                      <FaStar color="#FFD700" />
+                    ) : (
+                      <FaRegStar color="#FFD700" />
+                    )}
                   </span>
                 ))}
                 <span className={styles.starsCount}>

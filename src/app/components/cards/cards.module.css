@@ -6,15 +6,16 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s, transform 0.15s;
-  width: 100%;
+  transition: box-shadow 0.2s, transform 0.15s;
   max-width: 330px;
+  width: 100%;
+  min-width: 280px; 
   min-height: 380px;
   padding: 0.5rem;
+  margin: 0 auto;
 }
 
 .card:hover {
-  border-color: #bfa77a;
   transform: translateY(-2px) scale(1.01);
 }
 

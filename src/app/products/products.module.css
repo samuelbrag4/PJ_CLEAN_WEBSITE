@@ -231,6 +231,12 @@
   transition: transform 0.18s, box-shadow 0.18s;
   animation: fadeInUp 0.5s;
   overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .cardWrapper:hover {
@@ -276,13 +282,13 @@
 }
 
 .stars span {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .starsCount {
   color: #888;
-  font-size: 0.95rem;
   margin-left: 0.4rem;
+  font-family: "Inter", sans-serif;
 }
 
 .pagination {

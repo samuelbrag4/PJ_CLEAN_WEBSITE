@@ -10,6 +10,7 @@ const Card = ({
   caminhoArtigo,
   corBorda,
   corCategoria,
+  corPreco,
   preco,
   marca,
   linkMarca,
@@ -30,7 +31,12 @@ const Card = ({
       <div className={styles.textCard}>
         <h3 className={styles.tituloCard}>{titulo}</h3>
         <div className={styles.precoMarca}>
-          <span className={styles.preco}>R$ {preco?.toFixed(2) || "--"}</span>
+          <span
+            className={styles.preco}
+            style={{ color: corCategoria || "#f05080" }}
+          >
+            R$ {preco?.toFixed(2) || "--"}
+          </span>
           {marca && (
             <a
               href={linkMarca}
