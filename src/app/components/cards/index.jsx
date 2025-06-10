@@ -11,7 +11,6 @@ const Card = ({
   caminhoArtigo,
   corBorda,
   corCategoria,
-  corPreco,
   preco,
   marca,
   linkMarca,

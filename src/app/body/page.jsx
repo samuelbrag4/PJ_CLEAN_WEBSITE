@@ -107,9 +107,6 @@ export default function Corpo() {
         heroTexto={
           "Quer saber como conquistar um rosto naturalmente bonito? Nesta página, você aprenderá tudo sobre cuidados com a pele. Descubra sua melhor versão e brilhe com confiança!"
         }
-        textoPrimeiroBotao={"Dicas"}
-        corBotao={"#DBBD9C"}
-        textoSegundoBotao={"Vídeos"}
       />
 
       <Banner

@@ -13,27 +13,11 @@ const ArticlesCarousel = ({ articles, arrowColor }) => {
 
   return (
     <div className={styles.carouselContainer}>
-      <button
-        className={styles.arrow}
-        onClick={handlePrev}
-        disabled={start === 0}
-        style={{ backgroundColor: arrowColor }} // Aplica a cor dinâmica
-      >
-        <FaChevronLeft />
-      </button>
       <div className={styles.cardsWrapper}>
         {articles.slice(start, start + visible).map((art, idx) => (
           <Card key={idx} {...art} />
         ))}
       </div>
-      <button
-        className={styles.arrow}
-        onClick={handleNext}
-        disabled={start + visible >= articles.length}
-        style={{ backgroundColor: arrowColor }} // Aplica a cor dinâmica
-      >
-        <FaChevronRight />
-      </button>
     </div>
   );
 };

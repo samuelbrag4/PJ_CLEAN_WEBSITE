@@ -7,6 +7,7 @@ const Hero = ({
   heroSubtitulo = "Sua beleza, sua confiança. Produtos testados e aprovados por milhares de clientes!",
   linkImage,
   textoAlt,
+  corCategoria,
   onScrollClick,
 }) => {
   return (
@@ -30,10 +31,12 @@ const Hero = ({
         <h1 className={styles.heroTitulo}>{heroTitulo}</h1>
         <p className={styles.heroSubtitulo}>{heroSubtitulo}</p>
         <p className={styles.heroTexto}>{heroTexto}</p>
-        <div className={styles.selos}>
-          <span className={styles.selo}><FaShieldAlt /> Site seguro</span>
-          <span className={styles.selo}><FaUsers /> +10 mil clientes</span>
-          <span className={styles.selo}><FaCheckCircle /> Dermatologicamente testado</span>
+        <div className={styles.selos} >
+          <span className={styles.selo} style={{ backgroundColor: corCategoria || "#f05080" }}><FaShieldAlt /> Site seguro</span>
+          <span className={styles.selo}
+          style={{ backgroundColor: corCategoria || "#f05080" }}><FaUsers /> +10 mil clientes</span>
+          <span className={styles.selo}
+          style={{ backgroundColor: corCategoria || "#f05080" }}><FaCheckCircle /> Dermatologicamente testado</span>
         </div>
         <button
           className={styles.scrollDown}

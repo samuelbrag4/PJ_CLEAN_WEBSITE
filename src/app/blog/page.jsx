@@ -75,7 +75,6 @@ export default function Blog() {
         }
         textoPrimeiroBotao={"Dicas"}
         corBotao={corAtual}
-        textoSegundoBotao={"Vídeos"}
       />
 
       {/* Barra de busca */}
