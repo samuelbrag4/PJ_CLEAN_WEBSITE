@@ -1,20 +1,57 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../components/header";
 import Hero from "../components/hero";
-import SectionCards from "../components/sectionCards";
 import Footer from "../components/footer";
 import { FaSearch } from "react-icons/fa";
-import ArticlesCarousel from "../components/articlesCarousel";
-import styles from "./blog.module.css"; // Importando o CSS específico para o Blog
+import styles from "./blog.module.css";
+import ArticleCard from "../components/articleCard";
 
 export default function Blog() {
-  const [cardData, setCardData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [busca, setBusca] = useState("");
   const categorias = ["Todos", "Skincare", "Corpo", "Maquiagem"];
+  const [busca, setBusca] = useState("");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todos");
+
+  // Dados mockados dos cards
+  const mockCardData = [
+    {
+      id: "1",
+      capa: "https://framerusercontent.com/images/MNfy6QCYPIHXneNVGU628aift0.jpg",
+      titulo: "Cuidados com o Corpo",
+      descricao: "Descubra como manter seu corpo saudável e hidratado.",
+      categoria: "Corpo",
+      corCategoria: "#DBBD9C",
+      caminhoPage: "/pagesArticles/articleBlog1"
+    },
+    {
+      id: "2",
+      capa: "https://i.pinimg.com/736x/7f/d7/e7/7fd7e767b928003f10ad3e0ff2174e00.jpg",
+      titulo: "Dicas de Skincare",
+      descricao: "Aprenda como cuidar da sua pele com essas dicas incríveis.",
+      categoria: "Skincare",
+      corCategoria: "#5FCED4",
+      caminhoPage: "/articleBlog/2", 
+    },
+    {
+      id: "3",
+      capa: "https://i.pinimg.com/736x/78/34/31/783431b84e01cbd27c5f7a6b43e5a95b.jpg",
+      titulo: "Maquiagem para o Dia a Dia",
+      descricao: "Dicas de maquiagem simples e práticas para o dia a dia.",
+      categoria: "Maquiagem",
+      corCategoria: "#F05080",
+      caminhoPage: "/articleBlog/3", // Link para a página específica
+    },
+    {
+      id: "4",
+      capa: "https://i.pinimg.com/736x/78/34/31/783431b84e01cbd27c5f7a6b43e5a95b.jpg",
+      titulo: "Rotina de Beleza",
+      descricao: "Saiba como criar uma rotina de beleza eficiente.",
+      categoria: "Skincare",
+      corCategoria: "#5FCED4",
+      caminhoPage: "/articleBlog/4", // Link para a página específica
+    },
+  ];
 
   // Mapeamento de cores por categoria
   const coresCategoria = {
@@ -25,32 +62,8 @@ export default function Blog() {
   };
   const corAtual = coresCategoria[categoriaSelecionada] || "#00DAC7";
 
-  useEffect(() => {
-    fetch("https://clean-2tds.coolify.fps92.dev/blogcards")
-      .then((res) => res.json())
-      .then((data) => {
-        setCardData(data.cards);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
-
-  if (loading)
-    return (
-      <div
-        style={{
-          textAlign: "center",
-          padding: "2rem",
-          fontSize: "1.3rem",
-          color: corAtual,
-        }}
-      >
-        Buscando dicas e artigos para você...
-      </div>
-    );
-
   // Filtro de busca e categoria para os cards
-  const filteredCards = cardData.filter((card) => {
+  const filteredCards = mockCardData.filter((card) => {
     const buscaLower = busca.toLowerCase();
     const matchBusca =
       card.titulo.toLowerCase().includes(buscaLower) ||
@@ -98,24 +111,27 @@ export default function Blog() {
           <button
             key={cat}
             onClick={() => setCategoriaSelecionada(cat)}
-            className={`${styles.categoryButton} ${
-              categoriaSelecionada === cat ? styles.selected : styles.unselected
-            }`}
+            className={`${styles.categoryButton} ${categoriaSelecionada === cat ? styles.selected : styles.unselected
+              }`}
           >
             {cat}
           </button>
         ))}
       </div>
 
-      {/* Carrossel de artigos */}
-      <ArticlesCarousel articles={cardData} arrowColor={corAtual} />
-
-      {/* Cards filtrados */}
-      <SectionCards
-        corBotao={corAtual}
-        corTextoBotao={"#fff"}
-        cardData={filteredCards}
-      />
+      <div className={styles.cardsContainer}>
+        {filteredCards.map((card) => (
+          <ArticleCard
+            key={card.id}
+            caminhoPage={card.caminhoPage} // Passa o link específico
+            capa={card.capa}
+            titulo={card.titulo}
+            descricao={card.descricao}
+            categoria={card.categoria}
+            corCategoria={card.corCategoria}
+          />
+        ))}
+      </div>
 
       <Footer corFooter={corAtual} />
     </div>

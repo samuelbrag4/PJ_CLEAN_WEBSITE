@@ -1,20 +1,24 @@
 "use client";
+
 import styles from "./articleBlog.module.css";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 import { FaChevronLeft } from "react-icons/fa";
-import ConteudoArticle from "../components/contentArticle";
-import VideosArticle from "../components/videosArticle";
-import BibliografiaArticle from "../components/bibliographiaArticle";
+import ConteudoArticle from "../../components/contentArticle";
+import VideosArticle from "../../components/videosArticle";
+import BibliografiaArticle from "../../components/bibliographiaArticle";
 
 export default function Article() {
 
   const conteudoProps = {
-    tags: ["Cuidado Diário", "Skincare"],
+    tags: [
+      { text: "Cuidado Diário", color: "#DBBD9C", background: "#ffe6cc" },
+      { text: "Skincare", color: "#DBBD9C", background: "#ffe6cc" },
+    ],
     date: "10 de junho de 2025",
     title: "Como cuidar da pele seca?",
     subtitle: "A pele seca pode causar desconforto, descamação e até irritações. Se você sente sua pele áspera ou sem vida, não se preocupe! Com alguns cuidados diários, é possível deixá-la hidratada e saudável.",
-    imageSrc: "https://blog.farmadelivery.com.br/wp-content/uploads/2021/08/cuidados-com-pele-seca.jpg",
+    imageSrc: "https://framerusercontent.com/images/MNfy6QCYPIHXneNVGU628aift0.jpg",
     imageAlt: "Cuidados com a pele seca",
     paragraphs: [
       "A pele seca pode causar desconforto, descamação e até irritações. Se você sente sua pele áspera ou sem vida, não se preocupe! Com alguns cuidados diários, é possível deixá-la hidratada e saudável.",
@@ -64,12 +68,12 @@ export default function Article() {
 
   return (
     <div className={styles.pageContainer}>
-      <Header corHeader={"#00B6C7"} />
+      <Header corHeader={"#DBBD9C"} />
 
       <main className={styles.mainContent}>
         <div className={styles.returnRow}>
           <a href="#" className={styles.returnLink}>
-            <FaChevronLeft style={{ color: "#00B6C7", marginRight: 6, fontSize: 18 }} />
+            <FaChevronLeft style={{ color: "#DBBD9C", marginRight: 6, fontSize: 18 }} />
             Retornar
           </a>
         </div>
@@ -82,13 +86,13 @@ export default function Article() {
 
         <hr className={styles.divider} />
 
-        <BibliografiaArticle links={links} />
+        <BibliografiaArticle links={links} corSeta={"#DBBD9C"}/>
 
         <hr className={styles.divider} />
 
       </main>
 
-      <Footer corFooter="#00B6C7" />
+      <Footer corFooter="#DBBD9C" />
     </div>
   );
 }
