@@ -17,7 +17,16 @@ const ConteudoArticle = ({
     <>
       <div className={styles.tagsRow}>
         {tags.map((tag, idx) => (
-          <span key={idx} className={styles.tag}>{tag}</span>
+          <span
+            key={idx}
+            className={styles.tag}
+            style={{
+              color: tag.color, // Cor do texto
+              background: tag.background, // Cor de fundo
+            }}
+          >
+            {tag.text}
+          </span>
         ))}
         <span className={styles.date}>{date}</span>
       </div>

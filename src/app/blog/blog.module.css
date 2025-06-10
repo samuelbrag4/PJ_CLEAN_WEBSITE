@@ -58,3 +58,14 @@
   color: var(--corAtual);
   border: 2px solid var(--corAtual);
 }
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+  justify-content: flex-start; /* Alinha os cards à esquerda */
+  gap: 16px; /* Espaçamento entre os cards */
+  width: 80%; /* Mesma largura da header */
+  margin: 0 auto; /* Centraliza o contêiner */
+  padding: 32px 0; /* Espaçamento superior e inferior */
+  box-sizing: border-box; /* Inclui padding no cálculo de largura */
+}

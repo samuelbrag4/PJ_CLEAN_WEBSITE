@@ -2,7 +2,7 @@ import styles from "./bibliographiaArticle.module.css";
 import { FaChevronLeft } from "react-icons/fa";
 import React, { useState } from "react";
 
-const BibliografiaArticle = ({ links = [] }) => {
+const BibliografiaArticle = ({ links = [], corSeta }) => {
   const [openBibli, setOpenBibli] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const BibliografiaArticle = ({ links = [] }) => {
             transform: openBibli ? "rotate(-90deg)" : "rotate(0deg)"
           }}
         >
-          <FaChevronLeft style={{ color: "#00B6C7", fontSize: 18 }} />
+          <FaChevronLeft style={{ color: corSeta, fontSize: 18 }} />
         </span>
       </button>
       <div
