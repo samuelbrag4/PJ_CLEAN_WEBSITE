@@ -55,9 +55,9 @@
   margin-bottom: 0.7rem;
   flex-wrap: wrap;
 }
+
 .selo {
-  background: linear-gradient(90deg, #f05080, #dbbd9c);
-  background-size: 400% 400%;
+  background: var(--cor-categoria, #f05080);
   opacity: 0.6;
   transition: opacity 0.3s, transform 0.3s;
   color: #fff;
@@ -88,27 +88,6 @@
   0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1);}
   70% { opacity: 0; transform: translate(-50%, -50%) scale(1.4);}
   100% { opacity: 0; transform: translate(-50%, -50%) scale(1.4);}
-}
-
-.scrollDown {
-  margin: 1.2rem auto 0 auto;
-  background: none;
-  border: none;
-  color: #f05080;
-  font-size: 2.2rem;
-  cursor: pointer;
-  animation: bounceDown 1.5s infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s;
-}
-.scrollDown:hover {
-  color: #dbbd9c;
-}
-@keyframes bounceDown {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(12px);}
 }
 
 .containerImagem {

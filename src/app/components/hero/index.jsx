@@ -32,19 +32,12 @@ const Hero = ({
         <p className={styles.heroSubtitulo}>{heroSubtitulo}</p>
         <p className={styles.heroTexto}>{heroTexto}</p>
         <div className={styles.selos} >
-          <span className={styles.selo} style={{ backgroundColor: corCategoria || "#f05080" }}><FaShieldAlt /> Site seguro</span>
+          <span className={styles.selo} style={{ "--cor-categoria": corCategoria || "#f05080" }}><FaShieldAlt /> Site seguro</span>
           <span className={styles.selo}
-          style={{ backgroundColor: corCategoria || "#f05080" }}><FaUsers /> +10 mil clientes</span>
+          style={{ "--cor-categoria": corCategoria || "#f05080" }}><FaUsers /> +10 mil clientes</span>
           <span className={styles.selo}
-          style={{ backgroundColor: corCategoria || "#f05080" }}><FaCheckCircle /> Dermatologicamente testado</span>
+          style={{ "--cor-categoria": corCategoria || "#f05080" }}><FaCheckCircle /> Dermatologicamente testado</span>
         </div>
-        <button
-          className={styles.scrollDown}
-          onClick={onScrollClick}
-          aria-label="Rolar para ver mais"
-        >
-          <FaChevronDown />
-        </button>
       </div>
     </section>
   );

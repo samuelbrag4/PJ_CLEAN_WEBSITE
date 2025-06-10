@@ -26,6 +26,7 @@ export default function Home() {
         heroTexto={
           "Quer saber como ter uma pele naturalmente bonita? Descubra 8 dicas de beleza simples para começar hoje mesmo e deixar a pele ainda mais radiante."
         }
+        corCategoria="#F05080"
       />
 
       <CategoryCard />
