@@ -1,20 +1,24 @@
 "use client";
 
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
+
+import styles from "./blog.module.css";
+
+// Importando componentes necessários
 import Header from "../components/header";
 import Hero from "../components/hero";
 import Footer from "../components/footer";
-import { FaSearch } from "react-icons/fa";
-import styles from "./blog.module.css";
 import ArticleCard from "../components/articleCard";
 
 export default function Blog() {
+
   const categorias = ["Todos", "Skincare", "Corpo", "Maquiagem"];
   const [busca, setBusca] = useState("");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todos");
 
-  // Dados mockados dos cards
-  const mockCardData = [
+  // Dados dos cards de artigos 
+  const cardsArticles = [
     {
       id: "1",
       capa: "https://framerusercontent.com/images/MNfy6QCYPIHXneNVGU628aift0.jpg",
@@ -26,12 +30,12 @@ export default function Blog() {
     },
     {
       id: "2",
-      capa: "https://i.pinimg.com/736x/7f/d7/e7/7fd7e767b928003f10ad3e0ff2174e00.jpg",
+      capa: "https://www.clinicaleger.com.br/wp-content/uploads/2020/01/rotina-skincare-cuidados-com-a-pele.jpg",
       titulo: "Dicas de Skincare",
       descricao: "Aprenda como cuidar da sua pele com essas dicas incríveis.",
       categoria: "Skincare",
       corCategoria: "#5FCED4",
-      caminhoPage: "/articleBlog/2", 
+      caminhoPage: "/pagesArticles/articleBlog2", 
     },
     {
       id: "3",
@@ -63,7 +67,7 @@ export default function Blog() {
   const corAtual = coresCategoria[categoriaSelecionada] || "#00DAC7";
 
   // Filtro de busca e categoria para os cards
-  const filteredCards = mockCardData.filter((card) => {
+  const filteredCards = cardsArticles.filter((card) => {
     const buscaLower = busca.toLowerCase();
     const matchBusca =
       card.titulo.toLowerCase().includes(buscaLower) ||
@@ -79,14 +83,11 @@ export default function Blog() {
       <Header corHeader={corAtual} />
 
       <Hero
-        linkImage={
-          "https://i.pinimg.com/736x/cc/d7/f1/ccd7f15523a1891ec4b20fc2002221c4.jpg"
-        }
+        linkImage={"https://i.pinimg.com/736x/cc/d7/f1/ccd7f15523a1891ec4b20fc2002221c4.jpg"}
         heroTitulo={"Conheça dicas incríveis!!"}
         heroTexto={
           "Aqui, você encontrará dicas, tendências e informações sobre skincare, produtos de beleza e cuidados com o corpo. Nosso objetivo é ajudar você a escolher os melhores produtos para a sua rotina, entender os ingredientes e descobrir novas formas de cuidar da sua pele. Fique por dentro das novidades e aproveite nossas recomendações para realçar sua beleza da melhor forma!"
         }
-        textoPrimeiroBotao={"Dicas"}
         corBotao={corAtual}
       />
 
@@ -103,27 +104,23 @@ export default function Blog() {
       </div>
 
       {/* Filtros de categoria */}
-      <div
-        className={styles.categoryFilters}
-        style={{ "--corAtual": corAtual }}
-      >
+      <div className={styles.categoryFilters} style={{ "--corAtual": corAtual }}>
         {categorias.map((cat) => (
           <button
             key={cat}
             onClick={() => setCategoriaSelecionada(cat)}
-            className={`${styles.categoryButton} ${categoriaSelecionada === cat ? styles.selected : styles.unselected
-              }`}
-          >
-            {cat}
+            className={`${styles.categoryButton} ${categoriaSelecionada === cat ? styles.selected : styles.unselected}`}
+          > {cat}
           </button>
         ))}
       </div>
 
+      {/* Cards de artigos filtrados */}
       <div className={styles.cardsContainer}>
         {filteredCards.map((card) => (
           <ArticleCard
             key={card.id}
-            caminhoPage={card.caminhoPage} // Passa o link específico
+            caminhoPage={card.caminhoPage} 
             capa={card.capa}
             titulo={card.titulo}
             descricao={card.descricao}
