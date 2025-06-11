@@ -7,8 +7,11 @@ import { FaChevronLeft } from "react-icons/fa";
 import ConteudoArticle from "../../components/contentArticle";
 import VideosArticle from "../../components/videosArticle";
 import BibliografiaArticle from "../../components/bibliographiaArticle";
+import { useRouter } from "next/navigation";
 
 export default function Article() {
+
+  const router = useRouter();
 
   const conteudoProps = {
     tags: [
@@ -61,9 +64,9 @@ export default function Article() {
   ];
 
   const links = [
-    "https://www.fonte1vdhgvefwghvqgfvghwevgvdg.com.br",
-    "https://www.fonte2ehwfbhqberhfwbegfebgqh3hvqr.com.br",
-    "https://www.fonte3qrwefbvgqvergfugbuygbyu3wryfq3rdniqrfuqhiufiu.com.br"
+    "https://www.tuasaude.com/tratamento-para-pele-seca/",
+    "https://blog.adcos.com.br/pele-seca/",
+    "https://www.protex-soap.com.br/skin-care/dry-skin-care"
   ];
 
   return (
@@ -72,7 +75,14 @@ export default function Article() {
 
       <main className={styles.mainContent}>
         <div className={styles.returnRow}>
-          <a href="#" className={styles.returnLink}>
+          <a
+            href="#"
+            className={styles.returnLink}
+            onClick={(e) => {
+              e.preventDefault();
+              router.back();
+            }}
+          >
             <FaChevronLeft style={{ color: "#DBBD9C", marginRight: 6, fontSize: 18 }} />
             Retornar
           </a>

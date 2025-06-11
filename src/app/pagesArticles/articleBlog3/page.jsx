@@ -7,12 +7,16 @@ import { FaChevronLeft } from "react-icons/fa";
 import ConteudoArticle from "../../components/contentArticle";
 import VideosArticle from "../../components/videosArticle";
 import BibliografiaArticle from "../../components/bibliographiaArticle";
+import { useRouter } from "next/navigation";
 
 export default function Article() {
+
+  const router = useRouter();
+
   const conteudoProps = {
     tags: [
-      { text: "Beleza", color: "#DBBD9C", background: "#ffe6cc" },
-      { text: "Maquiagem", color: "#DBBD9C", background: "#ffe6cc" }
+      { text: "Beleza", color: "#F05080", background: "#f9b3c8" },
+      { text: "Maquiagem", color: "#F05080", background: "#f9b3c8" }
     ],
     date: "10 de junho de 2025",
     title: "Maquiagem para o Dia a Dia: Praticidade e Leveza",
@@ -66,14 +70,19 @@ export default function Article() {
 
   return (
     <div className={styles.pageContainer}>
-      <Header corHeader={"#DBBD9C"} />
+      <Header corHeader={"#F05080"} />
 
       <main className={styles.mainContent}>
         <div className={styles.returnRow}>
-          <a href="#" className={styles.returnLink}>
-            <FaChevronLeft
-              style={{ color: "#DBBD9C", marginRight: 6, fontSize: 18 }}
-            />
+          <a
+            href="#"
+            className={styles.returnLink}
+            onClick={(e) => {
+              e.preventDefault();
+              router.back();
+            }}
+          >
+            <FaChevronLeft style={{ color: "#F05080", marginRight: 6, fontSize: 18 }} />
             Retornar
           </a>
         </div>
@@ -86,12 +95,12 @@ export default function Article() {
 
         <hr className={styles.divider} />
 
-        <BibliografiaArticle links={links} corSeta={"#DBBD9C"} />
+        <BibliografiaArticle links={links} corSeta={"#F05080"} />
 
         <hr className={styles.divider} />
       </main>
 
-      <Footer corFooter="#DBBD9C" />
+      <Footer corFooter="#F05080" />
     </div>
   );
 }
