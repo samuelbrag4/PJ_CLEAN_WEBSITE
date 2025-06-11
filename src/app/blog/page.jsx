@@ -11,6 +11,7 @@ import Hero from "../components/hero";
 import Footer from "../components/footer";
 import ArticleCard from "../components/articleCard";
 
+
 export default function Blog() {
 
   const categorias = ["Todos", "Skincare", "Corpo", "Maquiagem"];
@@ -44,7 +45,7 @@ export default function Blog() {
       descricao: "Dicas de maquiagem simples e práticas para o dia a dia.",
       categoria: "Maquiagem",
       corCategoria: "#F05080",
-      caminhoPage: "/articleBlog/3", // Link para a página específica
+      caminhoPage: "/pagesArticles/articleBlog3", // Link para a página específica
     },
     {
       id: "4",
@@ -89,6 +90,7 @@ export default function Blog() {
           "Aqui, você encontrará dicas, tendências e informações sobre skincare, produtos de beleza e cuidados com o corpo. Nosso objetivo é ajudar você a escolher os melhores produtos para a sua rotina, entender os ingredientes e descobrir novas formas de cuidar da sua pele. Fique por dentro das novidades e aproveite nossas recomendações para realçar sua beleza da melhor forma!"
         }
         corBotao={corAtual}
+        corCategoria="#00DAC7"
       />
 
       {/* Barra de busca */}

@@ -144,6 +144,7 @@ export default function Produtos() {
         heroTexto={
           "Já sabe do que precisa, mas não tem ideia de onde comprar? Venha, vamos te ajudar! Aqui você encontrará produtos perfeitos para o que tem em mente."
         }
+        corCategoria="#DBBD9C"
       />
 
       <div className={styles.container}>
