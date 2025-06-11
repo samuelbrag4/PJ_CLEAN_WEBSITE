@@ -20,43 +20,115 @@ export default function Blog() {
 
   // Dados dos cards de artigos 
   const cardsArticles = [
-    {
-      id: "1",
-      capa: "https://framerusercontent.com/images/MNfy6QCYPIHXneNVGU628aift0.jpg",
-      titulo: "Cuidados com o Corpo",
-      descricao: "Descubra como manter seu corpo saudável e hidratado.",
-      categoria: "Corpo",
-      corCategoria: "#DBBD9C",
-      caminhoPage: "/pagesArticles/articleBlog1"
-    },
-    {
-      id: "2",
-      capa: "https://www.clinicaleger.com.br/wp-content/uploads/2020/01/rotina-skincare-cuidados-com-a-pele.jpg",
-      titulo: "Dicas de Skincare",
-      descricao: "Aprenda como cuidar da sua pele com essas dicas incríveis.",
-      categoria: "Skincare",
-      corCategoria: "#5FCED4",
-      caminhoPage: "/pagesArticles/articleBlog2", 
-    },
-    {
-      id: "3",
-      capa: "https://i.pinimg.com/736x/78/34/31/783431b84e01cbd27c5f7a6b43e5a95b.jpg",
-      titulo: "Maquiagem para o Dia a Dia",
-      descricao: "Dicas de maquiagem simples e práticas para o dia a dia.",
-      categoria: "Maquiagem",
-      corCategoria: "#F05080",
-      caminhoPage: "/pagesArticles/articleBlog3", // Link para a página específica
-    },
-    {
-      id: "4",
-      capa: "https://i.pinimg.com/736x/78/34/31/783431b84e01cbd27c5f7a6b43e5a95b.jpg",
-      titulo: "Rotina de Beleza",
-      descricao: "Saiba como criar uma rotina de beleza eficiente.",
-      categoria: "Skincare",
-      corCategoria: "#5FCED4",
-      caminhoPage: "/articleBlog/4", // Link para a página específica
-    },
-  ];
+  {
+    id: "1",
+    capa: "https://framerusercontent.com/images/MNfy6QCYPIHXneNVGU628aift0.jpg",
+    titulo: "Cuidados com o Corpo",
+    descricao: "Descubra como manter seu corpo saudável e hidratado.",
+    categoria: "Corpo",
+    corCategoria: "#DBBD9C",
+    caminhoPage: "/pagesArticles/articleBlog1"
+  },
+  {
+    id: "2",
+    capa: "https://www.clinicaleger.com.br/wp-content/uploads/2020/01/rotina-skincare-cuidados-com-a-pele.jpg",
+    titulo: "Dicas para uma Pele Saudável",
+    descricao: "Aprenda como cuidar da sua pele com essas dicas incríveis.",
+    categoria: "Skincare",
+    corCategoria: "#5FCED4",
+    caminhoPage: "/pagesArticles/articleBlog2"
+  },
+  {
+    id: "3",
+    capa: "https://www.atribuna.com.br/image/policy:1.460176:1746215469/image.jpg",
+    titulo: "Maquiagem para o Dia a Dia",
+    descricao: "Dicas de maquiagem simples e práticas para o dia a dia.",
+    categoria: "Maquiagem",
+    corCategoria: "#F05080",
+    caminhoPage: "/pagesArticles/articleBlog3"
+  },
+  {
+    id: "4",
+    capa: "https://areademulher.r7.com/wp-content/uploads/2020/03/skincare-o-que-fazer-dicas-e-truques-para-voce-aprender-a-cuidar-da-pele-6.jpg",
+    titulo: "Rotina de Beleza",
+    descricao: "Saiba como criar uma rotina de beleza eficiente.",
+    categoria: "Skincare",
+    corCategoria: "#5FCED4",
+    caminhoPage: "/articleBlog/4"
+  },
+  {
+    id: "5",
+    capa: "https://amaro.com/cdn/shop/articles/AMARO-Inspira-destaque-wide-1-1.png?v=1699387363",
+    titulo: "Hidratação no Inverno",
+    descricao: "Dicas de produtos e hábitos para manter sua pele hidratada no frio.",
+    categoria: "Skincare",
+    corCategoria: "#5FCED4",
+    caminhoPage: "/articleBlog/5"
+  },
+  {
+    id: "6",
+    capa: "https://s.zst.com.br/cms-assets/2022/05/autocuidado-feminino.webp",
+    titulo: "Autocuidado e Bem-Estar",
+    descricao: "Entenda como o autocuidado impacta sua saúde mental e física.",
+    categoria: "Corpo",
+    corCategoria: "#DBBD9C",
+    caminhoPage: "/articleBlog/6"
+  },
+  {
+    id: "9",
+    capa: "https://lh7-rt.googleusercontent.com/docsz/AD_4nXebSTB6yQ87o627O6Lhfq2Ew9va-CGLRFhRBQOUnkqOuEsw7rBUxwpQWpsQvFPLHWQNGlGtD9WwMNScHGC_gAZGouihsA7Fsbj5C2p3S757WlbeOB-_sgr4jhqGXzonogBOnkLTftdUwyx6M3lYMZvm6hho?key=bmxPeOa_dLzUHIBo3SYHOg",
+    titulo: "Como Remover a Maquiagem Corretamente",
+    descricao: "Passo a passo para limpar sua pele sem agredi-la.",
+    categoria: "Skincare",
+    corCategoria: "#5FCED4",
+    caminhoPage: "/articleBlog/9"
+  },
+  {
+    id: "7",
+    capa: "https://blog.oceane.com.br/wp-content/uploads/2024/02/409_rosa_noiva.jpg",
+    titulo: "Maquiagem para Festas",
+    descricao: "Arrase nas festas com essas inspirações de make incríveis!",
+    categoria: "Maquiagem",
+    corCategoria: "#F05080",
+    caminhoPage: "/articleBlog/7"
+  },
+  {
+    id: "10",
+    capa: "https://www.minasbanheiras.com.br/wp-content/uploads/2022/07/SPA-day-em-casa-como-fazer.jpg",
+    titulo: "Relaxamento e Spa em Casa",
+    descricao: "Transforme sua casa em um spa com essas dicas deliciosas.",
+    categoria: "Corpo",
+    corCategoria: "#DBBD9C",
+    caminhoPage: "/articleBlog/10"
+  },
+  {
+    id: "11",
+    capa: "https://www.janpodologia.com.br/img/produtos/design-de-sobrancelha.webp",
+    titulo: "Sobrancelhas Perfeitas",
+    descricao: "Aprenda truques para deixar suas sobrancelhas alinhadas e naturais.",
+    categoria: "Maquiagem",
+    corCategoria: "#F05080",
+    caminhoPage: "/articleBlog/11"
+  },
+  {
+    id: "12",
+    capa: "https://www.assai.com.br/sites/default/files/mulher_negra_sorrindo_segurando_laranjas_nas_maos_-_beleza_e_alimentacao_-_assai_atacadista.jpg",
+    titulo: "Alimentação e Beleza",
+    descricao: "Veja como a sua alimentação influencia diretamente na sua pele e cabelo.",
+    categoria: "Corpo",
+    corCategoria: "#DBBD9C",
+    caminhoPage: "/articleBlog/12"
+  },
+  {
+    id: "15",
+    capa: "https://lunetas.com.br/wp-content/uploads/2025/01/protetor-solar-10-perguntas-sobre-como-usar-e-qual-escolher-portal-lunetas.jpg",
+    titulo: "Protetor Solar: Uso Diário",
+    descricao: "Entenda por que o protetor solar é essencial até nos dias nublados.",
+    categoria: "Skincare",
+    corCategoria: "#5FCED4",
+    caminhoPage: "/articleBlog/15"
+  },
+];
 
   // Mapeamento de cores por categoria
   const coresCategoria = {

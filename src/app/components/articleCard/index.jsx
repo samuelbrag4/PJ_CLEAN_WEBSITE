@@ -16,7 +16,9 @@ const ArticleCard = ({ caminhoPage, capa, titulo, descricao, categoria, corCateg
       <div className={styles.content}>
         <h3 className={styles.title}>{titulo}</h3>
         <p className={styles.description}>{descricao}</p>
-        Leia mais
+        <button className={styles.readMoreBtn} type="button" style={{ backgroundColor: corCategoria }}>
+          Leia mais
+        </button> 
       </div>
     </Link>
   );

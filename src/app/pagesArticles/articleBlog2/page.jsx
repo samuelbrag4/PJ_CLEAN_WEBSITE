@@ -7,12 +7,16 @@ import { FaChevronLeft } from "react-icons/fa";
 import ConteudoArticle from "../../components/contentArticle";
 import VideosArticle from "../../components/videosArticle";
 import BibliografiaArticle from "../../components/bibliographiaArticle";
+import { useRouter } from "next/navigation";
 
 export default function Article() {
+
+  const router = useRouter();
+
   const conteudoProps = {
     tags: [
-      { text: "Beleza", color: "#DBBD9C", background: "#ffe6cc" },
-      { text: "Skincare", color: "#DBBD9C", background: "#ffe6cc" },
+      { text: "Beleza", color: "#5FCED4", background: "#9ef2f7" },
+      { text: "Skincare", color: "#5FCED4", background: "#9ef2f7" },
     ],
     date: "10 de junho de 2025",
     title: "5 Dicas Essenciais de Skincare para uma Pele Saudável",
@@ -46,8 +50,8 @@ export default function Article() {
       thumb: "https://ik.imagekit.io/goup/rufatto/wp-content/uploads/2022/10/Blog-02.png"
     },
     {
-      url: "https://www.youtube.com/watch?v=rfktT1iHrLY",
-      thumb: "https://blog.hmsnatural.com.br/wp-content/uploads/2021/09/young-woman-raises-palms-over-face-keeps-eyes-closed-shows-white-teeth-uses-cleansing-foam-for-skin-care-gets-real-pleasure_Easy-Resize.com_-990x660.jpg"
+      url: "https://youtu.be/j4jrPoaxw1I?si=2ZXo066KMa2nRSQd",
+      thumb: "https://img.youtube.com/vi/j4jrPoaxw1I/hqdefault.jpg"
     },
     {
       url: "https://www.youtube.com/watch?v=aLzyZKzmPgM",
@@ -63,14 +67,19 @@ export default function Article() {
 
   return (
     <div className={styles.pageContainer}>
-      <Header corHeader={"#DBBD9C"} />
+      <Header corHeader={"#5FCED4"} />
 
       <main className={styles.mainContent}>
         <div className={styles.returnRow}>
-          <a href="#" className={styles.returnLink}>
-            <FaChevronLeft
-              style={{ color: "#DBBD9C", marginRight: 6, fontSize: 18 }}
-            />
+          <a
+            href="#"
+            className={styles.returnLink}
+            onClick={(e) => {
+              e.preventDefault();
+              router.back();
+            }}
+          >
+            <FaChevronLeft style={{ color: "#5FCED4", marginRight: 6, fontSize: 18 }} />
             Retornar
           </a>
         </div>
@@ -83,12 +92,12 @@ export default function Article() {
 
         <hr className={styles.divider} />
 
-        <BibliografiaArticle links={links} corSeta={"#DBBD9C"} />
+        <BibliografiaArticle links={links} corSeta={"#5FCED4"} />
 
         <hr className={styles.divider} />
       </main>
 
-      <Footer corFooter="#DBBD9C" />
+      <Footer corFooter="#5FCED4" />
     </div>
   );
 }
