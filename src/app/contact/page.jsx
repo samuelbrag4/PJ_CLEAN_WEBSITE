@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./contact.module.css";
+import shapes from "./img/shapes.png";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
@@ -45,9 +46,9 @@ export default function Contato() {
 
   return (
     <div>
-      <Header corHeader={"#F05080"} /> {/* LightPink */}
+      <Header corHeader={"#DBBD9C"} />
       <div className={styles.contactSection}>
-      
+        <Image src={shapes} alt="" className={styles.contactImage} />
 
         <div className={styles.contactContainer}>
           <div className={styles.contactText}>
@@ -104,7 +105,7 @@ export default function Contato() {
           </div>
         </div>
       </div>
-      <Footer corFooter={"#F05080"} /> {/* LightPink */}
+      <Footer corFooter={"#DBBD9C"} />
     </div>
   );
 }
